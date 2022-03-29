@@ -26,8 +26,9 @@ module.exports={
         proyecto.eliminar(conn,req.params.id,function(err){
             res.redirect('/proyectos');
         });
+    },
+    editar:function(req,res){
+        res.render('proyectos/editar');
     }
-
-
 
 }

@@ -3,8 +3,8 @@ var router = express.Router();
 const proyectosC= require("../controlador/proyectosC");
 
 /* GET home page. */
-router.get('/',function(req,res,next){
-  res.send("ESTE ES EL INDEX");
+router.get('/views/index.ejs',function(req,res,next){
+  res.redirect('/');
 });
 
 

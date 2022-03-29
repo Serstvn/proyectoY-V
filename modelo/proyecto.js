@@ -9,5 +9,8 @@ module.exports = {
     },
     eliminar:function(conn,id,funcion){
         conn.query("DELETE FROM proyectos WHERE id=?",[id],funcion);
+    },
+    editar:function(req,res){
+
     }
 }

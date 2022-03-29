@@ -6,10 +6,12 @@ const proyectosC= require("../controlador/proyectosC");
 router.get('/',proyectosC.index);
 /* GET crear page. */
 router.get('/crear',proyectosC.crear);
-/* GET guardar page. */
+/* POST guardar page. */
 router.post("/",proyectosC.guardar);
-/* GET eliminar page. */
+/* POST eliminar page. */
 router.post("/eliminar/:id",proyectosC.eliminar);
+/* POST editar page. */
+router.get('/editar/:id',proyectosC.editar);
 
 
 
