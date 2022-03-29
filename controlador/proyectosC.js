@@ -20,6 +20,12 @@ module.exports={
             res.redirect('/proyectos');
         });
         
+    },
+    eliminar:function(req,res){
+        console.log("recepcion de datos");
+        proyecto.eliminar(conn,req.params.id,function(err){
+            res.redirect('/proyectos');
+        });
     }
 
 

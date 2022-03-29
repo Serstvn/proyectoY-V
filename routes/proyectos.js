@@ -8,4 +8,9 @@ router.get('/',proyectosC.index);
 router.get('/crear',proyectosC.crear);
 /* GET guardar page. */
 router.post("/",proyectosC.guardar);
+/* GET eliminar page. */
+router.post("/eliminar/:id",proyectosC.eliminar);
+
+
+
 module.exports = router;
