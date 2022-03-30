@@ -1,10 +1,12 @@
 <%- include ../layouts/cabecera.ejs %>
 
-
-
-    <a href="/proyectos/crear" class="btn btn-outline-secondary mt-4"><i
-            class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
+<div class="container"><a href="/proyectos/crear" class=" btn btn-outline-secondary mt-4 position-fixed text-right"><i
+            class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
+<br>
+    
+            <h1 class="align-text-bottom text-center" >DIRECTORIO ACTIVO DE PROYECTOS</h1>
     </div>
+    
 
     <div class="container">
 
@@ -42,11 +44,12 @@
                             <%=proyectos[proyecto].empleados_id %>
                         </td>
                         <td>
+                            
 
                             <div class="btn-group" role="group" aria-label="Button group">
 
-                                <form class="form-inline" method="get"
-                                    action="/proyectos/editar/<%=proyectos[proyecto].id %>">
+                                <form class="form-inline" method="post"
+                                    action="/proyectos/editar/<%=proyectos[proyecto].id%>">
                                     <button class="btn btn-outline-info" type="submit"><i
                                             class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
                                 </form>

@@ -11,8 +11,7 @@ router.post("/",proyectosC.guardar);
 /* POST eliminar page. */
 router.post("/eliminar/:id",proyectosC.eliminar);
 /* POST editar page. */
-router.get('/editar/:id',proyectosC.editar);
-
+router.post("/editar/:id",proyectosC.editar);
 
 
 module.exports = router;
