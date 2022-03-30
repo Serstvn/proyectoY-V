@@ -33,6 +33,13 @@ module.exports = {
         res.render('proyectos/editar',{proyecto:datos[0]});
         });
         
+    },
+    actualizar:function(req,res){
+
+        proyecto.actualizar(conn,req.body.datos,function(err){
+        console.log(req.body.datos);
+        });
+
     }
 
 }
