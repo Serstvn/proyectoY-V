@@ -3,7 +3,9 @@
 <br>
 <form method="post" action="../actualizar/" enctype="multipart/form-data">
 
-    <input type="text" name="id" value="<%= proyecto.id %> ">
+    <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
+
+    <input type="hidden" name="id" value="<%= proyecto.id %> ">
 
     <div class="form-group">
         <label for="my-input">CODIGO</label>
@@ -31,4 +33,6 @@
 
 </form>
 
+<br>
+<br>
 <%- include ../layouts/pie.ejs %>
