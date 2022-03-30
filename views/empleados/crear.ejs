@@ -1,0 +1,42 @@
+<%- include ../layouts/cabecera.ejs %>
+<br>
+<br>
+
+<form method="post" action="/">
+<div class="form-group">
+    <label for="my-input">TIPO DE DOCUMENTO</label>
+    <input id="my-input"  class="form-control"  type="text" name="tipoDocumento">
+</div>
+<div class="form-group">
+    <label for="my-input">DOCUMENTO</label>
+    <input id="my-input"  class="form-control" type="number" name="documento">
+</div>
+<div class="form-group">
+    <label for="my-input">NOMBRE</label>
+    <input id="my-input"   class="form-control" type="text" name="nombre">
+</div>
+<div class="form-group">
+    <label for="my-input">APELLIDO </label>
+    <input id="my-input"   class="form-control" type="text" name="apellido">
+</div>
+<div class="form-group">
+    <label for="my-input">GERENCIA</label>
+    <input id="my-input"  class="form-control" type="text" name="gerencia">
+</div>
+<div class="form-group">
+    <label for="my-input">DEPARTAMENTO</label>
+    <input id="my-input"  class="form-control" type="text" name="departamento">
+</div>
+<div class="form-group">
+    <label for="my-input">CARGO</label>
+    <input id="my-input"  class="form-control" type="text" name="cargo">
+</div>
+<div class="form-group">
+    <label for="my-input">SUELDO</label>
+    <input id="my-input"  class="form-control" type="number" name="salario">
+</div>
+<button type="submit" class="btn btn-outline-primary"><i class='bx bx-check-circle bx-md'></i></button>
+    <a href="../empleados" class="btn btn-outline-danger"><i class='bx bx-x-circle bx-md'></i></a>
+</form>
+
+<%- include ../layouts/pie.ejs %>

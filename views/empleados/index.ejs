@@ -1,0 +1,87 @@
+<%- include ../layouts/cabecera.ejs %>
+
+<div class="container"><a href="/empleados/crear" class=" btn btn-outline-secondary mt-4 position-fixed text-right"><i
+            class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
+<br>
+    
+            <h1 class="align-text-bottom text-center" >DIRECTORIO ACTIVO DE RECURSOS</h1>
+    </div>
+    
+
+    <div class="container">
+
+        <table class="table table-hover text-center mt-4">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>TIPO DOC</th>
+                    <th>DOCUMENTO</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>GERENCIA</th>
+                    <th>DEPARTAMENTO</th>
+                    <th>CARGO</th>
+                    <th>SUELDO</th>
+                    <th>ACCIÓN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let empleado=0; empleado < empleados.length; empleado++ ) { %>
+                    <tr>
+                        <td>
+                            <%=empleados[empleado].id %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].documentos_id %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].documento %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].nombre %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].apellido %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].gerencias_id  %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].departamentos_id  %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].cargos_id  %>
+                        </td>
+                        <td>
+                            <%=empleados[empleado].sueldo  %>
+                        </td>
+                        <td>
+                            
+
+                            <div class="btn-group" role="group" aria-label="Vertical button group">
+
+                                <form class="form-inline" method="post"
+                                    action="/empleados/editar/<%=empleados[empleado].id%>">
+                                    <button class="btn btn-outline-info" type="submit"><i
+                                            class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
+                                </form>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Vertical button group">
+
+                                <form class="form-inline" method="post"
+                                    action="/empleados/eliminar/<%=empleados[empleado].id %>">
+                                    <button class="btn btn-outline-danger" type="submit"><i
+                                            class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
+                                </form>
+                            </div>
+
+
+                        </td>
+                    </tr>
+                    <% } %>
+
+            </tbody>
+        </table>
+
+
+        <%- include ../layouts/pie.ejs %>
