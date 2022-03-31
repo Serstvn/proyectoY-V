@@ -2,8 +2,10 @@
 <br>
 <br>
 <form method="post" action="../actualizar/" enctype="multipart/form-data">
+    <h1 class="align-text-bottom text-center">EDITAR EMPLEADO</h1>
 
-    <input type="text" name="id" value="<%= empleado.id %> ">
+
+    <input type="hidden" name="id" value="<%= empleado.id %> ">
 
     <div class="form-group">
         <label for="my-input">TIPO DE DOCUMENTO</label>
@@ -42,5 +44,8 @@
     <a href="/empleados" class="btn btn-outline-danger"><i class='bx bx-x-circle bx-md'></i></a>
 
 </form>
+<br>
+<br>
+<br>
 
 <%- include ../layouts/pie.ejs %>
