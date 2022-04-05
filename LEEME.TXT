@@ -1,0 +1,18 @@
+IMPORTANTE!!!
+instalar NODE JS NVM
+https://github.com/coreybutler/nvm-windows ---- nvm-setup.zip
+
+EXPRESS   FRAMEWORK
+npm install express --save
+npm install express-generator -g
+
+
+npm install
+npm start
+
+NODEMON
+npm install nodemon -g
+nodemon start
+
+
+
