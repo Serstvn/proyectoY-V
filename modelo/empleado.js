@@ -1,5 +1,5 @@
 module.exports = {
-
+//*modulo MODELO MVC
 
     obtener: function (conn, funcion) {
         conn.query("SELECT * FROM empleados", funcion);
