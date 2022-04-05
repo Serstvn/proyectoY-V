@@ -7,4 +7,6 @@ router.get('/',function(req,res,next){
 });
 
 
+//** estoy en el index y esto es la prueba de git */
+
 module.exports = router;
