@@ -33,13 +33,12 @@ module.exports = {
             res.render('empleados/editar', { empleado: datos[0] });
         });
 
+
     },
-    actualizar: function (req, res) {
-        console.log(req.body.datos)
-        if (req.body.datos) {
-            empleado.actualizar(conn, req.body, function (err) { });
-        }
-        /* console.log(req.body,datos);
-        }); */
+    actualizar:function(req,res){
+
+        empleado.actualizar(conn,req.body,function(err){
+        console.log(req.body);
+        });
     }
 }
