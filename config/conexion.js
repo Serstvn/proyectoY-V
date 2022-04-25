@@ -10,7 +10,7 @@ var conn = mysql.createConnection({
 conn.connect(
     (err) => {
         if (!err){
-            console.log('conectado a la BD');
+            console.log('conectado a la BD http://localhost:3000/');
         } else {
             console.log('error en la conexion',err);
         }
