@@ -1,5 +1,6 @@
 var conn = require('../config/conexion');
 var proyecto = require("../modelo/proyecto");
+var bodyParser = require('body-parser')
 
 module.exports = {
     index: function (req, res) {
@@ -34,12 +35,9 @@ module.exports = {
         });
         
     },
-    actualizar:function(req,res){
-
-        proyecto.actualizar(conn,req.body.datos,function(err){
-        console.log(req.body.datos);
-        });
-
+    actualizar: function (req,res){
+        console.log(req.body.id);
+        console.log(req.body.codigo);
     }
 
 }

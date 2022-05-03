@@ -1,41 +1,68 @@
 <%- include ../layouts/cabecera.ejs %>
-<br>
-<br>
-<div class="container">
-    <form method="post" action="../actualizar/" enctype="multipart/form-data">
+    <br>
+    <br>
 
-    <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <form method="POST" action="../actualizar/">
+                    <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
+                    <input type="hidden" name="id" value="<%= proyecto.id %>">
 
-    <input type="hidden" name="id" value="<%= proyecto.id %> ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="my-input">CODIGO</label>
+                                    <input id="my-input" value="<%= proyecto.codigo %>" class="form-control" type="text"
+                                        name="codigo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="my-input">CECO</label>
+                                    <input id="my-input" value="<%= proyecto.ceco_id %>" class="form-control"
+                                        type="text" name="ceco">
+                                </div>
+                                <div class="form-group">
+                                    <label for="my-input">CLIENTE</label>
+                                    <input id="my-input" value="<%= proyecto.cliente %>" class="form-control"
+                                        type="text" name="cliente">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="my-input">NOMBRE CORTO</label>
+                                    <input id="my-input" value="<%= proyecto.nomCorto %>" class="form-control"
+                                        type="text" name="nombreCorto">
+                                </div>
+                                <div class="form-group">
+                                    <label for="my-input">GERENTE</label>
+                                    <input id="my-input" value="<%= proyecto.empleados_id %>" class="form-control"
+                                        type="text" name="gerente">
+                                </div>
 
-    <div class="form-group">
-        <label for="my-input">CODIGO</label>
-        <input id="my-input" value="<%= proyecto.codigo %>" class="form-control"  type="text" name="codigo">
+                                <button type="submit" class="btn btn-outline-primary"><i
+                                        class='bx bx-check-circle bx-md'></i></button>
+                                <a href="/proyectos" class="btn btn-outline-danger"><i
+                                        class='bx bx-x-circle bx-md'></i></a>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="my-input">CECO</label>
-        <input id="my-input" value="<%= proyecto.ceco_id %>" class="form-control" type="text" name="ceco">
-    </div>
-    <div class="form-group">
-        <label for="my-input">CLIENTE</label>
-        <input id="my-input" value="<%= proyecto.cliente %>"  class="form-control" type="text" name="cliente">
-    </div>
-    <div class="form-group">
-        <label for="my-input">NOMBRE CORTO</label>
-        <input id="my-input" value="<%= proyecto.nomCorto %>"  class="form-control" type="text" name="nombreCorto">
-    </div>
-    <div class="form-group">
-        <label for="my-input">GERENTE</label>
-        <input id="my-input" value="<%= proyecto.empleados_id %>" class="form-control" type="text" name="gerente">
-    </div>
-
-    <button type="submit" class="btn btn-outline-primary"><i class='bx bx-check-circle bx-md'></i></button>
-    <a href="/proyectos" class="btn btn-outline-danger"><i class='bx bx-x-circle bx-md'></i></a>
-
-</form>
-</div>
+    <br>
+    <br>
 
 
-<br>
-<br>
-<%- include ../layouts/pie.ejs %>
+
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <%- include ../layouts/pie.ejs %>
