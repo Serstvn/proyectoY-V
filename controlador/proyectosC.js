@@ -19,6 +19,7 @@ module.exports = {
 
         proyecto.insertar(conn, req.body, function (err) {
             res.redirect('/proyectos');
+            
         });
 
     },
@@ -35,9 +36,15 @@ module.exports = {
         });
         
     },
-    actualizar: function (req,res){
-        console.log(req.body.id);
-        console.log(req.body.codigo);
+    actualizar: function name(req,res){
+        console.log(req.body);
+        if(req.body){
+            
+        proyecto.actualizar(conn,req.body, function(err,){
+            
+            res.redirect('/proyectos');
+        });
+        }
     }
 
 }

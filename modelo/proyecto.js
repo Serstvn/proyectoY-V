@@ -14,7 +14,7 @@ module.exports = {
     retornarDatosID: function (conn,id,funcion) {
         conn.query("SELECT * FROM proyectos WHERE id=?",[id], funcion);
     },
-    actualizar:function(conn, datos, funcion) {
-        conn.query("UPDATE proyectos SET ? WHERE id=?",[datos.proyecto, datos.id],funcion);
+    actualizar:function(conn, datos,id, funcion) {
+        conn.query("UPDATE `proyectos` SET `codigo=?`, `ceco_id=?`, `cliente=?`, `nomCorto=?`, `empleados_id=?` WHERE id=?",[datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente],[id],funcion);
      }
 }

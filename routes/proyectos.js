@@ -13,7 +13,7 @@ router.post("/eliminar/:id",proyectosC.eliminar);
 /* POST editar page. */
 router.post("/editar/:id",proyectosC.editar);
 /* POST actualizar page. */
-router.post("/actualizar/",proyectosC.actualizar);
+router.post("/actualizar",proyectosC.actualizar);
 
 
 module.exports = router;

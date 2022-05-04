@@ -63,14 +63,24 @@
                                             class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                 </form>
                             </div>
+                            <div>
+                                <button onclick="return confirm('estas seguro compa??')">prueba</button>
+                            </div>
 
 
                         </td>
                     </tr>
                     <% } %>
-
             </tbody>
         </table>
+
+        <script>
+            import Swal from 'sweetalert2';
+
+            const showAlert = () => {
+                alert('esta es la alerta')
+            }
+        </script>
 
 
         <%- include ../layouts/pie.ejs %>
