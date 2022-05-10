@@ -4,9 +4,11 @@
 
     <div class="card">
         <div class="card-body">
-            <div class="container">
+          <br>
+            <div class="container shadow p-3 mb-5 bg-white rounded">
                 <form method="POST" action="../actualizar/">
                     <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
+                    
                     <input type="hidden" name="id" value="<%= proyecto.id %>">
 
                     <div class="container">
@@ -44,25 +46,12 @@
                                         class='bx bx-check-circle bx-md'></i></button>
                                 <a href="/proyectos" class="btn btn-outline-danger"><i
                                         class='bx bx-x-circle bx-md'></i></a>
-                            </div>
-                        </div>
-                </form>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-
-
-    </div>
-
-
-
-
-
-
-
-    <br>
-    <br>
+            <br>
+            <br>
     <%- include ../layouts/pie.ejs %>

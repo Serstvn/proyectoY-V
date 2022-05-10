@@ -1,15 +1,14 @@
 <%- include ../layouts/cabecera.ejs %>
-
-    <div class="container"><a href="/proyectos/crear"
-            class=" btn btn-outline-secondary mt-4 position-fixed text-right"><i
-                class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
+    <br>
+    <br>
+    <h1 class="align-text-bottom text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
     <br>
 
-    <h1 class="align-text-bottom text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
+    <div class="container-fluid"><a href="/proyectos/crear"
+            class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
+                class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
     </div>
-
-
-    <div class="container">
+    <div class="container shadow p-3 mb-5 bg-white rounded">
 
         <table class="table table-hover text-center mt-4">
             <thead class="thead-light">
@@ -59,12 +58,9 @@
 
                                 <form class="form-inline" method="post"
                                     action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
-                                    <button class="btn btn-outline-danger" type="submit"><i
+                                    <button class="btn btn-outline-danger" onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')" type="submit"><i
                                             class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                 </form>
-                            </div>
-                            <div>
-                                <button onclick="return confirm('estas seguro compa??')">prueba</button>
                             </div>
 
 

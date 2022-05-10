@@ -6,7 +6,7 @@ module.exports = {
     index: function (req, res) {
         proyecto.obtener(conn, function (err, datos) {
             console.log(datos);
-            res.render('proyectos/index', { title: 'Y&V backlog', proyectos: datos });
+            res.render('proyectos/index', { proyectos: datos });
         });
     },
     crear: function (req, res) {
@@ -19,7 +19,7 @@ module.exports = {
 
         proyecto.insertar(conn, req.body, function (err) {
             res.redirect('/proyectos');
-            
+
         });
 
     },
@@ -30,20 +30,19 @@ module.exports = {
         });
     },
     editar: function (req, res) {
-        proyecto.retornarDatosID(conn,req.params.id,function(err,datos){
+        proyecto.retornarDatosID(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
-        res.render('proyectos/editar',{proyecto:datos[0]});
+            res.render('proyectos/editar', { proyecto: datos[0] });
         });
-        
+
     },
-    actualizar: function name(req,res){
+    actualizar: function (req, res) {
         console.log(req.body);
-        if(req.body){
-            
-        proyecto.actualizar(conn,req.body, function(err,){
-            
-            res.redirect('/proyectos');
-        });
+        if (req.body) {
+
+            proyecto.actualizar(conn, req.body, function (err) {
+                res.redirect('/proyectos');
+            });
         }
     }
 

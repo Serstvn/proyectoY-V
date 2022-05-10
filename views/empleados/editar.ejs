@@ -1,50 +1,64 @@
 <%- include ../layouts/cabecera.ejs %>
-<br>
-<br>
-<div class="container">
-    <form method="post" action="../actualizar/" enctype="multipart/form-data">
-    <h1 class="align-text-bottom text-center">EDITAR EMPLEADO</h1>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" action="../actualizar/" enctype="multipart/form-data">
+                <h1 class="align-text-bottom text-center">EDITAR EMPLEADO</h1>
+                <br>
+                <input type="hidden" name="id" value="<%= empleado.id %> ">
 
+                <div class="container shadow-lg p-3 mb-5 bg-waith rounded">
 
-    <input type="hidden" name="id" value="<%= empleado.id %> ">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="my-input">TIPO DE DOCUMENTO</label>
+                                <input id="my-input" value="<%= empleado.documentos_id %>" class="form-control"
+                                    type="text" name="tipoDocumento">
+                            </div>
+                            <div class="form-group">
+                                <label for="my-input">DOCUMENTO</label>
+                                <input id="my-input" value="<%= empleado.documento %>" class="form-control"
+                                    type="number" name="documento">
+                            </div>
+                            <div class="form-group">
+                                <label for="my-input">NOMBRE</label>
+                                <input id="my-input" value="<%= empleado.nombre %>" class="form-control" type="text"
+                                    name="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="my-input">APELLIDO </label>
+                                <input id="my-input" value="<%= empleado.apellido %>" class="form-control" type="text"
+                                    name="apellido">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="my-input">GERENCIA</label>
+                                <input id="my-input" value="<%= empleado.gerencias_id %>" class="form-control"
+                                    type="text" name="gerencia">
+                            </div>
+                            <div class="form-group">
+                                <label for="my-input">DEPARTAMENTO</label>
+                                <input id="my-input" value="<%= empleado.departamentos_id  %>" class="form-control"
+                                    type="text" name="departamento">
+                            </div>
+                            <div class="form-group">
+                                <label for="my-input">CARGO</label>
+                                <input id="my-input" value="<%= empleado.cargos_id  %>" class="form-control" type="text"
+                                    name="cargo">
+                            </div>
 
-    <div class="form-group">
-        <label for="my-input">TIPO DE DOCUMENTO</label>
-        <input id="my-input" value="<%= empleado.documentos_id %>" class="form-control"  type="text" name="tipoDocumento">
-    </div>
-    <div class="form-group">
-        <label for="my-input">DOCUMENTO</label>
-        <input id="my-input" value="<%= empleado.documento %>" class="form-control" type="number" name="documento">
-    </div>
-    <div class="form-group">
-        <label for="my-input">NOMBRE</label>
-        <input id="my-input" value="<%= empleado.nombre %>"  class="form-control" type="text" name="nombre">
-    </div>
-    <div class="form-group">
-        <label for="my-input">APELLIDO </label>
-        <input id="my-input" value="<%= empleado.apellido %>"  class="form-control" type="text" name="apellido">
-    </div>
-    <div class="form-group">
-        <label for="my-input">GERENCIA</label>
-        <input id="my-input" value="<%= empleado.gerencias_id %>" class="form-control" type="text" name="gerencia">
-    </div>
-    <div class="form-group">
-        <label for="my-input">DEPARTAMENTO</label>
-        <input id="my-input" value="<%= empleado.departamentos_id  %>" class="form-control" type="text" name="departamento">
-    </div>
-    <div class="form-group">
-        <label for="my-input">CARGO</label>
-        <input id="my-input" value="<%= empleado.cargos_id  %>" class="form-control" type="text" name="cargo">
-    </div>
+                            <button type="submit" class="btn btn-outline-primary"><i
+                                    class='bx bx-check-circle bx-md'></i></button>
+                            <a href="/empleados" class="btn btn-outline-danger"><i class='bx bx-x-circle bx-md'></i></a>
 
-    <button type="submit" class="btn btn-outline-primary"><i class='bx bx-check-circle bx-md'></i></button>
-    <a href="/empleados" class="btn btn-outline-danger"><i class='bx bx-x-circle bx-md'></i></a>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <br>
 
-</form>
-</div>
-
-<br>
-<br>
-<br>
-
-<%- include ../layouts/pie.ejs %>
+    <%- include ../layouts/pie.ejs %>

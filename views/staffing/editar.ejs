@@ -1,0 +1,74 @@
+<%- include ../layouts/cabecera.ejs %>
+    <br>
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="align-text-bottom text-center">AGREGAR REGISTRO</h1>
+            <br>
+            <div class="container shadow-lg p-3 mb-5 bg-waith rounded">
+                <form method="POST" action="../actualizar/">
+                    <input type="hidden" name="id" value="<%= staffing.id %>">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="my-input">DEPARTAMENTO</label>
+                                    <input id="my-input" value="<%= staffing.depto_id  %>" class="form-control"
+                                        type="text" name="departamento">
+                                </div>
+                                <div class="form-group">
+                                    <label for="my-input">CARGO</label>
+                                    <input id="my-input" value="<%= staffing.cargo_id  %>" class="form-control"
+                                        type="text" name="cargo">
+                                </div>
+                                <div class="form-group">
+                                    <fieldset disabled>
+                                        <label for="my-input">CODIGO</label>
+                                        <input id="my-input" value="<%= staffing.codigo %>" class="form-control"
+                                            type="text" name="codigo">
+                                    </fieldset>
+                                </div>
+                                <div class="form-group">
+                                    <fieldset disabled>
+                                        <label for="my-input">CECO</label>
+                                        <input id="my-input" value="<%= staffing.ceco_id %>" class="form-control"
+                                            type="text" name="ceco">
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <fieldset disabled>
+                                        <label for="my-input">CLIENTE</label>
+                                        <input id="my-input" value="<%= staffing.cliente %>" class="form-control"
+                                            type="text" name="cliente">
+                                    </fieldset>
+                                </div>
+                                <div class="form-group">
+                                    <fieldset disabled>
+                                        <label for="my-input">NOMBRE CORTO</label>
+                                        <input id="my-input" value="<%= staffing.nomCorto %>" class="form-control"
+                                            type="text" name="nombreCorto">
+                                    </fieldset>
+                                </div>
+                                <div class="form-group">
+                                    <label for="my-input">FECHA</label>
+                                    <input id="my-input" value="<%= staffing.empleados_id %>" class="form-control"
+                                        type="date" name="fecha">
+                                </div>
+
+                                <button type="submit" class="btn btn-outline-primary"><i
+                                        class='bx bx-check-circle bx-md'></i></button>
+                                <a href="/staffing" onclick="return confirm('seguro quieres salir??')"
+                                    class="btn btn-outline-danger"><i class='bx bx-x-circle bx-md'></i></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <%- include ../layouts/pie.ejs %>
