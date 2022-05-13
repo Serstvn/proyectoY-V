@@ -6,7 +6,7 @@ module.exports = {
     index: function (req, res) {
         staffing.obtener(conn, function (err, datos) {
             console.log(datos);
-            res.render('staffing/index', { title: 'Y&V backlog', staffings: datos });
+            res.render('staffing/index', { title: 'Y&V backlog', staffings: datos});
         });
     },
     crear: function (req, res) {
@@ -45,6 +45,21 @@ module.exports = {
             res.redirect('/staffing');
         });
         }
-    }
+        
+    },
+    obtstaff: function (req, res) {
+        staffing.crearstaff(conn, function (err, datos) {
+            console.log(datos);
+            res.render('staffing/crearSTF', { title: 'Y&V backlog', staffingsCrear:datos });
+        });
+    },
+
+    editarSTF: function (req, res) {
+        staffing.retornarDatosID(conn,req.params.id,function(err,datos){
+            console.log(datos[0]);
+            res.render('staffingcrearSTF');
+        }); 
+    },
+
 
 }

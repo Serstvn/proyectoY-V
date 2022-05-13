@@ -1,14 +1,15 @@
 <%- include ../layouts/cabecera.ejs %>
+    <div class="container-fluid">
     <br>
     <br>
 
     <div class="card">
         <div class="card-body">
-          <br>
+            <br>
             <div class="container shadow p-3 mb-5 bg-white rounded">
                 <form method="POST" action="../actualizar/">
                     <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
-                    
+
                     <input type="hidden" name="id" value="<%= proyecto.id %>">
 
                     <div class="container">
@@ -46,12 +47,14 @@
                                         class='bx bx-check-circle bx-md'></i></button>
                                 <a href="/proyectos" class="btn btn-outline-danger"><i
                                         class='bx bx-x-circle bx-md'></i></a>
-                                    </div>
-                                </div>
-                        </form>
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                </form>
             </div>
-            <br>
-            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    </div>
     <%- include ../layouts/pie.ejs %>

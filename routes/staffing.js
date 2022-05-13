@@ -14,6 +14,10 @@ router.post("/eliminar/:id",staffingC.eliminar);
 router.post("/editar/:id",staffingC.editar);
 /* POST actualizar page. */
 router.post("/actualizar",staffingC.actualizar);
+/* GET crearSTF page. */
+router.get('/crearSTF',staffingC.obtstaff);
+/* POST editarSTF page. */
+router.post("/editarSTF/:id",staffingC.editarSTF);
 
 
 module.exports = router;

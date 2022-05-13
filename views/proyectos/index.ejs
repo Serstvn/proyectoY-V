@@ -1,74 +1,77 @@
 <%- include ../layouts/cabecera.ejs %>
-    <br>
-    <br>
-    <h1 class="align-text-bottom text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
-    <br>
+    <div class="container-fluid">
+        <br>
+        <br>
+        <h1 class="align-text-bottom text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
+        <br>
 
-    <div class="container-fluid"><a href="/proyectos/crear"
-            class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
-                class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
-    </div>
-    <div class="container shadow p-3 mb-5 bg-white rounded">
+        <div class="container-fluid"><a href="/proyectos/crear"
+                class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
+                    class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
+        <div class="container shadow p-3 mb-5 bg-white rounded">
 
-        <table class="table table-hover text-center mt-4">
-            <thead class="thead-light">
-                <tr>
-                    <th>#</th>
-                    <th>CODIGO</th>
-                    <th>CECO</th>
-                    <th>CLIENTE</th>
-                    <th>NOMBRE CORTO</th>
-                    <th>GERENTE</th>
-                    <th>ACCIÓN</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for( let proyecto=0; proyecto < proyectos.length; proyecto++ ) { %>
+            <table class="table table-hover text-center mt-4">
+                <thead class="thead-light">
                     <tr>
-                        <td>
-                            <%=proyectos[proyecto].id %>
-                        </td>
-                        <td>
-                            <%=proyectos[proyecto].codigo %>
-                        </td>
-                        <td>
-                            <%=proyectos[proyecto].ceco_id %>
-                        </td>
-                        <td>
-                            <%=proyectos[proyecto].cliente %>
-                        </td>
-                        <td>
-                            <%=proyectos[proyecto].nomCorto %>
-                        </td>
-                        <td>
-                            <%=proyectos[proyecto].empleados_id %>
-                        </td>
-                        <td>
-
-
-                            <div class="btn-group" role="group" aria-label="Button group">
-
-                                <form class="form-inline" method="post"
-                                    action="/proyectos/editar/<%=proyectos[proyecto].id%>">
-                                    <button class="btn btn-outline-info" type="submit"><i
-                                            class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
-                                </form>
-                            </div>
-                            <div class="btn-group" role="group" aria-label="Button group">
-
-                                <form class="form-inline" method="post"
-                                    action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
-                                    <button class="btn btn-outline-danger" onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')" type="submit"><i
-                                            class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
-                                </form>
-                            </div>
-
-
-                        </td>
+                        <th>#</th>
+                        <th>CODIGO</th>
+                        <th>CECO</th>
+                        <th>CLIENTE</th>
+                        <th>NOMBRE CORTO</th>
+                        <th>GERENTE</th>
+                        <th>ACCIÓN</th>
                     </tr>
-                    <% } %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <% for( let proyecto=0; proyecto < proyectos.length; proyecto++ ) { %>
+                        <tr>
+                            <td>
+                                <%=proyectos[proyecto].id %>
+                            </td>
+                            <td>
+                                <%=proyectos[proyecto].codigo %>
+                            </td>
+                            <td>
+                                <%=proyectos[proyecto].ceco_id %>
+                            </td>
+                            <td>
+                                <%=proyectos[proyecto].cliente %>
+                            </td>
+                            <td>
+                                <%=proyectos[proyecto].nomCorto %>
+                            </td>
+                            <td>
+                                <%=proyectos[proyecto].empleados_id %>
+                            </td>
+                            <td>
+
+
+                                <div class="btn-group" role="group" aria-label="Button group">
+
+                                    <form class="form-inline" method="post"
+                                        action="/proyectos/editar/<%=proyectos[proyecto].id%>">
+                                        <button class="btn btn-outline-info" type="submit"><i
+                                                class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
+                                    </form>
+                                </div>
+                                <div class="btn-group" role="group" aria-label="Button group">
+
+                                    <form class="form-inline" method="post"
+                                        action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
+                                        <button class="btn btn-outline-danger"
+                                            onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')"
+                                            type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
+                                    </form>
+                                </div>
+
+
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+
 
         <script>
             import Swal from 'sweetalert2';
@@ -77,6 +80,9 @@
                 alert('esta es la alerta')
             }
         </script>
+    </div>
 
 
-        <%- include ../layouts/pie.ejs %>
+
+
+    <%- include ../layouts/pie.ejs %>

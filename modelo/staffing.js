@@ -2,7 +2,7 @@ module.exports = {
 
 
     obtener: function (conn, funcion) {
-        conn.query("SELECT `id`,`depto_id`,`cargo_id`,  `codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`, `fecha_id` FROM proyectos", funcion);
+        conn.query("SELECT `id`,`depto_id`,`cargo_id`,  `codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`, `fecha_id` FROM proyectos where depto_id and cargo_id is not null", funcion);
     },
     insertar: function (conn, datos, funcion) {
         conn.query("INSERT INTO `proyectos` (`codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`) VALUES (?,?,?,?,?)", [datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente], funcion);
@@ -16,5 +16,9 @@ module.exports = {
     },
     actualizar:function(conn, datos,id, funcion) {
         conn.query("UPDATE proyectos SET codigo=?, ceco_id=?, cliente=?, nomCorto=?, empleados_id=? WHERE proyectos.id=?",[datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente],[id],funcion);
-     }
+    },
+    
+    crearstaff: function (conn, funcion) {
+        conn.query("SELECT `id`, `codigo`, `nomCorto`, `cliente`, `ceco_id`, `fecha_id` FROM `proyectos` WHERE depto_id IS NULL AND cargo_id IS NULL", funcion);
+    },
 }

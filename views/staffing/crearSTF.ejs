@@ -9,33 +9,33 @@
                 <br>
                 <div class="container shadow-lg p-3 mb-5 bg-waith rounded">
                     <form method="POST" action="../actualizar/">
-                        <input type="hidden" name="id" value="<%= staffing.id %>">
+                        <input type="hidden" name="id" value="id">
 
                         <div class="container">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="my-input">DEPARTAMENTO</label>
-                                        <input id="my-input" value="<%= staffing.depto_id  %>" class="form-control"
-                                            type="text" name="departamento">
+                                        <input id="my-input" value="depto" class="form-control" type="text"
+                                            name="departamento">
                                     </div>
                                     <div class="form-group">
                                         <label for="my-input">CARGO</label>
-                                        <input id="my-input" value="<%= staffing.cargo_id  %>" class="form-control"
-                                            type="text" name="cargo">
+                                        <input id="my-input" value="cargo" class="form-control" type="text"
+                                            name="cargo">
                                     </div>
                                     <div class="form-group">
                                         <fieldset disabled>
                                             <label for="my-input">CODIGO</label>
-                                            <input id="my-input" value="<%= staffing.codigo %>" class="form-control"
-                                                type="text" name="codigo">
+                                            <input id="my-input" value="codigo" class="form-control" type="text"
+                                                name="codigo">
                                         </fieldset>
                                     </div>
                                     <div class="form-group">
                                         <fieldset disabled>
                                             <label for="my-input">CECO</label>
-                                            <input id="my-input" value="<%= staffing.ceco_id %>" class="form-control"
-                                                type="text" name="ceco">
+                                            <input id="my-input" value="ceco" class="form-control" type="text"
+                                                name="ceco">
                                         </fieldset>
                                     </div>
                                 </div>
@@ -43,23 +43,23 @@
                                     <div class="form-group">
                                         <fieldset disabled>
                                             <label for="my-input">CLIENTE</label>
-                                            <input id="my-input" value="<%= staffing.cliente %>" class="form-control"
-                                                type="text" name="cliente">
+                                            <input id="my-input" value="cliente" class="form-control" type="text"
+                                                name="cliente">
                                         </fieldset>
                                     </div>
                                     <div class="form-group">
                                         <fieldset disabled>
                                             <label for="my-input">NOMBRE CORTO</label>
-                                            <input id="my-input" value="<%= staffing.nomCorto %>" class="form-control"
-                                                type="text" name="nombreCorto">
+                                            <input id="my-input" value=".nomCorto" class="form-control" type="text"
+                                                name="nombreCorto">
                                         </fieldset>
                                     </div>
                                     <div class="form-group">
                                         <label for="my-input">FECHA</label>
-                                        <input id="my-input" value="<%= staffing.empleados_id %>" class="form-control"
-                                            type="date" name="fecha">
+                                        <input id="my-input" value="empleados" class="form-control" type="date"
+                                            name="fecha">
                                     </div>
-
+                                    <br>
                                     <button type="submit" class="btn btn-outline-primary"><i
                                             class='bx bx-check-circle bx-md'></i></button>
                                     <a href="/staffing" onclick="return confirm('seguro quieres salir??')"
@@ -72,4 +72,4 @@
         </div>
     </div>
     <br>
-<%- include ../layouts/pie.ejs %>
+    <%- include ../layouts/pie.ejs %>

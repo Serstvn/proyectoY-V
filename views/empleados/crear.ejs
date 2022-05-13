@@ -1,4 +1,5 @@
 <%- include ../layouts/cabecera.ejs %>
+<div class="container-fluid">
     <br>
     <div class="card">
         <div class="card-body">
@@ -43,7 +44,7 @@
                                     <label for="my-input">DEPARTAMENTO</label>
                                     <input id="my-input" class="form-control" type="text" name="departamento">
                                 </div>
-                                <div class="form-group">
+                                <div class="js-example-basic-multiple" multiple="multiple">
                                     <label for="my-select">CARGO</label>
                                     <select id="my-select" class="form-control" name="cargo">
                                         <option value="1"> VP </option>
@@ -114,5 +115,7 @@
         </div>
     </div>
     <br>
+    
+</div>
 
     <%- include ../layouts/pie.ejs %>

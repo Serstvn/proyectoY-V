@@ -35,10 +35,13 @@ module.exports = {
 
 
     },
-    actualizar:function(req,res){
-
-        empleado.actualizar(conn,req.body,function(err){
+    actualizar: function (req,res) {
         console.log(req.body);
-        });
+        if(req.body){
+            empleado.actualizar(conn,req.body,function(err){
+            });
+            res.redirect('/empleados');
+        }
     }
+
 }

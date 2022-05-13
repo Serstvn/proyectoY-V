@@ -1,9 +1,10 @@
 <%- include ../layouts/cabecera.ejs %>
+<div class="container-fluid">
     <br>
     <div class="card">
         <div class="card-body">
-            <form method="post" action="../actualizar/" enctype="multipart/form-data">
                 <h1 class="align-text-bottom text-center">EDITAR EMPLEADO</h1>
+            <form method="post" action="../actualizar/" >
                 <br>
                 <input type="hidden" name="id" value="<%= empleado.id %> ">
 
@@ -60,5 +61,7 @@
     </div>
     </div>
     <br>
+    
+</div>
 
     <%- include ../layouts/pie.ejs %>
