@@ -8,10 +8,11 @@
         <div class="container-fluid"><a href="/proyectos/crear"
                 class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
                     class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
+                    
         <div class="container shadow p-3 mb-5 bg-white rounded">
 
             <table class="table table-hover text-center mt-4">
-                <thead class="thead-light">
+                <thead class="thead" style="background-color: #d8aa13;"> 
                     <tr>
                         <th>#</th>
                         <th>CODIGO</th>
@@ -32,7 +33,7 @@
                                 <%=proyectos[proyecto].codigo %>
                             </td>
                             <td>
-                                <%=proyectos[proyecto].ceco_id %>
+                                <%=proyectos[proyecto].ceco %>
                             </td>
                             <td>
                                 <%=proyectos[proyecto].cliente %>
@@ -41,7 +42,7 @@
                                 <%=proyectos[proyecto].nomCorto %>
                             </td>
                             <td>
-                                <%=proyectos[proyecto].empleados_id %>
+                                <%=proyectos[proyecto].nombre %>
                             </td>
                             <td>
 
@@ -71,6 +72,10 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+
+
 
 
         <script>
@@ -80,9 +85,5 @@
                 alert('esta es la alerta')
             }
         </script>
-    </div>
-
-
-
 
     <%- include ../layouts/pie.ejs %>

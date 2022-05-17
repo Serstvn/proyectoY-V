@@ -2,7 +2,7 @@ module.exports = {
 
 
     obtener: function (conn, funcion) {
-        conn.query("SELECT `id`,`depto_id`,`cargo_id`,  `codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`, `fecha_id` FROM proyectos where depto_id and cargo_id is not null", funcion);
+        conn.query("SELECT `id`,`id_empleado`,`id_proyecto`,`id_fecha` ,`valor` FROM staffing", funcion);
     },
     insertar: function (conn, datos, funcion) {
         conn.query("INSERT INTO `proyectos` (`codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`) VALUES (?,?,?,?,?)", [datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente], funcion);
@@ -15,7 +15,7 @@ module.exports = {
         conn.query("SELECT * FROM proyectos WHERE id=?",[id], funcion);
     },
     actualizar:function(conn, datos,id, funcion) {
-        conn.query("UPDATE proyectos SET codigo=?, ceco_id=?, cliente=?, nomCorto=?, empleados_id=? WHERE proyectos.id=?",[datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente],[id],funcion);
+        conn.query("UPDATE proyectos SET codigo=?, ceco_id=?, cliente=?, nomCorto=?, empleados_id=? WHERE proyectos.id=?",[datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente, datos.proyectos_id],funcion);
     },
     
     crearstaff: function (conn, funcion) {

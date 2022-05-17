@@ -41,9 +41,10 @@ module.exports = {
         if (req.body) {
 
             proyecto.actualizar(conn, req.body, function (err) {
-                res.redirect('/proyectos');
             });
+             res.redirect('/proyectos');
         }
+               
     }
 
 }
