@@ -2,17 +2,17 @@
     <div class="container-fluid">
         <br>
         <br>
-        <h1 class="align-text-bottom text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
+        <h1 class="text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
         <br>
 
         <div class="container-fluid"><a href="/proyectos/crear"
-                class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
+                class="btn btn-outline-warning mt-4 position-fixed text-right"><i
                     class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
-                    
-        <div class="container shadow p-3 mb-5 bg-white rounded">
 
-            <table class="table table-hover text-center mt-4">
-                <thead class="thead" style="background-color: #d8aa13;"> 
+        <div class="container shadow p-3 mb-5 bg-white rounded">
+            
+            <table class="table  table-hover text-center mt-4 table-responsive">
+                <thead class="thead">
                     <tr>
                         <th>#</th>
                         <th>CODIGO</th>
@@ -45,10 +45,10 @@
                                 <%=proyectos[proyecto].nombre %>
                             </td>
                             <td>
-
-
+        
+        
                                 <div class="btn-group" role="group" aria-label="Button group">
-
+        
                                     <form class="form-inline" method="post"
                                         action="/proyectos/editar/<%=proyectos[proyecto].id%>">
                                         <button class="btn btn-outline-info" type="submit"><i
@@ -56,34 +56,26 @@
                                     </form>
                                 </div>
                                 <div class="btn-group" role="group" aria-label="Button group">
-
+        
                                     <form class="form-inline" method="post"
                                         action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
                                         <button class="btn btn-outline-danger"
                                             onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')"
                                             type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                     </form>
-                                </div>
+                            </div>
 
 
-                            </td>
+                        </td>
                         </tr>
                         <% } %>
+
                 </tbody>
             </table>
         </div>
     </div>
 
-
-
-
-
-        <script>
-            import Swal from 'sweetalert2';
-
-            const showAlert = () => {
-                alert('esta es la alerta')
-            }
-        </script>
-
     <%- include ../layouts/pie.ejs %>
+
+
+    

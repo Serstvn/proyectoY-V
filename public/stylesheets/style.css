@@ -1,8 +1,22 @@
 body {
-  padding: 50px;
-  font: 14px "Helvetica", Lucida_Grande , Arial, sans-serif;
+    font-family: "sans-serif" Gill Sans Extrabold, Helvetica, sans-serif
 }
 
-a {
-  color: #00B7FF;
+
+H1 {
+    font-family: 'Neuton', serif;
+    font-size: 50px;
+}
+
+thead {
+    background: linear-gradient(to right, black, orange, black);
+}
+thead tr th {
+    text-decoration: none;
+    color: white !important;
+}
+
+nav {
+    background: linear-gradient(to right, black, orange, black, orange, black);
+  
 }
