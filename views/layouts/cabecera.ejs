@@ -16,10 +16,13 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!-- SELECT2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <!-- BOXICONS -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- CSS PROPIO -->
     <link rel="stylesheet" href="/stylesheets/style.css">
 
@@ -28,17 +31,16 @@
 
 <body>
     <nav class="navbar-expand-lg navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="nav navbar-nav navbar-center" href='/'>
+        <a class="nav navbar-nav navbar-center" href='/'><img src="../../images/logo2.png " width="200px"
+                class="rounded mx-auto d-block bx bxl bx-md bx-flashing"></a>
 
-                <img src="../../images/LOGO.png " width="100" class="rounded mx-auto d-block bx bxl bx-md bx-flashing ">
-            </a>
+        <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon ml-auto"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
                         <a class="nav-link active bx-burst-hover m-2" aria-current="page" href="/empleados">RECURSOS</a>
@@ -51,9 +53,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active bx-burst-hover m-2" href="/staffing">STAFFING</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active bx-burst-hover m-2" href="#">RECURSOS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active bx-burst-hover m-2" href="#">NOMINA</a>

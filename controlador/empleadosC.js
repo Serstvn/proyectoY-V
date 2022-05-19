@@ -42,6 +42,10 @@ module.exports = {
             });
             res.redirect('/empleados');
         }
-    }
+    },
+
+
+
+    
 
 }
