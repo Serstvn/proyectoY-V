@@ -9,7 +9,13 @@
                 class="btn btn-outline-warning mt-4 position-fixed text-right"><i
                     class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
         <div class="container shadow p-3 mb-5 bg-white rounded">
-            
+            <div class="input-group">
+                <div class="input">
+                    <span class="input-group-text" id="basic-addon1"><i class='bx bx-search-alt'></i></span>
+                </div>
+                <input class="form-control" id="myInput" type="text" placeholder="BUSCAR PROYECTO..."
+                    style="width:250px; height:30px">
+            </div>            
             <table class="table  table-hover text-center mt-4 table-responsive">
                 <thead class="thead">
                     <tr>
@@ -22,7 +28,7 @@
                         <th>ACCIÓN</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="myTable">
                     <% for( let proyecto=0; proyecto < proyectos.length; proyecto++ ) { %>
                         <tr>
                             <td>
@@ -68,6 +74,17 @@
             </table>
         </div>
     </div>
+    
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>
 
     <%- include ../layouts/pie.ejs %>
 

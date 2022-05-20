@@ -9,14 +9,26 @@ H1 {
 }
 
 thead {
-    background: linear-gradient(to right, black, orange, black);
+    background: linear-gradient(to bottom, black, orange);
 }
 thead tr th {
     text-decoration: none;
     color: white !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
 }
+thead tr th { 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, black, orange);
+}
+
 
 nav {
     background: linear-gradient(to bottom, black, orange);
   
 }
+

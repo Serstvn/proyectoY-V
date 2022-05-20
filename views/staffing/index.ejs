@@ -17,7 +17,13 @@
         </div>
         <div class="container shadow p-3 mb-5 bg-white rounded">
             <table class="table  table-hover text-center mt-4 table-responsive">
-                <thead class="thead">
+                <div class="input-group">
+                    <div class="input">
+                        <span class="input-group-text" id="basic-addon1"><i class='bx bx-search-alt'></i></span>
+                    </div>
+                    <input class="form-control" id="myInput" type="text" placeholder="BUSCAR..."
+                        style="width:250px; height:30px">
+                </div>                <thead class="thead">
                     <tr>
                         <th>ACCION</th>
                         <th>#</th>
@@ -31,7 +37,7 @@
                         <th>FECHA</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="myTable">
                     <% for( let staffing=0; staffing < staffings.length; staffing++ ) { %>
                         <tr id="myRow">
                             <td>
@@ -47,8 +53,8 @@
 
                                     <form class="form-inline" method="post" action="">
                                         <button class="btn btn-outline-danger"
-                                            onclick="return confirm('deseas eliminar a  ???')"
-                                            type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
+                                            onclick="return confirm('deseas eliminar a  ???')" type="submit"><i
+                                                class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                     </form>
                                 </div>
                             </td>
@@ -83,6 +89,18 @@
             </table>
         </div>
     </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 
 
 
