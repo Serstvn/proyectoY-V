@@ -13,9 +13,12 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label for="my-input">TIPO DE DOCUMENTO</label>
-                                <input id="my-input" value="<%= empleado.documentos_id %>" class="form-control"
-                                    type="text" name="tipoDocumento">
+                                <label for="my-select">TIPO DE DOCUMENTO</label>
+                                <select id="my-select" class="form-control" name="gerencia">
+                                    <option value="0"></option>
+                                    <option value="1">CC</option>
+                                    <option value="2">CE</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="my-input">DOCUMENTO</label>
@@ -33,21 +36,104 @@
                                     name="apellido">
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col"><div class="form-group">
+                            <label for="my-select">GERENCIA</label>
+                            <select id="my-select" class="form-control" value="<%= empleado.gerencia %>" name="gerencia">
+                                <option value="0"><%= empleado.gerencia %></option>
+                                <option value="1">VIP</option>
+                                <option value="2">GMP</option>
+                                <option value="3">GST</option>
+                                <option value="4">ADMIN Y FIN</option>
+                                <option value="5">GDO</option>
+                                <option value="6">OF</option>
+                                <option value="7">SG</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="my-select">DEPARTAMENTO</label>
+                            <select id="selectCargo" class="form-control" value="<%= empleado.departamento %>" name="cargo">
+                                <option value=""><%= empleado.departamento %></option>
+                                <option value="1">CIVIL </option>
+                                <option value="2">ADMINISTRACIÓN </option>
+                                <option value="3">ELECTRICIDAD </option>
+                                <option value="4">INGENIERIA </option>
+                                <option value="5">INSTRUMENTACIÓN </option>
+                                <option value="6">MECANICA Y TUBERIAS </option>
+                                <option value="7">PROCESOS </option>
+                                <option value="8">SISTEMAS Y TECNOLOGIA</option>
+                                <option value="9">CONTABILIDAD</option>
+                                <option value="10">GDO</option>
+                                <option value="11">DESARROLLO ORGANIZACIONAL</option>
+                                <option value="12">ADMINISTRACION DE CONTRATOS</option>
+                                <option value="13">ASISTENCIA DE SERVICIOS ADMINITRATIVOS</option>
+                                <option value="14">CALIDAD</option>
+                                <option value="15">HSE</option>
+                                <option value="16">PLANEACIÓN Y CONTROL</option>
+                                <option value="17">OFERTAS</option>
+                                <option value="18">SERVICIOS GENERALES</option>
+                                <option value="19">GERENCIA DE PROCESOS MEDULARES</option>
+                                <option value="20">VICEPRECIDENCIA</option>
+                            </select>
+                        </div>
                             <div class="form-group">
-                                <label for="my-input">GERENCIA</label>
-                                <input id="my-input" value="<%= empleado.gerencias_id %>" class="form-control"
-                                    type="text" name="gerencia">
-                            </div>
-                            <div class="form-group">
-                                <label for="my-input">DEPARTAMENTO</label>
-                                <input id="my-input" value="<%= empleado.departamentos_id  %>" class="form-control"
-                                    type="text" name="departamento">
-                            </div>
-                            <div class="form-group">
-                                <label for="my-input">CARGO</label>
-                                <input id="my-input" value="<%= empleado.cargos_id  %>" class="form-control" type="text"
-                                    name="cargo">
+                                <label for="my-select">CARGO</label>
+                                <select id="selectCargo" class="form-control" value="<%= empleado.cargo %>" name="cargo">
+                                    <option value="<%= empleado.cargo %>">  </option>
+                                    <option value="1">VP </option>
+                                    <option value="2">ADMINISTRADOR DE CONTRATOS </option>
+                                    <option value="3">ADMINISTRACION </option>
+                                    <option value="4">ANALISTA DE NOMINA </option>
+                                    <option value="5">ANALISTA AMBIENTAL </option>
+                                    <option value="6">ANALISTA DE TALENTO HUMANO </option>
+                                    <option value="7">ANALISTA DE SOPORTE TECNICO </option>
+                                    <option value="8">ANALISTA DE CONTABILIDAD E IMPUESTOS</option>
+                                    <option value="9">ASISTENTE DE INGENIERO</option>
+                                    <option value="10">ASISTENTE DE ADMINISTRATIVO</option>
+                                    <option value="11">ASISTENTE DE MANTENIMIENTO Y LIMPIEZA</option>
+                                    <option value="12">ASISTENTE DE LOGISTICA DE OFERTAS</option>
+                                    <option value="13">AUXILIAR HSE</option>
+                                    <option value="14">GERENTE DE OFERTAS</option>
+                                    <option value="15">GERENTE DE PROYECTO</option>
+                                    <option value="16">GERENTE DE PROCESOS MEDULARES</option>
+                                    <option value="17">GERENTE DE SERVICIOS TECNICOS</option>
+                                    <option value="18">GERENTE DE OFERTAS</option>
+                                    <option value="19">INGENIERO DE CALIDAD</option>
+                                    <option value="20">INGENIERO ASEG CALIDAD</option>
+                                    <option value="21">INGENIERO DE PROYECTOS</option>
+                                    <option value="22">INGENIERO HSE</option>
+                                    <option value="23">TECNICO CAD</option>
+                                    <option value="24">TECNICO DE DISEÑO</option>
+                                    <option value="25">TOPOGRAFO</option>
+                                    <option value="26">COORDINADOR DE CALIDAD</option>
+                                    <option value="27">COORDINADOR HSE</option>
+                                    <option value="28">COORDINADOR DE PLANIFICACION Y CONTROL</option>
+                                    <option value="29">COORDINADOR DE ADMIN DE CONTRATOS</option>
+                                    <option value="30">COORDINADOR DE DESARROLLO ORGANIZACIONAL</option>
+                                    <option value="31">COORDINADOR DE PLANIFICACION CORP Y PRESUPUES</option>
+                                    <option value="32">COORDINADOR DE ADMINISTRACIÓN</option>
+                                    <option value="33">COORDINADOR DE CONTABILIDAD, IMPUESTOS Y NOMI</option>
+                                    <option value="34">COORDINADOR DE INFRAESTRUCTURA Y SERVICIOS</option>
+                                    <option value="35">SENA</option>
+                                    <option value="36">ESTIMADOR DE COSTOS</option>
+                                    <option value="37">RECEPCIONISTA</option>
+                                    <option value="38">MENSAJERO</option>
+                                    <option value="39">CONTROLADOR DE DOCUMENTOS</option>
+                                    <option value="40">DISEÑADOR CAD</option>
+                                    <option value="41">FREELANCER</option>
+                                    <option value="42">PLANIFICACION</option>
+                                    <option value="43">SAT ECP</option>
+                                    <option value="44">ADMINISTRACION DE FINANZAS</option>
+                                    <option value="45">ADMINISTRADOR DE SISTEMAS</option>
+                                    <option value="46">COORDINADOR DE SISTEMAS</option>
+                                    <option value="47">GERENTE DE DEPARTAMENTO</option>
+                                    <option value="48">GERENTE COMERCIAL</option>
+                                    <option value="49">ING PROYECTOS I</option>
+                                    <option value="50">ING PROYECTOS II</option>
+                                    <option value="51">ING PROYECTOS III</option>
+                                    <option value="52">ING PROYECTOS IV</option>
+                                    <option value="53">TECNICO DISEÑO II</option>
+                                    <option value="54">TECNICO DISEÑO III</option>
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-outline-warning"><i
