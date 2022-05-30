@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <br>
         <br>
-        <h1 class="text-center">DIRECTORIO ACTIVO DE EMPLEADOS</h1>
+        <span>DIRECTORIO ACTIVO DE EMPLEADOS</span>
+        
         <br>
 
         <div class="container-fluid"><a href="/empleados/crear"
@@ -10,15 +11,8 @@
                     class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
 
         <div class="container shadow p-3 mb-5 bg-white rounded">
-            <div class="input-group">
-                <div class="input">
-                    <span class="input-group-text" id="basic-addon1"><i class='bx bx-search-alt'></i></span>
-                </div>
-                <input class="form-control" id="myInput" type="text" placeholder="BUSCAR EMPLEADO..."
-                    style="width:250px; height:30px">
-            </div>
 
-            <table class="table  table-hover text-center mt-4 table-responsive" >
+            <table id="myTable" class="table  table-hover text-center mt-4 table-responsive" >
                 <thead class="thead">
                     <tr>
                         <th>#</th>
@@ -32,7 +26,7 @@
                         <th>ACCIÓN</th>
                     </tr>
                 </thead>
-                <tbody id="myTable">
+                <tbody >
                     <% for( let empleado=0; empleado < empleados.length; empleado++ ) { %>
 
                         <td>
@@ -62,7 +56,7 @@
                         <td>
 
 
-                            <div class="btn-group" role="group" aria-label="button group">
+                            <div class="btn-group" id="btnAccion" role="group" aria-label="button group">
 
                                 <form class="form-inline" method="post"
                                     action="/empleados/editar/<%=empleados[empleado].id%>">
@@ -71,7 +65,7 @@
                                 </form>
                             </div>
                             <br>
-                            <div class="btn-group" role="group" aria-label="button group">
+                            <div class="btn-group" id="btnAccion" role="group" aria-label="button group">
 
                                 <form class="form-inline" method="post"
                                     action="/empleados/eliminar/<%=empleados[empleado].id %>">
@@ -92,14 +86,4 @@
     </div>
 
 
-    <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-        });
-        </script>
     <%- include ../layouts/pie.ejs %>

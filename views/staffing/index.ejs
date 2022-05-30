@@ -14,20 +14,14 @@
                     class='bx bx-calendar bx-md bx-flashing-hover'></i></a>
             <br>
             <br>
-            <br>
             <a href="" class=" btn btn-outline-warning mt-4 text-right"><i
                     class='bx bxs-download bx-md bx-flashing-hover'></i></a>
             <br>
         </div>
         <div class="container shadow p-3 mb-5 bg-white rounded">
-            <table class="table  table-hover text-center mt-4 table-responsive">
-                <div class="input-group">
-                    <div class="input">
-                        <span class="input-group-text" id="basic-addon1"><i class='bx bx-search-alt'></i></span>
-                    </div>
-                    <input class="form-control" id="myInput" type="text" placeholder="BUSCAR..."
-                        style="width:250px; height:30px">
-                </div>                <thead class="thead">
+            <table  id="myTable" class="table  table-hover text-center mt-4 table-responsive">
+               
+                <thead class="thead">
                     <tr>
                         <th>ACCION</th>
                         <th>#</th>
@@ -95,16 +89,6 @@
     </div>
 
 
-    <script>
-        $(document).ready(function () {
-            $("#myInput").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
 
 
 

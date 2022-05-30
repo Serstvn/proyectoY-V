@@ -4,9 +4,37 @@ body {
 
 
 H1 {
-    font-family: 'Neuton', serif;
     font-size: 50px;
+    box-shadow: 2px 2px 50px rgb(146, 119, 0);
+    
 }
+span {
+    display: block !important;
+    font-family: monospace;
+
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 12ch;
+
+    animation: typing 3s steps(30)
+    blink .8s infinite step-end alternate;
+    overflow: hidden;
+
+}
+@keyframes typing {
+    from {width: 0}
+}
+@keyframes blink {
+    50% {border-color: transparent}
+}
+
+
+
+
+
+
+
+
 
 thead {
     background: linear-gradient(to bottom, black, orange);
@@ -14,15 +42,9 @@ thead {
 thead tr th {
     text-decoration: none;
     color: white !important;
-    position: sticky;
-    top: 0;
-    z-index: 10;
     
 }
 thead tr th { 
-    position: sticky;
-    top: 0;
-    z-index: 10;
     background: linear-gradient(to bottom, black, orange);
 }
 
@@ -32,3 +54,19 @@ nav {
   
 }
 
+/*--------------------------------------------*/
+/*para alinear los botones y cuadro de busqueda*/
+
+
+table>tbody>tr>td {
+    vertical-align: middle !important;
+}
+.btn-group, .btn-group-vertical {
+    position: relative !important;
+    margin: 2%;
+
+    }
+    
+
+    
+/*--------------------------------------------*/

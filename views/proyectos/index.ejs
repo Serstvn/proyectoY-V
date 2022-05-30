@@ -1,22 +1,28 @@
 <%- include ../layouts/cabecera.ejs %>
+
     <div class="container-fluid">
         <br>
         <br>
+
         <h1 class="text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
         <br>
 
-        <div class="container-fluid"><a href="/proyectos/crear"
-                class="btn btn-outline-warning mt-4 position-fixed text-right"><i
-                    class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a></div>
-        <div class="container shadow p-3 mb-5 bg-white rounded">
-            <div class="input-group">
-                <div class="input">
-                    <span class="input-group-text" id="basic-addon1"><i class='bx bx-search-alt'></i></span>
+        <div class="container-fluid position-fixed"><a href="/proyectos/crear"
+                class="btn btn-outline-warning mt-1 position-fixed text-right"><i
+                    class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
+        <br>
+        <br>
+        <a href="" class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
+                    class='bx bxs-download bx-md bx-flashing-hover'></i></a>
                 </div>
-                <input class="form-control" id="myInput" type="text" placeholder="BUSCAR PROYECTO..."
-                    style="width:250px; height:30px">
-            </div>            
-            <table class="table  table-hover text-center mt-4 table-responsive">
+
+    </div>
+    <div class="container">
+
+
+        <div class="container shadow p-3 mb-5 bg-white rounded">
+            
+            <table id="myTable" class="table  table-hover text-center mt-4 table-responsive">
                 <thead class="thead">
                     <tr>
                         <th>#</th>
@@ -51,7 +57,7 @@
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Button group">
-        
+
                                     <form class="form-inline" method="post"
                                         action="/proyectos/editar/<%=proyectos[proyecto].id%>">
                                         <button class="btn btn-outline-info" type="submit"><i
@@ -59,34 +65,24 @@
                                     </form>
                                 </div>
                                 <div class="btn-group" role="group" aria-label="Button group">
-        
+
                                     <form class="form-inline" method="post"
                                         action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
                                         <button class="btn btn-outline-danger"
                                             onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')"
                                             type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                     </form>
-                            </div>
-                        </td>
+                                </div>
+                            </td>
                         </tr>
                         <% } %>
                 </tbody>
             </table>
         </div>
     </div>
-    
-    <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
-        });
-        </script>
+
+
+
+
 
     <%- include ../layouts/pie.ejs %>
-
-
-    
