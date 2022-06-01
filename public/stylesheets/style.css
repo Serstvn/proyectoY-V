@@ -1,72 +1,90 @@
-body {
-    font-family: "sans-serif" Gill Sans Extrabold, Helvetica, sans-serif
-}
-
-
 H1 {
+    font-family: "Tiro Telugu" ,Gill Sans Extrabold , sans-serif, Helvetica;
     font-size: 50px;
     box-shadow: 2px 2px 50px rgb(146, 119, 0);
-    
-}
-span {
-    display: block !important;
-    font-family: monospace;
-
-    white-space: nowrap;
-    border-right: 4px solid;
-    width: 12ch;
-
-    animation: typing 3s steps(30)
-    blink .8s infinite step-end alternate;
-    overflow: hidden;
-
-}
-@keyframes typing {
-    from {width: 0}
-}
-@keyframes blink {
-    50% {border-color: transparent}
+    text-align: center;
 }
 
-
-
-
-
-
-
-
-
-thead {
-    background: linear-gradient(to bottom, black, orange);
-}
 thead tr th {
     text-decoration: none;
     color: white !important;
-    
+
 }
-thead tr th { 
+
+thead tr th {
     background: linear-gradient(to bottom, black, orange);
 }
 
 
 nav {
     background: linear-gradient(to bottom, black, orange);
+
+}
+
+
+i{
+    margin-bottom:1px;
+    border: 1px solid transparent;
+    font-size:70px;
+    
+    
+    
+  }
   
+  
+  .btn {
+    display: inline-flex;
+    font-size: 35px;
+    font-weight: 40px;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
 }
+  
+  
+  
+  /*
+  Esto es opcional pero sirve para que todos los botones de exportacion se distribuyan de manera equitativa usando flexbox
+  
+  .flexcontent {
+      display: flex;
+      justify-content: space-around;
+  }
+  */
+  
+  .selectTable{
+    margin-top: 1px;
+    text-align: center;
+  }
+  
+  div.dataTables_wrapper div.dataTables_filter {
+      margin-top: 1px;
+      
+  }
+  
+  .btn-secondary {
+      color: rgb(0, 0, 0);
+      background-color: transparent;
+      border-color: none;
+      margin-top: 1px;
+  }
+  .btn-secondary:hover {
+      color: rgb(0, 0, 0);
+      background-color: #ffd000;
+      border-color: #000000;
+  }
+  
+  .inline{
+    display:inline-block;
+    padding:0;
+  }
+  
 
-/*--------------------------------------------*/
-/*para alinear los botones y cuadro de busqueda*/
 
 
-table>tbody>tr>td {
-    vertical-align: middle !important;
-}
-.btn-group, .btn-group-vertical {
-    position: relative !important;
-    margin: 2%;
-
-    }
-    
-
-    
 /*--------------------------------------------*/

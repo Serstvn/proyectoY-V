@@ -4,85 +4,79 @@
         <br>
         <br>
 
-        <h1 class="text-center">DIRECTORIO ACTIVO DE PROYECTOS</h1>
+        <h1>DIRECTORIO ACTIVO DE PROYECTOS</h1>
         <br>
 
         <div class="container-fluid position-fixed"><a href="/proyectos/crear"
                 class="btn btn-outline-warning mt-1 position-fixed text-right"><i
                     class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
-        <br>
-        <br>
-        <a href="" class=" btn btn-outline-warning mt-4 position-fixed text-right"><i
-                    class='bx bxs-download bx-md bx-flashing-hover'></i></a>
-                </div>
-
-    </div>
-    <div class="container">
-
-
-        <div class="container shadow p-3 mb-5 bg-white rounded">
-            
-            <table id="myTable" class="table  table-hover text-center mt-4 table-responsive">
-                <thead class="thead">
-                    <tr>
-                        <th>#</th>
-                        <th>CODIGO</th>
-                        <th>CECO</th>
-                        <th>CLIENTE</th>
-                        <th>NOMBRE CORTO</th>
-                        <th>GERENTE</th>
-                        <th>ACCIÓN</th>
-                    </tr>
-                </thead>
-                <tbody id="myTable">
-                    <% for( let proyecto=0; proyecto < proyectos.length; proyecto++ ) { %>
-                        <tr>
-                            <td>
-                                <%=proyectos[proyecto].id %>
-                            </td>
-                            <td>
-                                <%=proyectos[proyecto].codigo %>
-                            </td>
-                            <td>
-                                <%=proyectos[proyecto].ceco %>
-                            </td>
-                            <td>
-                                <%=proyectos[proyecto].cliente %>
-                            </td>
-                            <td>
-                                <%=proyectos[proyecto].nomCorto %>
-                            </td>
-                            <td>
-                                <%=proyectos[proyecto].nombre %>
-                            </td>
-                            <td>
-                                <div class="btn-group" role="group" aria-label="Button group">
-
-                                    <form class="form-inline" method="post"
-                                        action="/proyectos/editar/<%=proyectos[proyecto].id%>">
-                                        <button class="btn btn-outline-info" type="submit"><i
-                                                class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
-                                    </form>
-                                </div>
-                                <div class="btn-group" role="group" aria-label="Button group">
-
-                                    <form class="form-inline" method="post"
-                                        action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
-                                        <button class="btn btn-outline-danger"
-                                            onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')"
-                                            type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        <% } %>
-                </tbody>
-            </table>
         </div>
-    </div>
+        <div class="container">
+
+
+            <div class="container shadow p-3 mb-5 bg-white rounded">
+
+                <table id="myTable" class="table  table-hover text-center mt-4 table-responsive">
+                    <thead class="thead">
+                        <tr>
+                            <th>#</th>
+                            <th>CODIGO</th>
+                            <th>CECO</th>
+                            <th>CLIENTE</th>
+                            <th>NOMBRE CORTO</th>
+                            <th>GERENTE</th>
+                            <th>ACCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <% for( let proyecto=0; proyecto < proyectos.length; proyecto++ ) { %>
+                            <tr>
+                                <td>
+                                    <%=proyectos[proyecto].id %>
+                                </td>
+                                <td>
+                                    <%=proyectos[proyecto].codigo %>
+                                </td>
+                                <td>
+                                    <%=proyectos[proyecto].ceco %>
+                                </td>
+                                <td>
+                                    <%=proyectos[proyecto].cliente %>
+                                </td>
+                                <td>
+                                    <%=proyectos[proyecto].nomCorto %>
+                                </td>
+                                <td>
+                                    <%=proyectos[proyecto].nombre %>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Button group">
+
+                                        <form class="form-inline" method="post"
+                                            action="/proyectos/editar/<%=proyectos[proyecto].id%>">
+                                            <button class="btn btn-outline-info" type="submit"><i
+                                                    class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="btn-group" role="group" aria-label="Button group">
+
+                                        <form class="form-inline" method="post"
+                                            action="/proyectos/eliminar/<%=proyectos[proyecto].id %>">
+                                            <button class="btn btn-outline-danger"
+                                                onclick="return confirm('SE ELIMINARÁ EL PROYECTO: <%=proyectos[proyecto].codigo %>')"
+                                                type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
 
 
 
-    <%- include ../layouts/pie.ejs %>
+        <%- include ../layouts/pie.ejs %>
