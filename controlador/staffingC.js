@@ -6,20 +6,15 @@ module.exports = {
     index: function (req, res) {
         staffing.obtener(conn, function (err, datos) {
             console.log(datos);
-            res.render('staffing/index', { title: 'Y&V backlog', staffings: datos});
+            res.render('staffing/index', { title: 'Y&V backlog', staffings: datos });
         });
-    },
-    crear: function (req, res) {
-        res.render('staffing/crear');
-
-
     },
     guardar: function (req, res) {
         console.log(req.body);
 
         staffing.insertar(conn, req.body, function (err) {
             res.redirect('/staffing');
-            
+
         });
 
     },
@@ -30,36 +25,41 @@ module.exports = {
         });
     },
     editar: function (req, res) {
-        staffing.retornarDatosID(conn,req.params.id,function(err,datos){
+        staffing.retornarDatosID(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
-        res.render('staffing/editar',{staffing:datos[0]});
+            res.render('staffing/editar', { staffing: datos[0] });
         });
-        
+
     },
-    actualizar: function name(req,res){
+    actualizar: function name(req, res) {
         console.log(req.body);
-        if(req.body){
-            
-            staffing.actualizar(conn,req.body, function(err,){
-            
-            res.redirect('/staffing');
-        });
+        if (req.body) {
+
+            staffing.actualizar(conn, req.body, function (err,) {
+
+                res.redirect('/staffing');
+            });
         }
-        
+
     },
-    obtstaff: function (req, res) {
+    verEmpleados: function (req, res) {
         staffing.crearstaff(conn, function (err, datos) {
             console.log(datos);
-            res.render('staffing/crearSTF', { title: 'Y&V backlog', staffingsCrear:datos });
+            res.render('staffing/crearSTF', { title: 'Y&V backlog' });
         });
     },
 
     editarSTF: function (req, res) {
-        staffing.retornarDatosID(conn,req.params.id,function(err,datos){
+        staffing.retornarDatosID(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
-            res.render('staffingcrearSTF');
-        }); 
+            res.render('staffing/crearSTF');
+        });
     },
 
-
+    obtstaff: function (req, res) {
+        staffing.obtstaffEmpleado(conn, function (err, datos) {
+            console.log(datos);
+            res.render('staffing/crearSTF', { title: 'Y&V backlog', empleados: datos});
+        });
+    },
 }

@@ -1,7 +1,17 @@
 H1 {
-    font-family: "Tiro Telugu" ,Gill Sans Extrabold , sans-serif, Helvetica;
+    font-family: " 'Tiro Gurmukhi'", serif,Gill SansExtrabold, sans-serif, Helvetica;
     font-size: 50px;
     box-shadow: 2px 2px 50px rgb(146, 119, 0);
+    text-align: center;
+}H2 {
+    font-family: " 'Tiro Gurmukhi'", serif,Gill SansExtrabold, sans-serif, Helvetica;
+    font-size: 40px;
+    box-shadow: 2px 2px 50px rgb(146, 119, 0);
+    text-align: center;
+}
+
+h3{
+    font-size: 20px;
     text-align: center;
 }
 

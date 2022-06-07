@@ -2,23 +2,17 @@ module.exports = {
 
 
     obtener: function (conn, funcion) {
-        conn.query("SELECT `id`,`id_empleado`,`id_proyecto`,`id_fecha` ,`valor` FROM staffing", funcion);
+        conn.query("  SELECT ST.id, E.documentos_id, E.documento, E.nombre, E.apellido, E.gerencias_id, E.departamentos_id, E.cargos_id, P.codigo, P.ceco_id, P.cliente, P.nomCorto, P.empleados_id, F.fechaInicial, F.fechaFinal, F.valor FROM staffing AS ST INNER JOIN empleados AS E ON ST.id_empleado=E.id INNER JOIN proyectos AS P ON ST.id_proyecto=P.id INNER JOIN fechas AS F ON ST.id_fecha=F.id", funcion);
     },
     insertar: function (conn, datos, funcion) {
-        conn.query("INSERT INTO `proyectos` (`codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`) VALUES (?,?,?,?,?)", [datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente], funcion);
+        conn.query();
     },
-    eliminar:function(conn,id,funcion){
-        conn.query("DELETE FROM proyectos WHERE id=?",[id],funcion);
-    
+    retornarDatosID: function (conn, id, funcion) {
+        conn.query("SELECT * FROM proyectos WHERE id=?", [id], funcion);
     },
-    retornarDatosID: function (conn,id,funcion) {
-        conn.query("SELECT * FROM proyectos WHERE id=?",[id], funcion);
-    },
-    actualizar:function(conn, datos,id, funcion) {
-        conn.query("UPDATE proyectos SET codigo=?, ceco_id=?, cliente=?, nomCorto=?, empleados_id=? WHERE proyectos.id=?",[datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente, datos.proyectos_id],funcion);
-    },
-    
-    crearstaff: function (conn, funcion) {
-        conn.query("SELECT `id`, `codigo`, `nomCorto`, `cliente`, `ceco_id`, `fecha_id` FROM `proyectos` WHERE depto_id IS NULL AND cargo_id IS NULL", funcion);
-    },
+    obtstaffEmpleado: function (conn, funcion) {
+        conn.query("SELECT e.id,documento,nombre,apellido, doc.tipoDoc , g.gerencia, d.departamento, c.cargo FROM empleados as e INNER JOIN documentos as doc on e.documentos_id=doc.id INNER JOIN gerencias as g on e.gerencias_id=g.id INNER JOIN departamentos as d on e.departamentos_id=d.id INNER JOIN cargos as c on e.cargos_id=c.id order by id UNION SELECT p.id,codigo, cliente, nomCorto, e.nombre, c.ceco FROM proyectos as p INNER JOIN empleados as e on p.empleados_id=e.id INNER JOIN cecos as c on p.ceco_id=c.id order by id", funcion);
+         
+    }
+
 }

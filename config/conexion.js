@@ -4,6 +4,7 @@ var conn = mysql.createConnection({
     user: 'root',
     password: '',
     database: 'mydb'
+
 });
 
 

@@ -19,15 +19,22 @@
                 <thead class="thead">
                     <tr>
                         <th>ACCION</th>
-                        <th>#</th>
-                        <th>RECURSO</th>
-                        <th>DEPARTAMENTO</th>
-                        <th>CARGO</th>
-                        <th>CODIGO</th>
-                        <th>NOMBRE CORTO</th>
-                        <th>CLIENTE</th>
-                        <th>CECO</th>
-                        <th>FECHA</th>
+                        <th>ID</th>
+                        <th>documentos_id</th>
+                        <th>documento</th>
+                        <th>nombre</th>
+                        <th>apellido</th>
+                        <th>gerencias_id</th>
+                        <th>departamentos_id</th>
+                        <th>cargos_id</th>
+                        <th>codigo</th>
+                        <th>ceco_id</th>
+                        <th>cliente</th>
+                        <th>nomCorto</th>
+                        <th>empleados_id</th>
+                        <th>fechaInicial</th>
+                        <th>fechaFinal</th>
+                        <th>asignación</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -55,26 +62,49 @@
                                 <%=staffings[staffing].id %>
                             </td>
                             <td>
-                                <%=staffings[staffing].depto_id %>
+                                <%=staffings[staffing].documentos_id %>
                             </td>
                             <td>
-                                <%=staffings[staffing].cargo_id %>
+                                <%=staffings[staffing].documento %>
                             </td>
                             <td>
-                                <%=staffings[staffing].codigo %>
+                                <%=staffings[staffing].nombre %>
                             </td>
                             <td>
-                                <%=staffings[staffing].nomCorto %>
-                            </td>
-                            <td>
-                                <%=staffings[staffing].cliente %>
+                                <%=staffings[staffing].apellido %>
                             </td>
                             <td>
                                 <%=staffings[staffing].ceco_id %>
                             </td>
                             <td>
-                                <%=staffings[staffing].fecha_id %>
-
+                                <%=staffings[staffing].departamentos_id %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].cargos_id %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].codigo %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].ceco_id %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].cliente %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].nomCorto %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].empleados_id %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].fechaInicial %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].fechaFinal %>
+                            </td>
+                            <td>
+                                <%=staffings[staffing].valor %>
                             </td>
                         </tr>
                         <% } %>
