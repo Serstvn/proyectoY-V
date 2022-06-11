@@ -1,13 +1,14 @@
+var conn = require('../config/conexion');
+
+
 $(document).ready(function () {
     $('#myTable').DataTable({
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
         },
-        //para usar los botones    
+        //para los botones  de exportar e imprimir en doc las tablas.  
         responsive: "true",
         dom:'<"row"<"col-sm-12 col-md-4"l><"col-sm-12 col-md-4"<"dt-buttons btn-group flex-wrap"B>><"col-sm-12 col-md-4"f>>t<"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
-
-
 
         buttons: [
             {
@@ -15,8 +16,6 @@ $(document).ready(function () {
 
                 text: '<svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M304 800l416 0 0 16-416 0 0-16Z"  /><path d="M304 728l416 0 0 16-416 0 0-16Z"  /><path d="M584.5 408 524.4 474 491.6 408 408.9 408 475.5 524.4 360 648 439.2 648 505.7 573.7 543.8 648 626.9 648 555.9 521.7 664 408Z"  /><path d="M456.8 151.5c10.8 0 15.7 3.9 17.4 13.4l19.1-0.8c-0.6-17-12.5-28.1-36.3-28.1-5.6 0-33 0.6-33 24 0 7.3 1.4 15.5 7.2 20.5 4.1 3.6 11.2 7.1 21.5 9.2 21.4 4.3 24.3 10.4 24.1 13.7-0.5 10.6-6.3 12.8-18.6 12.8-5.8 0-10.4-1.4-13.8-4.3-3.4-2.9-5.7-7.4-6.8-13.5l-18.6 1.8c1.2 10.4 5.1 18.3 11.5 23.7 6.4 5.4 15.6 8.1 27.5 8.1 8.2 0 15.1-1.1 20.6-3.4 5.5-2.3 9.8-5.7 12.8-10.3 3-4.7 4.5-9.6 4.5-14.9 0-25.3-26.3-28.9-34.8-30.9-9.3-2.2-15.1-4.2-17.5-6.2-1.9-1.6-2.8-3.4-2.8-5.6C440.8 157.4 443.5 151.5 456.8 151.5z"  /><path d="M408 216 360 216 360 136 344 136 344 232 408 232Z"  /><path d="M328 136 304 136 284.3 167.4 264 136 240 136 272.3 181.9 240 232 264 232 283.9 198.3 304 232 328 232 295.6 182.6Z"  /><path d="M632 106.5 803.7 240 632 240 632 106.5M624 80l-8 0 0 176 224 0 0-8L624 80 624 80z"  /><path d="M576 96l0 184 0 16 16 0 232 0 0 632L200 928 200 96 576 96M592 80 184 80l0 864 656 0L840 280 592 280 592 80 592 80z"  /></svg>',
                 titleAttr: 'Exportar a Excel',
-                
-
             },
             {
                 extend: 'pdfHtml5',

@@ -56,10 +56,17 @@ module.exports = {
         });
     },
 
-    obtstaff: function (req, res) {
-        staffing.obtstaffEmpleado(conn, function (err, datos) {
+    verEmpleadoStaff: function (req, res) {
+        staffing.obtStaffEmpleado(conn, function (err, datos) {
             console.log(datos);
-            res.render('staffing/crearSTF', { title: 'Y&V backlog', empleados: datos});
+            res.render('staffing/crearSTF');
+            // res.render('staffing/crearSTF', {empleadosStaff: datos});
+        });
+    },
+    verProyectoStaff: function (req, res) {
+        staffing.obtStaffProyecto(conn, function (err, datos) {
+            console.log(datos);
+         res.render('staffing/crearSTF');
         });
     },
 }
