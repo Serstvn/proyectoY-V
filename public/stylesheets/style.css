@@ -1,35 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
 H1 {
     font-family: " 'Tiro Gurmukhi'", serif,Gill SansExtrabold, sans-serif, Helvetica;
     font-size: 50px;
-    box-shadow: 2px 2px 50px rgb(146, 119, 0);
+    box-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
     text-align: center;
 }H2 {
     font-family: " 'Tiro Gurmukhi'", serif,Gill SansExtrabold, sans-serif, Helvetica;
     font-size: 40px;
-    box-shadow: 2px 2px 50px rgb(146, 119, 0);
+    box-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
     text-align: center;
 }
 
 h3{
     font-size: 20px;
     text-align: center;
+    text-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
 }
 
 thead tr th {
     text-decoration: none;
     color: white !important;
+    box-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
+    background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38));
 
 }
 
-thead tr th {
-    background: linear-gradient(to bottom, black, orange);
+
+
+nav  {
+    background: linear-gradient(to bottom, rgb(63, 63, 63),rgb(255, 166, 0),rgb(255, 213, 134),white);
 }
 
 
-nav {
-    background: linear-gradient(to bottom, black, orange);
-
-}
+.btn-navBar {
+    background: transparent; /* color de fondo */
+    color: #000000; /* color de fuente */
+    border: 2px solid transparent; /* tamaño y color de borde */
+    padding: 8px 10px;
+    border-radius: 5px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .btn-navBar:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .btn-navBar::after {
+    content: "";
+    background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38)); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .btn-navBar:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
 
 
 i{
