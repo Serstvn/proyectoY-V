@@ -18,16 +18,29 @@
                                 <div class="row">
                                     <div class="col">
                                         <h2>Recurso</h2>
-                                        <hr>
                                         <br>
                                         <div class="container shadow p-3 mb-5 bg-white rounded">
                                             <form method="post" action="/">
+                                                <!-- SELECT EMPLEADOS-->
                                                 <label for="my-select"></label>
-                                                <select id="my-select" class="form-control" name="">
+                                                <select id="my-select" class="form-control SelectEmpeados" name="">
                                                     <option>Seleccione al empleado</option>
                                                 </select>
+
+                                                <div>
+                                                <select class="js-example-basic-multiple" name="state">
+                                                    <option value="AL">Alabama</option>
+                                                    <option value="WY">Wyoming</option>
+                                                  </select>
+                                                </div>
+
+
+
+
+
                                                 <div class="container">
                                                     <div class="row">
+                                                        <!-- columna#1 EMPLEADOS-->
                                                         <div class="col">
 
                                                             <div class="form-group">
@@ -52,6 +65,7 @@
                                                             </div>
 
                                                         </div>
+                                                        <!-- columna#2 EMPLEADOS-->
                                                         <div class="col">
 
                                                             <div class="form-group">
@@ -83,92 +97,94 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <H2>Proyecto</H2>
-                                            <hr>
-                                            <label for="my-select"></label>
-                                            <select id="my-select" class="form-control" name="">
-                                                <option>Seleccione el proyecto</option>
-                                            </select>
-                                        </div>
-                                        <br>
-                                        <div>
-                                            <div class="container shadow p-3 mb-5 bg-white rounded">
-                                                <form method="post" action="/">
-                                                    <div class="container">
-                                                        <div class="row">
+                                            <br>
+                                            <div>
+                                                <div class="container shadow p-3 mb-5 bg-white rounded">
+                                                    <form method="post" action="/">
+                                                        <div class="container">
+                                                            <!-- SELECT PROYECTOS-->
+                                                            <label for="my-select"></label>
+                                                            <select id="my-select" class="form-control" name="">
+                                                                <option>Seleccione el proyecto</option>
+                                                            </select>
+                                                            <br>
+                                                            <br>
+                                                            <!-- columna#1 PROYECTOS-->
+                                                            <div class="row">
 
-                                                            <div class="col">
-                                                                <div class="form-group">
-                                                                    <label for="my-input">CODIGO</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="text" name="codigo">
+                                                                <div class="col">
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">CODIGO</label>
+                                                                        <input id="my-input" class="form-control"
+                                                                            type="text" name="codigo">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="my-select">CECO</label>
+                                                                        <select id="my-select" class="form-control"
+                                                                            name="gerencia">
+                                                                            <option value="0"></option>
+                                                                            <option value="1">FACTURABLE</option>
+                                                                            <option value="2">O.H</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">CLIENTE</label>
+                                                                        <input id="my-input" class="form-control"
+                                                                            type="text" name="cliente">
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-select">CECO</label>
-                                                                    <select id="my-select" class="form-control"
-                                                                        name="gerencia">
-                                                                        <option value="0"></option>
-                                                                        <option value="1">FACTURABLE</option>
-                                                                        <option value="2">O.H</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">CLIENTE</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="text" name="cliente">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col">
-                                                                <div class="form-group">
-                                                                    <label for="my-input">NOMBRE CORTO</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="text" name="nombreCorto">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">GERENTE</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="text" name="gerente">
+                                                                <!-- columna#2 PROYECTOS-->
+                                                                <div class="col">
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">NOMBRE CORTO</label>
+                                                                        <input id="my-input" class="form-control"
+                                                                            type="text" name="nombreCorto">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">GERENTE</label>
+                                                                        <input id="my-input" class="form-control"
+                                                                            type="text" name="gerente">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                                    </form>
+                                                </div>
 
+                                            </div>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div>
-                                    <hr>
-                                    <H2>Agregar fechas</H2>
-                                    <br>
-                                    <form>
-                                        <div class="form-row align-items-center">
-                                            <div class="col-4">
-                                                <h3>Fecha inicial</h3>
-                                                <input type="date" class="form-control"
-                                                    placeholder="Seleccionar fecha Inicial">
-                                            </div>
-                                            <div class="col-4">
-                                                <h3>Fecha final</h3>
+                            </div>
+                            <div>
+                                <hr>
+                                <H2>Agregar fechas</H2>
+                                <br>
+                                <form>
+                                    <div class="form-row align-items-center">
+                                        <div class="col-4">
+                                            <h3>Fecha inicial</h3>
+                                            <input type="date" class="form-control"
+                                                placeholder="Seleccionar fecha Inicial">
+                                        </div>
+                                        <div class="col-4">
+                                            <h3>Fecha final</h3>
 
-                                                <input type="date" class="form-control"
-                                                    placeholder="Seleccionar fecha Final">
-                                            </div>
-                                            <div class="col-4">
-                                                <h3>Asignación</h3>
-                                                <input type="text" class="form-control" placeholder="Asignacion">
-                                            </div>
+                                            <input type="date" class="form-control"
+                                                placeholder="Seleccionar fecha Final">
                                         </div>
-                                    </form>
-                                    <br>
-                                    <div class="row w-100 align-items-center">
-                                        <div class="col text-center"><button type="submit"
-                                                class="btn btn-outline-warning"><i
-                                                    class='bx bxs-chevrons-down bx-md bx-fade-down-hover'></i></button>
-                                            <button type="submit" class="btn btn-outline-danger"><i
-                                                    class='bx bxs-x-circle bx-md bx-flashing-hover'></i></button>
+                                        <div class="col-4">
+                                            <h3>Asignación</h3>
+                                            <input type="text" class="form-control" placeholder="Asignacion">
                                         </div>
+                                    </div>
+                                </form>
+                                <br>
+                                <div class="row w-100 align-items-center">
+                                    <div class="col text-center">
+                                        <button type="submit" class="btn btn-outline-warning"><i class='bx bxs-chevrons-down bx-md bx-fade-down-hover'></i></button>
+                                        <button type="submit" class="btn btn-outline-danger"><i class='bx bxs-x-circle bx-md bx-flashing-hover'></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -179,6 +195,7 @@
                     <br>
                     <div>
                         <h2>Datos a enviar a sftaffing</h2>
+                        <br>
 
                         <table id="myTable" class="table  table-hover text-center mt-4 table-responsive">
                             <input type="hidden" name="id_Empleado">
@@ -256,4 +273,15 @@
             </div>
         </div>
     </div>
+
+    
+
+
+
+
+
+
+
+
+
     <%- include ../layouts/pie.ejs %>
