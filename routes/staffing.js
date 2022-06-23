@@ -15,7 +15,7 @@ router.post("/actualizar",staffingC.actualizar);
 
 
 /* GET crearSTF page MUESTRA DATOS DE LA TABLA STAFF. */
-router.get('/crearSTF' , staffingC.verProyectoStaff,staffingC.verEmpleadoStaff);
+router.get('/crearSTF' ,staffingC.verEmpleadoStaff  /*,staffingC.verEmpleadoStaff*/ );
 /* POST editarSTF page. */
 
 

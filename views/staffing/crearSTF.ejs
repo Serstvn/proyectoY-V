@@ -21,76 +21,72 @@
                                         <br>
                                         <div class="container shadow p-3 mb-5 bg-white rounded">
                                             <form method="post" action="/">
-                                                <!-- SELECT EMPLEADOS-->
-                                                <label for="my-select"></label>
-                                                <select id="my-select" class="form-control SelectEmpeados" name="">
-                                                    <option>Seleccione al empleado</option>
-                                                </select>
-
-                                                <div>
-                                                <select class="js-example-basic-multiple" name="state">
-                                                    <option value="AL">Alabama</option>
-                                                    <option value="WY">Wyoming</option>
-                                                  </select>
-                                                </div>
 
 
-
-
+                                                <!-- BOTON MODAL EMPLEADOS -->
+                                                <button type="button" id="btnMoldal"
+                                                    class="btn btn-secondary btnEmpleado" data-toggle="modal"
+                                                    data-target="#modalEmpleado">
+                                                    Seleccionar empleado
+                                                </button>
+                                                <br>
+                                                <br>
 
                                                 <div class="container">
-                                                    <div class="row">
-                                                        <!-- columna#1 EMPLEADOS-->
-                                                        <div class="col">
+                                                    <fieldset disabled>
+                                                        <div class="row">
+                                                            <!-- columna#1 empleadosStaff-->
+                                                            <div class="col">
 
-                                                            <div class="form-group">
-                                                                <label for="my-input">TIPO DE DOCUMENTO</label>
-                                                                <input id="my-input" class="form-control" type="number"
-                                                                    name="tipoDoc">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="my-input">DOCUMENTO</label>
-                                                                <input id="my-input" class="form-control" type="number"
-                                                                    name="documento">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="my-input">NOMBRE</label>
-                                                                <input id="my-input" class="form-control" type="text"
-                                                                    name="nombre">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="my-input">APELLIDO </label>
-                                                                <input id="my-input" class="form-control" type="text"
-                                                                    name="apellido">
-                                                            </div>
+                                                                <div class="form-group">
+                                                                    <label for="my-input">TIPO DE DOCUMENTO</label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        type="number" name="tipoDoc">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="my-input">DOCUMENTO</label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        type="number" name="documento">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="my-input">NOMBRE</label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        type="text" name="nombre">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="my-input">APELLIDO </label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        type="text" name="apellido">
+                                                                </div>
 
+                                                            </div>
+                                                            <!-- columna#2 empleadosStaff-->
+                                                            <div class="col">
+
+                                                                <div class="form-group">
+                                                                    <label for="my-input">GERENCIA</label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        name="gerencia">
+                                                                    </input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="my-input">DEPARTAMENTO</label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        name="departamento">
+                                                                    </input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="my-input">CARGO</label>
+                                                                    <input id="my-input" class="form-control"
+                                                                        name="cargo">
+                                                                    </input>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
-                                                        <!-- columna#2 EMPLEADOS-->
-                                                        <div class="col">
-
-                                                            <div class="form-group">
-                                                                <label for="my-input">GERENCIA</label>
-                                                                <input id="my-input" class="form-control"
-                                                                    name="gerencia">
-                                                                </input>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="my-input">DEPARTAMENTO</label>
-                                                                <input id="my-input" class="form-control"
-                                                                    name="departamento">
-                                                                </input>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="my-input">CARGO</label>
-                                                                <input id="my-input" class="form-control" name="cargo">
-                                                                </input>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
+                                                    </fieldset>
 
                                                 </div>
-
                                             </form>
                                         </div>
                                     </div>
@@ -102,13 +98,15 @@
                                                 <div class="container shadow p-3 mb-5 bg-white rounded">
                                                     <form method="post" action="/">
                                                         <div class="container">
-                                                            <!-- SELECT PROYECTOS-->
-                                                            <label for="my-select"></label>
-                                                            <select id="my-select" class="form-control" name="">
-                                                                <option>Seleccione el proyecto</option>
-                                                            </select>
+                                                            <!-- BOTON MODAL PROYECTOS -->
+                                                            <button type="button" id="btnMoldal" class="btn btn-primary"
+                                                                data-toggle="modal" data-target="#modalProyecto">
+                                                                Seleccionar proyecto
+                                                            </button>
                                                             <br>
                                                             <br>
+                                                            <div class="container">
+                                                                <fieldset disabled>
                                                             <!-- columna#1 PROYECTOS-->
                                                             <div class="row">
 
@@ -147,6 +145,9 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </fieldset>
+    
+                                                    </div>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -183,8 +184,10 @@
                                 <br>
                                 <div class="row w-100 align-items-center">
                                     <div class="col text-center">
-                                        <button type="submit" class="btn btn-outline-warning"><i class='bx bxs-chevrons-down bx-md bx-fade-down-hover'></i></button>
-                                        <button type="submit" class="btn btn-outline-danger"><i class='bx bxs-x-circle bx-md bx-flashing-hover'></i></button>
+                                        <button type="submit" class="btn btn-outline-warning"><i
+                                                class='bx bxs-chevrons-down bx-md bx-fade-down-hover'></i></button>
+                                        <button type="submit" class="btn btn-outline-danger"><i
+                                                class='bx bxs-x-circle bx-md bx-flashing-hover'></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +218,7 @@
                                     <th>ceco_id</th>
                                     <th>cliente</th>
                                     <th>nomCorto</th>
-                                    <th>empleados_id</th>
+                                    <th>empleadosStaff_id</th>
                                     <th>fechaInicial</th>
                                     <th>fechaFinal</th>
                                     <th>asignación</th>
@@ -274,11 +277,91 @@
         </div>
     </div>
 
-    
+
+
+    <!-- ventana modal prueba -->
+    <!-- Modal EMPLEADO-->
+    <div class="modal fade" id="modalEmpleado" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                        Seleccione el recurso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ventana modal prueba -->
+
+
+    <!-- ventana modal prueba -->
+    <!-- Modal PROYECTO-->
+    <div class="modal fade" id="modalProyecto" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                        Seleccione el proyecto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    ...
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ventana modal prueba -->
 
 
 
+    <script>
+        $(document).ready(function () {
+            $("#buscador").select2({
+                ajax: {
+                    url: "taffing/crearSTF.",
+                    type: "post",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            palabraClave: params.term // search term
+                        };
+                    },
+                    processResults: function (response) {
+                        return {
+                            results: response
+                        };
+                    },
+                    cache: true
+                }
+            });
+        });
 
+    </script>
 
 
 
