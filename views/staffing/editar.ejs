@@ -24,31 +24,27 @@
                                         <input id="my-input" value="<%= staffing.cargo_id  %>" class="form-control"
                                             type="text" name="cargo">
                                     </div>
-                                    <div class="form-group">
-                                        <fieldset disabled>
+                                    <fieldset disabled>
+                                        <div class="form-group">
                                             <label for="my-input">CODIGO</label>
                                             <input id="my-input" value="<%= staffing.codigo %>" class="form-control"
                                                 type="text" name="codigo">
-                                        </fieldset>
-                                    </div>
-                                    <div class="form-group">
-                                        <fieldset disabled>
-                                            <label for="my-input">CECO</label>
-                                            <input id="my-input" value="<%= staffing.ceco_id %>" class="form-control"
-                                                type="text" name="ceco">
-                                        </fieldset>
-                                    </div>
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="my-input">CECO</label>
+                                                <input id="my-input" value="<%= staffing.ceco_id %>"
+                                                    class="form-control" type="text" name="ceco">
+                                        </div>
+                                        
+                                    </fieldset>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <fieldset disabled>
                                             <label for="my-input">CLIENTE</label>
                                             <input id="my-input" value="<%= staffing.cliente %>" class="form-control"
                                                 type="text" name="cliente">
-                                        </fieldset>
                                     </div>
                                     <div class="form-group">
-                                        <fieldset disabled>
                                             <label for="my-input">NOMBRE CORTO</label>
                                             <input id="my-input" value="<%= staffing.nomCorto %>" class="form-control"
                                                 type="text" name="nombreCorto">
@@ -72,4 +68,4 @@
         </div>
     </div>
     <br>
-<%- include ../layouts/pie.ejs %>
+    <%- include ../layouts/pie.ejs %>

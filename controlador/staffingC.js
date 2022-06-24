@@ -42,13 +42,6 @@ module.exports = {
         }
 
     },
-    verEmpleados: function (req, res) {
-        staffing.crearstaff(conn, function (err, datos) {
-            console.log(datos);
-            res.render('staffing/crearSTF', { title: 'Y&V backlog' });
-        });
-    },
-
     editarSTF: function (req, res) {
         staffing.retornarDatosID(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
@@ -56,17 +49,25 @@ module.exports = {
         });
     },
 
-    verEmpleadoStaff: function (req, res) {
-        staffing.obtStaffEmpleado(conn, function (err, datos) {
+    verEmpleados: function (req, res) {
+        staffing.crearstaff(conn, function (err, datos) {
             console.log(datos);
-            res.render('staffing/crearSTF', {empleadosStaff: datos});
-            // res.render('staffing/crearSTF', {empleadosStaff: datos});
+            res.render('staffing/crearSTF', { title: 'Y&V backlog' });
         });
+
     },
-    verProyectoStaff: function (req, res) {
-        staffing.obtStaffProyecto(conn, function (err, datos) {
-            console.log(datos);
-         res.render('staffing/crearSTF');
-        });
-    },
+
+
+    //----------------------------------------------------------------//
+    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS MODALES//
+
+    /* */
+    crearSTF: function (req, res) {
+         staffing.obtStaffEmpleado,staffing.obtStaffProyecto (conn, function (err, datos) {
+                console.log(datos);
+                res.render('staffing/crearSTF',{empleadosSTF:datos,proyectosSTF:datos});
+            });
+        },
+
+    //----------------------------------------------------------------//
 }

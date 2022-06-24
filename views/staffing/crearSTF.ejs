@@ -10,7 +10,6 @@
                 <br>
                 <div class="container shadow p-3 mb-5 bg-white rounded">
                     <div>
-                        <form method="post" action="">
                             <div class="container">
 
 
@@ -33,65 +32,68 @@
                                                 <br>
 
                                                 <div class="container">
-                                                    <fieldset disabled>
-                                                        <div class="row">
-                                                            <!-- columna#1 empleadosStaff-->
-                                                            <div class="col">
+                                                    <form action="/crearSTF" id="formEmpleado">
 
-                                                                <div class="form-group">
-                                                                    <label for="my-input">TIPO DE DOCUMENTO</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="number" name="tipoDoc">
+                                                        <fieldset disabled>
+                                                            <div class="row">
+                                                                <!-- columna#1 empleadosStaff-->
+                                                                <div class="col">
+                                                                    <input type="hidden" name="id" value="">
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">TIPO DE DOCUMENTO</label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="number" name="tipoDoc>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">DOCUMENTO</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="number" name="documento">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">NOMBRE</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="text" name="nombre">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">APELLIDO </label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        type="text" name="apellido">
+                                                                <div class=" form-group">
+                                                                        <label for="my-input">DOCUMENTO</label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="number"
+                                                                            name="documento">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">NOMBRE</label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="text"
+                                                                            name="nombre">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">APELLIDO </label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="text"
+                                                                            name="apellido">
+                                                                    </div>
                                                                 </div>
 
+                                                                <!-- columna#1 empleadosStaff-->
+                                                                <div class="col">
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">GERENCIA </label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="text" name="gerencia>
+                                                                </div>
+                                                                <div class=" form-group">
+                                                                        <label for="my-input">DEPARTAMENTO </label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="text"
+                                                                            name="departamento">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="my-input">CARGO </label>
+                                                                        <input id="my-input" value=""
+                                                                            class="form-control" type="text"
+                                                                            name="cargo">
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <!-- columna#2 empleadosStaff-->
-                                                            <div class="col">
-
-                                                                <div class="form-group">
-                                                                    <label for="my-input">GERENCIA</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        name="gerencia">
-                                                                    </input>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">DEPARTAMENTO</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        name="departamento">
-                                                                    </input>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="my-input">CARGO</label>
-                                                                    <input id="my-input" class="form-control"
-                                                                        name="cargo">
-                                                                    </input>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </fieldset>
+                                                        </fieldset>
+                                                    </form>
 
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <div class="form-group">
+                                        <div class="form-group" id="formProyecto">
                                             <H2>Proyecto</H2>
                                             <br>
                                             <div>
@@ -99,55 +101,59 @@
                                                     <form method="post" action="/">
                                                         <div class="container">
                                                             <!-- BOTON MODAL PROYECTOS -->
-                                                            <button type="button" id="btnMoldal" class="btn btn-primary"
-                                                                data-toggle="modal" data-target="#modalProyecto">
+                                                            <button type="button" id="btnMoldal"
+                                                                class="btn btn-secundary" data-toggle="modal"
+                                                                data-target="#modalProyecto">
                                                                 Seleccionar proyecto
                                                             </button>
                                                             <br>
                                                             <br>
                                                             <div class="container">
                                                                 <fieldset disabled>
-                                                            <!-- columna#1 PROYECTOS-->
-                                                            <div class="row">
+                                                                    <!-- columna#1 PROYECTOS-->
+                                                                    <div class="row">
 
-                                                                <div class="col">
-                                                                    <div class="form-group">
-                                                                        <label for="my-input">CODIGO</label>
-                                                                        <input id="my-input" class="form-control"
-                                                                            type="text" name="codigo">
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <label for="my-input">CODIGO</label>
+                                                                                <input id="my-input"
+                                                                                    class="form-control" type="text"
+                                                                                    name="codigo">
+                                                                            </div>
+
+                                                                            <div class="form-group">
+                                                                                <label for="my-input">CECO</label>
+                                                                                <input id="my-input"
+                                                                                    class="form-control" type="text"
+                                                                                    name="nombreCorto">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="my-input">CLIENTE</label>
+                                                                                <input id="my-input"
+                                                                                    class="form-control" type="text"
+                                                                                    name="cliente">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- columna#2 PROYECTOS-->
+                                                                        <div class="col">
+                                                                            <div class="form-group">
+                                                                                <label for="my-input">NOMBRE
+                                                                                    CORTO</label>
+                                                                                <input id="my-input"
+                                                                                    class="form-control" type="text"
+                                                                                    name="nombreCorto">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="my-input">GERENTE</label>
+                                                                                <input id="my-input"
+                                                                                    class="form-control" type="text"
+                                                                                    name="gerente">
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <label for="my-select">CECO</label>
-                                                                        <select id="my-select" class="form-control"
-                                                                            name="gerencia">
-                                                                            <option value="0"></option>
-                                                                            <option value="1">FACTURABLE</option>
-                                                                            <option value="2">O.H</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="my-input">CLIENTE</label>
-                                                                        <input id="my-input" class="form-control"
-                                                                            type="text" name="cliente">
-                                                                    </div>
-                                                                </div>
-                                                                <!-- columna#2 PROYECTOS-->
-                                                                <div class="col">
-                                                                    <div class="form-group">
-                                                                        <label for="my-input">NOMBRE CORTO</label>
-                                                                        <input id="my-input" class="form-control"
-                                                                            type="text" name="nombreCorto">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="my-input">GERENTE</label>
-                                                                        <input id="my-input" class="form-control"
-                                                                            type="text" name="gerente">
-                                                                    </div>
-                                                                </div>
+                                                                </fieldset>
+
                                                             </div>
-                                                        </fieldset>
-    
-                                                    </div>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -191,7 +197,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
                     <br>
                     <hr>
@@ -206,7 +211,6 @@
                             <thead class="thead">
                                 <tr>
                                     <th>ACCION</th>
-                                    <th>ID</th>
                                     <th>documentos_id</th>
                                     <th>documento</th>
                                     <th>nombre</th>
@@ -225,7 +229,7 @@
                                 </tr>
                             </thead>
                             <tbody id="myTable">
-                                <tr id="myRow">
+                                <tr>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Button group">
 
@@ -243,8 +247,6 @@
                                             </form>
                                         </div>
                                     </td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -283,7 +285,7 @@
     <!-- Modal EMPLEADO-->
     <div class="modal fade" id="modalEmpleado" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">
@@ -294,9 +296,67 @@
                 </div>
                 <div class="modal-body">
 
-                    ...
+                    <div class="container">
 
+                        <table id="myTableSTF" class="table  table-hover text-center mt-4 table-responsive">
+                            <thead class="thead">
+                                <tr>
+                                    <th>-</th>
+                                    <th>CC</th>
+                                    <th>DOCUMENTO</th>
+                                    <th>NOMBRE</th>
+                                    <th>APELLIDO</th>
+                                    <th>GERENCIA</th>
+                                    <th>DEPARTAMENTO</th>
+                                    <th>CARGO</th>
+                                    <th>ELEGIR</th>
+                                </tr>
+                            </thead>
 
+                            <tbody id="myTableSTF">
+                                <% for( let empleadoStaff=0; empleadoStaff < empleadosSTF.length; empleadoStaff++ ) { %>
+
+                                    <tr>
+                                        <td >
+                                            <%=empleadosSTF[empleadoStaff].id %>
+                                        </td>
+
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].documento %>
+                                        </td>
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].nombreEmpleado %>
+                                        </td>
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].apellido %>
+                                        </td>
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].tipoDoc %>
+                                        </td>
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].gerencia %>
+                                        </td>
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].departamento %>
+                                        </td>
+                                        <td>
+                                            <%=empleadosSTF[empleadoStaff].cargo %>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Button group">
+
+                                                <form class="form-inline" method="post"
+                                                    action="./crearSTF/<%=empleadosSTF[empleadoStaff].id %>">
+                                                    <button class="btn btn-outline-info" type="submit"><i
+                                                            class='bx bx-checkbox-checked bx-md bx-tada-hover'></i></button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -304,35 +364,96 @@
             </div>
         </div>
     </div>
+
 
     <!-- ventana modal prueba -->
 
 
     <!-- ventana modal prueba -->
     <!-- Modal PROYECTO-->
-    <div class="modal fade" id="modalProyecto" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
-                        Seleccione el proyecto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
 
-                    ...
+    <div class="container">
+        <div class=" modal fade" id="modalProyecto" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                            Seleccione el Proyecto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <div class="container">
+
+                            <table id="myTableSTF" class="table  table-hover text-center mt-4 table-responsive">
+                                <input type="hidden" name="id_Proyecto">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>CODIGO</th>
+                                        <th>CECO</th>
+                                        <th>CLIENTE</th>
+                                        <th>NOMBRE CORTO</th>
+                                        <th>GERENTE</th>
+                                        <th>ACCIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTableSTF">
+
+                                    <% for( let proyectoStaff=0; proyectoStaff < proyectosSTF.length; proyectoStaff++ )
+                                        { %>
+
+                                        <tr>
+                                            <td>
+                                                <%=proyectosSTF[proyectoStaff].id %>
+                                            </td>
+                                            <td>
+                                                <%=proyectosSTF[proyectoStaff].codigo %>
+                                            </td>
+                                            <td>
+                                                <%=proyectosSTF[proyectoStaff].cliente %>
+                                            </td>
+                                            <td>
+                                                <%=proyectosSTF[proyectoStaff].nomCorto %>
+                                            </td>
+                                            <td>
+                                                <%=proyectosSTF[proyectoStaff].nombreProyecto %>
+                                            </td>
+                                            <td>
+                                                <%=proyectosSTF[proyectoStaff].ceco %>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Button group">
+
+                                                    <form class="form-inline" method="post" action="./crearSTF.">
+                                                        <button class="btn btn-outline-info" type="submit"><i
+                                                                class='bx bx-checkbox-checked bx-md bx-tada-hover'></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- ventana modal prueba -->
 

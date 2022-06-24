@@ -14,11 +14,18 @@ router.post("/editar/:id",staffingC.editar);
 router.post("/actualizar",staffingC.actualizar);
 
 
-/* GET crearSTF page MUESTRA DATOS DE LA TABLA STAFF. */
-router.get('/crearSTF' ,staffingC.verEmpleadoStaff  /*,staffingC.verEmpleadoStaff*/ );
+/*GET crearSTF page MUESTRA DATOS DE LA TABLA STAFF. */
+router.get('/crearSTF' ,staffingC.crearSTF);
+
+
+
+/*      
+router.get('/crearSTF', (req,res) =>{
+    res.render("crearSTF")
+});
+*/
+
 /* POST editarSTF page. */
-
-
 router.post("/editarSTF/",staffingC.editarSTF);
 
 
