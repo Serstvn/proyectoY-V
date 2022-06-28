@@ -17,4 +17,18 @@ module.exports = {
     actualizar:function(conn,datos,funcion) {
         conn.query("UPDATE `empleados` SET documentos_id = ?,documento = ?,nombre = ?,apellido = ?,gerencias_id = ?,departamentos_id = ?,cargos_id = ? WHERE id = ?", [datos.tipoDocumento, datos.documento, datos.nombre, datos.apellido, datos.gerencia,datos.departamento,datos.cargo,datos.id],funcion);
      },
+
+
+    traerDocumentos:function(conn,funcion){
+        conn.query("SELECT id AS idDoc, tipoDoc FROM documentos ORDER BY id",funcion);
+    },
+    traerGerencias:function(conn,funcion){
+        conn.query("SELECT id AS idGerencia, gerencia FROM gerencias ORDER BY id",funcion);
+    },
+    traerDeptos:function(conn,funcion){
+        conn.query("SELECT id AS idDpo, departamento FROM departamentos ORDER BY id",funcion);
+    },
+    traerCargos:function(conn,funcion){
+        conn.query("SELECT id AS idCargo, cargo FROM cargos ORDER BY id",funcion);
+    },
 }

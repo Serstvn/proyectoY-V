@@ -9,10 +9,15 @@ module.exports = {
         });
     },
     crear: function (req, res) {
-        res.render('empleados/crear');
-
-
+        empleado.traerDocumentos(conn,function(err,datos){
+            console.log(datos);
+            res.render('empleados/crear',{documentos:datos,gerencias:datos,departamentos:datos,cargos:datos});
+        });
     },
+//,gerencias:datos,departamentos:datos,cargos:datos
+
+    //res.render('empleados/crear',{documentos:datos,gerencias:datos,departamentos:datos,cargos:datos});
+
     guardar: function (req, res) {
         console.log(req.body);
 
