@@ -8,11 +8,8 @@ module.exports = {
             res.render('empleados/index', { title: 'Y&V backlog', empleados: datos });
         });
     },
-    crear: function (req, res) {
-        empleado.traerDocumentos(conn,function(err,datos){
-            console.log(datos);
-            res.render('empleados/crear',{documentos:datos,gerencias:datos,departamentos:datos,cargos:datos});
-        });
+    crear: function(req,res){
+        res.render('empleados/crear');
     },
 //,gerencias:datos,departamentos:datos,cargos:datos
 

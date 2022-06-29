@@ -7,23 +7,15 @@
                 <br>
                 <div class="container shadow p-3 mb-5 bg-white rounded">
                     <form method="post" action="/empleados">
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
 
                                     <div>
-                                        <div class="form-group">
-                                            <label for="tipodocumento">TIPO DE DOCUMENTO</label>
-                                            <select id="SelectDocument" class="custom-select" name="documentos">
-                                                <option selected>Seleccionar</option>
-                                                <% for( let documento=0; documento < documentos.length; documento++ ) {
-                                                    %>
-                                                    <option value="<%=documentos[documento].idDoc %>">
-                                                        <%=documentos[documento].tipoDoc %>
-                                                    </option>
-
-                                                    <% } %>
-                                            </select>
+                                        <div class="form-group ">
+                                            <label for="my-select">TIPO DE DOCUMENTO</label>
+                                            <select id="SelectDocumentos" class="custom-select" name="documentos"
+                                                style="width: 75%"></select>
                                         </div>
                                     </div>
 
@@ -39,58 +31,47 @@
                                         <label for="my-input">APELLIDO </label>
                                         <input id="my-input" class="form-control" type="text" name="apellido">
                                     </div>
-
                                 </div>
                                 <div class="col">
                                     <div>
                                         <div class="form-group">
-                                            <label for="tipodocumento">GERENCIA</label>
-                                            <select id="SelectDocument" class="custom-select" name="documento">
-                                                <option selected>Seleccionar</option>
-                                                <% for( let gerencia=0; gerencia < gerencias.length; gerencia++ ) {
-                                                    %>
-                                                    <option value="<%=gerencias[gerencia].idGerencia %>">
-                                                        <%=gerencias[gerencia].gerencia %>
-                                                    </option>
-
-                                                    <% } %>
+                                            <label for="form-group">GERENCIA</label>
+                                            <select id="SelectGerencias" class="custom-select" name="documento">
+                                                <option selected>Seleccionar gerencia</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="form-group">
-                                            <label for="tipodocumento">DEPARTAMENTOS</label>
-                                            <select id="SelectDocument" class="custom-select" name="departamento">
-                                                <option selected>Seleccionar</option>
-                                                <% for( let departamento=0; departamento < departamentos.length; departamento++ ) {
-                                                    %>
-                                                    <option value="<%=departamentos[departamento].idDpo %>">
-                                                        <%=departamentos[departamento].departamento %>
-                                                    </option>
-
-                                                    <% } %>
+                                            <label for="form-group">DEPARTAMENTOS</label>
+                                            <select id="SelectDepartamentos" class="custom-select" name="departamento">
+                                                <option selected>Seleccionar departamento</option>
                                             </select>
+
                                         </div>
                                     </div>
                                     <div>
-                                    <div>
-                                        <div class="form-group">
-                                            <label for="tipodocumento">CARGOS</label>
-                                            <select id="SelectDocument" class="custom-select" name="departamento">
-                                                <option selected>Seleccionar</option>
-                                                <% for( let cargo=0; cargo < cargos.length; cargo++ ) {
-                                                    %>
-                                                    <option value="<%=cargos[cargo].idCargo %>">
-                                                        <%=cargos[cargo].cargo %>
-                                                    </option>
 
-                                                    <% } %>
-                                            </select>
-                                        </div>
                                     </div>
-                                        
+                                    <div>
+                                        <div>
+                                            <div class="form-group ">
+                                                <label for="form-group">CARGOS</label>
+                                                <select id="SelectCargos" class="custom-select" name="departamento">
+                                                    <option selected>Seleccionar cargo</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    <br>
+
+                                    </div>
+
+
+                                    <div>
+                                        <button type="button" class="btn btn-secondary"
+                                            id="botonAJAX">Secondary</button>
+                                    </div>
+
+
                                     <button type="submit" class="btn btn-outline-warning"><i
                                             class='bx bx-check-circle bx-md'></i></button>
                                     <a href="../empleados" class="btn btn-outline-danger"><i
@@ -106,5 +87,98 @@
 
     </div>
 
+
+    <script>
+
+
+        /*-----------------SELECT2--------------------*/
+        /*-------------SELECT DOCUMENTO---------------*/
+        $(document).ready(function () {
+            $('#SelectDocumentos').select2({
+                theme: "classic",
+                language: "es",
+                placeholder: 'Seleccione el tipo de documento',
+                width: '100%',
+                language: {
+                    noResults: function () {
+                        return "Sin resultados";
+                    },
+                    searching: function () {
+                        return "Buscando...";
+                    }
+                },
+            });
+            /*-----------------SELECT2--------------------*/
+            /*-------------SELECT DOCUMENTOS---------------*/
+            $('#selectPaises').select2({
+                theme: "classic",
+                placeholder: 'Seleccione el tipo de documento',
+                width: '100%',
+                language: {
+                    noResults: function () {
+                        return "Sin resultados";
+                    },
+                    searching: function () {
+                        return "Buscando...";
+                    }
+                },
+            });
+            /*-----------------SELECT2--------------------*/
+            /*-------------SELECT GERENCIAS---------------*/
+            $('#SelectGerencias').select2({
+                theme: "classic",
+                placeholder: 'Seleccione la gerencia',
+                width: '100%',
+
+                language: {
+                    noResults: function () {
+                        return "Sin resultados";
+                    },
+                    searching: function () {
+                        return "Buscando...";
+                    }
+                },
+            });
+            /*-----------------SELECT2--------------------*/
+            /*-------------SELECT DEPARTAMENTOS---------------*/
+            $('#SelectDepartamentos').select2({
+                theme: "classic",
+
+                placeholder: 'Seleccione el departamento',
+                width: '100%',
+
+                language: {
+                    noResults: function () {
+                        return "Sin resultados";
+                    },
+                    searching: function () {
+                        return "Buscando...";
+                    }
+                },
+            });
+            /*-----------------SELECT2--------------------*/
+            /*-------------SELECT CARGOS---------------*/
+            $('#SelectCargos').select2({
+                theme: "classic",
+                placeholder: 'Seleccione el cargo',
+                width: '100%',
+
+                language: {
+                    noResults: function () {
+                        return "Sin resultados";
+                    },
+                    searching: function () {
+                        return "Buscando...";
+                    }
+                },
+            });
+
+
+
+
+
+
+        });
+    </script>
 
     <%- include ../layouts/pie.ejs %>

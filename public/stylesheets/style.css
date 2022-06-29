@@ -1,136 +1,149 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
+
 H1 {
-    font-family: " 'Tiro Gurmukhi'", serif,Gill SansExtrabold, sans-serif, Helvetica;
-    font-size: 50px;
-    box-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
-    text-align: center;
-}H2 {
-    font-family: " 'Tiro Gurmukhi'", serif,Gill SansExtrabold, sans-serif, Helvetica;
-    font-size: 40px;
-    box-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
-    text-align: center;
+  font-family: " 'Tiro Gurmukhi'", serif, Gill SansExtrabold, sans-serif, Helvetica;
+  font-size: 50px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  text-align: center;
 }
 
-h3{
-    font-size: 20px;
-    text-align: center;
-    text-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
+H2 {
+  font-family: " 'Tiro Gurmukhi'", serif, Gill SansExtrabold, sans-serif, Helvetica;
+  font-size: 40px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 thead tr th {
-    text-decoration: none;
-    color: white !important;
-    box-shadow: rgba(0,0,0, 0.45) 0px 25px 20px -20px;
-    background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38));
+  text-decoration: none;
+  color: white !important;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38));
 
 }
 
 
 
-nav  {
-    background: linear-gradient(to bottom, rgb(63, 63, 63),rgb(255, 166, 0),rgb(255, 213, 134),white);
+nav {
+  background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 166, 0), rgb(255, 213, 134), white);
 }
 
 
 .btn-navBar {
-    background: transparent; /* color de fondo */
-    color: #000000; /* color de fuente */
-    border: 2px solid transparent; /* tamaño y color de borde */
-    padding: 8px 10px;
-    border-radius: 5px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-  }
-  .btn-navBar:hover {
-    color: #fff; /* color de fuente hover */
-  }
-  .btn-navBar::after {
-    content: "";
-    background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38)); /* color de fondo hover */
-    position: absolute;
-    z-index: -1;
-    padding: 16px 20px;
-    display: block;
-    left: 0;
-    right: 0;
-    top: -100%;
-    bottom: 100%;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-  }
-  .btn-navBar:hover::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-  }
-
-
-i{
-    margin-bottom:1px;
-    border: 1px solid transparent;
-    font-size:70px;
-    
-    
-    
-  }
-  
-  
-  .btn {
-    display: inline-flex;
-    font-size: 35px;
-    font-weight: 40px;
-    text-align: center;
-    align-items: center;
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 5px;
+  background: transparent;
+  /* color de fondo */
+  color: #000000;
+  /* color de fuente */
+  border: 2px solid transparent;
+  /* tamaño y color de borde */
+  padding: 8px 10px;
+  border-radius: 5px;
+  /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
 }
 
-  /*
+.btn-navBar:hover {
+  color: #fff;
+  /* color de fuente hover */
+}
+
+.btn-navBar::after {
+  content: "";
+  background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38));
+  /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.btn-navBar:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+
+i {
+  margin-bottom: 1px;
+  border: 1px solid transparent;
+  font-size: 70px;
+
+
+
+}
+
+
+.btn {
+  display: inline-flex;
+  font-size: 35px;
+  font-weight: 40px;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+/*
   Esto es opcional pero sirve para que todos los botones de exportacion se distribuyan de manera equitativa usando flexbox
   
   .flexcontent {
       display: flex;
       justify-content: space-around;
   }
-  */
   
   .selectTable{
     margin-top: 1px;
     text-align: center;
   }
-  
-  div.dataTables_wrapper div.dataTables_filter {
-      margin-top: 1px;
-      
-  }
-  
-  .btn-secondary {
-      color: rgb(0, 0, 0);
-      background-color: transparent;
-      border-color: none;
-      margin-top: 1px;
-  }
-  .btn-secondary:hover {
-      color: rgb(0, 0, 0);
-      background-color: #ffd000;
-      border-color: #000000;
-  }
-  
-  .inline{
-    display:inline-block;
-    padding:0;
-  }
-  
+  */
+
+div.dataTables_wrapper div.dataTables_filter {
+  margin-top: 5px;
+
+}
+
+.btn-secondary {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  border-color: none;
+  margin-top: 1px;
+}
+
+.btn-secondary:hover {
+  color: rgb(0, 0, 0);
+  background-color: #ffd000;
+  border-color: #000000;
+}
+
+.inline {
+  display: inline-block;
+  padding: 0;
+}
 
 
+/*------------------------------------------*/
 
-/*--------------------------------------------*/
+/*------------------------------------------*/
