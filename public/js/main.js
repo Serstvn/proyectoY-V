@@ -45,14 +45,15 @@ $(document).ready(function () {
 
   */
 
-  
 
-  $('#botonAJAX').click(function (e) { 
-    e.preventDefault()
-    $.get("/selectDocumento.json",function(data){
-      console.log(data);
-    });
-    
+
+  $('#botonAJAX').select2({
+    ajax: {
+      url: 'https://api.github.com/search/repositories',
+      dataType: 'json'
+      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+    }
   });
+
 
 });
