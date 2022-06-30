@@ -7,7 +7,7 @@ router.get('/',proyectosC.index);
 /* GET crear page. */
 router.get('/crear',proyectosC.crear);
 /* POST guardar page. */
-router.post("/",proyectosC.guardar);
+router.post("/guardar",proyectosC.guardar);
 /* POST eliminar page. */
 router.post("/eliminar/:id",proyectosC.eliminar);
 /* POST editar page. */

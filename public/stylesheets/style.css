@@ -25,7 +25,10 @@ thead tr th {
   color: white !important;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   background: linear-gradient(to bottom, rgb(63, 63, 63), rgb(255, 179, 38));
-
+}
+label {
+  
+  font-weight: bold;
 }
 
 
@@ -145,6 +148,5 @@ div.dataTables_wrapper div.dataTables_filter {
 
 
 /*------------------------------------------*/
-
 
 /*------------------------------------------*/

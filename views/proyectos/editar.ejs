@@ -1,63 +1,70 @@
 <%- include ../layouts/cabecera.ejs %>
     <div class="container-fluid">
-    <br>
-    <br>
+        <br>
+        <br>
 
-    <div class="card">
-        <div class="card-body">
-            <br>
-            <div class="container shadow p-3 mb-5 bg-white rounded">
-                <form method="POST" action="../actualizar/">
-                    <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
+        <div class="card">
+            <div class="card-body">
+                <br>
+                <div class="container shadow p-3 mb-5 bg-white rounded">
+                    <form method="POST" action="../actualizar/">
+                        <h1 class="align-text-bottom text-center">EDITAR PROYECTO</h1>
 
-                    <input type="hidden" name="id" value="<%= proyecto.id %>">
+                        <input type="hidden" name="id" value="<%= proyecto.id %>">
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="my-input">CODIGO</label>
-                                    <input id="my-input" value="<%= proyecto.codigo %>" class="form-control" type="text"
-                                        name="codigo">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="my-input">CODIGO</label>
+                                        <input id="my-input" value="<%= proyecto.codigo %>" class="form-control" placeholder="<%= proyecto.codigo %>"
+                                            type="text" name="codigo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="my-select">CECO</label>
+                                        <select id="my-select"  class="form-control custom-select" name="ceco" placeholder="<%=proyecto.ceco %>">
+                                            <% for( let cecos=0; cecos < ceco.length; cecos++ ) { %>
+                                                <option value="<%=ceco[cecos].id %>">
+                                                    <%=ceco[cecos].ceco %>
+                                                        <% } %>
+                                                </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="my-input">CLIENTE</label>
+                                        <input id="my-input" value="<%= proyecto.cliente %>" class="form-control"
+                                            type="text" name="cliente">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="my-select">CECO</label>
-                                    <select id="my-select" class="form-control" name="gerencia">
-                                        <option value="0"></option>
-                                        <option value="1">FACTURABLE</option>
-                                        <option value="2">O.H</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="my-input">CLIENTE</label>
-                                    <input id="my-input" value="<%= proyecto.cliente %>" class="form-control"
-                                        type="text" name="cliente">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="my-input">NOMBRE CORTO</label>
+                                        <input id="my-input" value="<%= proyecto.nomCorto %>" class="form-control"
+                                            type="text" name="nombreCorto">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="my-select">GERENTE</label>
+                                        <select id="my-select" class="form-control custom-select" name="gerencia" placeholder="<%= proyecto.empleados_id%>">
+                                            <% for( let gerentes=0; gerentes < gerente.length; gerentes++ ) { %>
+                                                <option value="<%=gerente[gerentes].id %>">
+                                                    <%=gerente[gerentes].nombre %>
+                                                        <% } %>
+                                                </option>
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-outline-warning"><i
+                                            class='bx bx-check-circle bx-md'></i></button>
+                                    <a href="/proyectos" class="btn btn-outline-danger"><i
+                                            class='bx bx-x-circle bx-md'></i></a>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label for="my-input">NOMBRE CORTO</label>
-                                    <input id="my-input" value="<%= proyecto.nomCorto %>" class="form-control"
-                                        type="text" name="nombreCorto">
-                                </div>
-                                <div class="form-group">
-                                    <label for="my-input">GERENTE</label>
-                                    <input id="my-input" value="<%= proyecto.empleados_id%>" class="form-control"
-                                        type="text" name="gerente">
-                                </div>
-
-                                <button type="submit" class="btn btn-outline-warning"><i
-                                        class='bx bx-check-circle bx-md'></i></button>
-                                <a href="/proyectos" class="btn btn-outline-danger"><i
-                                        class='bx bx-x-circle bx-md'></i></a>
-                            </div>
-                        </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <br>
+        <br>
+        <br>
 
     </div>
     <%- include ../layouts/pie.ejs %>

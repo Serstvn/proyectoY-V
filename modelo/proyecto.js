@@ -5,16 +5,24 @@ module.exports = {
         conn.query("SELECT p.id,codigo, cliente, nomCorto, e.nombre, c.ceco FROM proyectos as p INNER JOIN empleados as e on p.empleados_id=e.id INNER JOIN cecos as c on p.ceco_id=c.id order by id", funcion);
     },
     insertar: function (conn, datos, funcion) {
-        conn.query("INSERT INTO `proyectos` (`codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`) VALUES (?,?,?,?,?)", [datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente], funcion);
+        conn.query("INSERT INTO `proyectos` (`codigo`, `ceco_id`, `cliente`, `nomCorto`, `empleados_id`) VALUES (?,?,?,?,?)", [datos.codigo, datos.ceco, datos.cliente, datos.nomCorto, datos.gerencia], funcion);
     },
-    eliminar:function(conn,id,funcion){
-        conn.query("DELETE FROM proyectos WHERE id=?",[id],funcion);
-    
+    eliminar: function (conn, id, funcion) {
+        conn.query("DELETE FROM proyectos WHERE id=?", [id], funcion);
     },
-    retornarDatosID: function (conn,id,funcion) {
-        conn.query("SELECT * FROM proyectos WHERE id=?",[id], funcion);
+    retornarDatosID: function (conn, id, funcion) {
+        conn.query("SELECT * FROM proyectos WHERE id=?", [id], funcion);
     },
-    actualizar:function(conn,datos,id,funcion) {
-        conn.query("UPDATE `proyectos` SET codigo = ?, ceco_id = ?, cliente = ?, nomCorto = ?,empleados_id = ? WHERE id = ?", [datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerente,datos.id],funcion);
-     }
+    actualizar: function (conn, datos, id, funcion) {
+        conn.query("UPDATE `proyectos` SET codigo = ?, ceco_id = ?, cliente = ?, nomCorto = ?,empleados_id = ? WHERE id = ?", [datos.codigo, datos.ceco, datos.cliente, datos.nombreCorto, datos.gerencia, datos.id], funcion);
+    },
+    traerCecos: function (conn, funcion) {
+        conn.query("SELECT id , ceco FROM cecos", funcion);
+    },
+    traerGerentes: function (conn, funcion) {
+        conn.query("SELECT id , nombre FROM empleados", funcion);
+    },
+
+
+
 }
