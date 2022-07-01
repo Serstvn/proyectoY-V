@@ -13,8 +13,9 @@
 
                                     <div>
                                         <div class="form-group ">
-                                            <label for="my-select">TIPO DE DOCUMENTO</label>
-                                            <select id="SelectGerencias" class="custom-select" name="tipoDoc">
+                                            <label for="form-group">TIPO DE DOCUMENTO</label>
+                                            <select class="custom-select" name="tipoDoc">
+                                                <option disabled selected>Selecciona el tipo de documento</option>
                                             <% for( let documento=0; documento < documentos.length; documento++ ) { %>
                                             <option value="<%=documentos[documento].id %>">
                                                 <%=documentos[documento].tipoDoc %>
@@ -41,7 +42,8 @@
                                     <div>
                                         <div class="form-group">
                                             <label for="form-group">GERENCIA</label>
-                                            <select id="SelectGerencias" class="custom-select" name="gerencia">
+                                            <select class="custom-select" name="gerencia">
+                                                <option disabled selected>Selecciona una gerencia</option>
                                                 <% for( let gerencia=0; gerencia < gerencias.length; gerencia++ ) { %>
                                                 <option value="<%=gerencias[gerencia].id %>">
                                                     <%=gerencias[gerencia].gerencia %>
@@ -54,7 +56,9 @@
                                         <div class="form-group">
 
                                             <label for="form-group">DEPARTAMENTOS</label>
-                                            <select id="SelectDepartamentos" class="custom-select" name="departamento" placeholder="Seleccionar departamento">
+                                            <select class="custom-select" name="departamento" placeholder="Seleccionar departamento">
+                                                
+                                                <option disabled selected>Selecciona un departamento</option>
                                                 <% for( let departamento=0; departamento < departamentos.length; departamento++ ) { %>
                                                 <option value="<%=departamentos[departamento].id %>">
                                                     <%=departamentos[departamento].departamento %>
@@ -68,7 +72,8 @@
                                         <div>
                                             <div class="form-group ">
                                                 <label for="form-group">CARGOS</label>
-                                                <select id="SelectCargos" class="custom-select" name="cargo">
+                                                <select class="custom-select" name="cargo">
+                                                <option disabled selected>Selecciona un cargo</option>
                                                     <% for( let cargo=0; cargo < cargos.length; cargo++ ) { %>
                                                     <option value="<%=cargos[cargo].id %>">
                                                         <%=cargos[cargo].cargo %>
@@ -90,90 +95,5 @@
             </div>
         </div>
         <br>
-
     </div>
- 
-    <script>
-
-
-        /*-----------------SELECT2--------------------*/
-        /*-------------SELECT DOCUMENTO---------------*/
-        
-$(document).ready(function() {
-    $('.custom-select').select2();
-});
-    </script>
-<!-- 
-            /*-----------------SELECT2--------------------*/
-            /*-------------SELECT DOCUMENTOS---------------*/
-            $('#selectPaises').select2({
-                theme: "classic",
-                placeholder: 'Seleccione el tipo de documento',
-                width: '100%',
-                language: {
-                    noResults: function () {
-                        return "Sin resultados";
-                    },
-                    searching: function () {
-                        return "Buscando...";
-                    }
-                },
-            });
-            /*-----------------SELECT2--------------------*/
-            /*-------------SELECT GERENCIAS---------------*/
-            $('#SelectGerencias').select2({
-                theme: "classic",
-                placeholder: 'Seleccione la gerencia',
-                width: '100%',
-
-                language: {
-                    noResults: function () {
-                        return "Sin resultados";
-                    },
-                    searching: function () {
-                        return "Buscando...";
-                    }
-                },
-            });
-            /*-----------------SELECT2--------------------*/
-            /*-------------SELECT DEPARTAMENTOS---------------*/
-            $('#SelectDepartamentos').select2({
-                theme: "classic",
-
-                placeholder: 'Seleccione el departamento',
-                width: '100%',
-
-                language: {
-                    noResults: function () {
-                        return "Sin resultados";
-                    },
-                    searching: function () {
-                        return "Buscando...";
-                    }
-                },
-            });
-            /*-----------------SELECT2--------------------*/
-            /*-------------SELECT CARGOS---------------*/
-            $('#SelectCargos').select2({
-                theme: "classic",
-                placeholder: 'Seleccione el cargo',
-                width: '100%',
-
-                language: {
-                    noResults: function () {
-                        return "Sin resultados";
-                    },
-                    searching: function () {
-                        return "Buscando...";
-                    }
-                },
-            });
-
-
-
-
-
-
-        });  -->
-
     <%- include ../layouts/pie.ejs %>

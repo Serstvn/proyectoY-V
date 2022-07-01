@@ -10,15 +10,15 @@ module.exports = {
     },
     crear: function (req, res) {
         empleado.traerDocumentos(conn, function (err, documentos) {
-                    empleado.traerCargos(conn, function (err, cargos){
-                empleado.traerGerencias(conn, function (err, gerencias) { 
-            empleado.traerDeptos(conn, function (err, departamentos) {
-                        console.log(documentos,cargos,gerencias,departamentos);
-                        res.render('empleados/crear',{documentos:documentos,cargos:cargos,gerencias:gerencias,departamentos:departamentos,});
+            empleado.traerCargos(conn, function (err, cargos) {
+                empleado.traerGerencias(conn, function (err, gerencias) {
+                    empleado.traerDeptos(conn, function (err, departamentos) {
+                        console.log(documentos, cargos, gerencias, departamentos);
+                        res.render('empleados/crear', { documentos: documentos, cargos: cargos, gerencias: gerencias, departamentos: departamentos, });
                     });
-                 });
+                });
             });
-        }); 
+        });
     },
     //,gerencias:datos,departamentos:datos,cargos:datos
 
@@ -39,9 +39,18 @@ module.exports = {
         });
     },
     editar: function (req, res) {
-        empleado.retornarDatosID(conn, req.params.id, function (err, datos) {
-            console.log(datos[0]);
-            res.render('empleados/editar', { empleado: datos[0] });
+        empleado.traerDocumentos(conn, function (err, documentos) {
+            empleado.traerCargos(conn, function (err, cargos) {
+                empleado.traerGerencias(conn, function (err, gerencias) {
+                    empleado.traerDeptos(conn, function (err, departamentos) {
+                        empleado.retornarDatosID(conn, req.params.id, function (err, datosEmpleado) {
+                            console.log(documentos, cargos, gerencias, departamentos);
+                            res.render('empleados/editar', { empleado: datosEmpleado[0], documentos: documentos, cargos: cargos, gerencias: gerencias, departamentos: departamentos });
+                            console.log(datosEmpleado[0]);
+                        });
+                    });
+                });
+            });
         });
 
 
@@ -50,8 +59,9 @@ module.exports = {
         console.log(req.body);
         if (req.body) {
             empleado.actualizar(conn, req.body, function (err) {
+            console.log(body.datos);
             });
-            res.redirect('/empleados');
+           // res.redirect('/empleados');
         }
     },
 

@@ -33,19 +33,22 @@ $(document).ready(function () {
 
 
   });
-  /*
-  $('#botonAJAX').click(function(e){
-    e.preventDefault();
-    $.get("selectDocumento.json",function(data,textStatus,jqXHR){
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
-    });
-  });
-
-  */
-
   
+  /*-----------------SELECT2--------------------*/
+  /*-------------SELECT FORMULARIOS---------------*/
+  $(".custom-select").select2({
+    theme: "classic",
+    width: '100%',
+
+    language: {
+        noResults: function () {
+            return "Sin resultados";
+        },
+        searching: function () {
+            return "Buscando...";
+        }
+    },
+  });
 
     
 
