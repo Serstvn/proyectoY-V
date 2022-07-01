@@ -8,10 +8,19 @@ module.exports = {
             res.render('empleados/index', { title: 'Y&V backlog', empleados: datos });
         });
     },
-    crear: function(req,res){
-        res.render('empleados/crear');
+    crear: function (req, res) {
+        empleado.traerDocumentos(conn, function (err, documentos) {
+                    empleado.traerCargos(conn, function (err, cargos){
+                empleado.traerGerencias(conn, function (err, gerencias) { 
+            empleado.traerDeptos(conn, function (err, departamentos) {
+                        console.log(documentos,cargos,gerencias,departamentos);
+                        res.render('empleados/crear',{documentos:documentos,cargos:cargos,gerencias:gerencias,departamentos:departamentos,});
+                    });
+                 });
+            });
+        }); 
     },
-//,gerencias:datos,departamentos:datos,cargos:datos
+    //,gerencias:datos,departamentos:datos,cargos:datos
 
     //res.render('empleados/crear',{documentos:datos,gerencias:datos,departamentos:datos,cargos:datos});
 
@@ -37,10 +46,10 @@ module.exports = {
 
 
     },
-    actualizar: function (req,res) {
+    actualizar: function (req, res) {
         console.log(req.body);
-        if(req.body){
-            empleado.actualizar(conn,req.body,function(err){
+        if (req.body) {
+            empleado.actualizar(conn, req.body, function (err) {
             });
             res.redirect('/empleados');
         }
@@ -48,6 +57,6 @@ module.exports = {
 
 
 
-    
+
 
 }

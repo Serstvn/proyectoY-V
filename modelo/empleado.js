@@ -20,15 +20,15 @@ module.exports = {
 
 
     traerDocumentos:function(conn,funcion){
-        conn.query("SELECT id AS idDoc, tipoDoc FROM documentos ORDER BY id",funcion);
+        conn.query("SELECT id, tipoDoc FROM documentos ORDER BY id",funcion);
     },
     traerGerencias:function(conn,funcion){
-        conn.query("SELECT id AS idGerencia, gerencia FROM gerencias ORDER BY id",funcion);
+        conn.query("SELECT id, gerencia FROM gerencias ORDER BY id",funcion);
     },
     traerDeptos:function(conn,funcion){
-        conn.query("SELECT id AS idDpo, departamento FROM departamentos ORDER BY id",funcion);
+        conn.query("SELECT id, departamento FROM departamentos ORDER BY id",funcion);
     },
     traerCargos:function(conn,funcion){
-        conn.query("SELECT id AS idCargo, cargo FROM cargos ORDER BY id",funcion);
+        conn.query("SELECT id, cargo FROM cargos ORDER BY id",funcion);
     },
 }

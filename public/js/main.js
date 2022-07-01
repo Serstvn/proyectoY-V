@@ -47,12 +47,6 @@ $(document).ready(function () {
 
   
 
-  $('#botonAJAX').click(function (e) { 
-    e.preventDefault()
-    $.get("/selectDocumento.json",function(data){
-      console.log(data);
-    });
     
-  });
 
 });
