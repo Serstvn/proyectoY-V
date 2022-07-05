@@ -1,5 +1,6 @@
 var conn = require('../config/conexion');
 var staffing = require("../modelo/staffing");
+var empleadoSTF = require("../modelo/empleado")
 var bodyParser = require('body-parser')
 
 module.exports = {
@@ -43,10 +44,11 @@ module.exports = {
 
     },
     editarSTF: function (req, res) {
-        staffing.retornarDatosID(conn, req.params.id, function (err, datos) {
-            console.log(datos[0]);
-            res.render('staffing/crearSTF');
+        empleadoSTF.obtener(conn,function(err,datos){
+console.log(datos)
         });
+           //res.render('staffing/crearSTF');
+        
     },
 
     verEmpleados: function (req, res) {
@@ -63,11 +65,13 @@ module.exports = {
 
     /* */
     crearSTF: function (req, res) {
-         staffing.obtStaffEmpleado,staffing.obtStaffProyecto (conn, function (err, datos) {
-                console.log(datos);
-                res.render('staffing/crearSTF',{empleadosSTF:datos,proyectosSTF:datos});
-            });
-        },
+       staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
+            staffing.obtStaffProyecto(conn, function (err, proyStf) {
+                     console.log(empleadoSTF);
+                     res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF:proyStf}); 
+                    });
+                });
+    },
 
     //----------------------------------------------------------------//
 }

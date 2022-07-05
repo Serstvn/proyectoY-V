@@ -33,9 +33,9 @@ $(document).ready(function () {
 
 
   });
-  
   /*-----------------SELECT2--------------------*/
   /*-------------SELECT FORMULARIOS---------------*/
+  /* */
   $(".custom-select").select2({
     theme: "classic",
     width: '100%',
@@ -49,7 +49,7 @@ $(document).ready(function () {
         }
     },
   });
-
+ 
     
 
 });

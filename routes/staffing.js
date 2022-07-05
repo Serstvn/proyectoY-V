@@ -9,7 +9,7 @@ router.post("/",staffingC.guardar);
 /* POST eliminar page. 
 router.post("/eliminar/:id",staffingC.eliminar);  */
 /* POST editar page. */
-router.post("/editar/:id",staffingC.editar);
+router.post("/editar/:id",staffingC.editarSTF);
 /* POST actualizar page. */
 router.post("/actualizar",staffingC.actualizar);
 
