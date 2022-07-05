@@ -12,7 +12,7 @@ module.exports = {
 
     },
     retornarDatosID: function (conn, id, funcion) {
-        conn.query("SELECT e.id,doc.tipoDoc ,documento,nombre,apellido,  g.gerencia, d.departamento, c.cargo FROM empleados as e INNER JOIN documentos as doc on e.documentos_id=doc.id INNER JOIN gerencias as g on e.gerencias_id=g.id INNER JOIN departamentos as d on e.departamentos_id=d.id INNER JOIN cargos as c on e.cargos_id=c.id WHERE e.id=?", [id], funcion);
+        conn.query("SELECT documentos_id,gerencias_id,departamentos_id,cargos_id, e.id,doc.tipoDoc,documento,nombre,apellido,  g.gerencia, d.departamento, c.cargo  FROM empleados as e  INNER JOIN documentos as doc on e.documentos_id=doc.id  INNER JOIN gerencias as g on e.gerencias_id=g.id  INNER JOIN departamentos as d on e.departamentos_id=d.id  INNER JOIN cargos as c on e.cargos_id=c.id WHERE e.id=?", [id], funcion);
     },
     actualizar: function (conn, datos, funcion) {
         conn.query("UPDATE `empleados` SET documentos_id = ?,documento = ?,nombre = ?,apellido = ?,gerencias_id = ?,departamentos_id = ?,cargos_id = ? WHERE id = ?", [datos.tipoDocumento, datos.documento, datos.nombre, datos.apellido, datos.gerencia, datos.departamento, datos.cargo, datos.id], funcion);

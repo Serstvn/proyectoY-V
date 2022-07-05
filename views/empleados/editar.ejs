@@ -6,7 +6,7 @@
                 <h1 class="align-text-bottom text-center">EDITAR EMPLEADO</h1>
                 <form method="post" action="../actualizar/">
                     <br>
-                    <input type="hidden" name="id" value="<%= empleado.e.id %> ">
+                    <input type="hidden" name="id" value="<%= empleado.id %> ">
 
                     <div class="container shadow-lg p-3 mb-5 bg-waith rounded">
 
@@ -14,8 +14,8 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="my-select">TIPO DE DOCUMENTO</label>
-                                    <select class="form-control custom-select" name="tipoDocumento">
-                                        <option disabled selected>
+                                    <select class="form-control custom-select"  name="tipoDocumento">
+                                        <option  value="<%= empleado.documentos_id %>">
                                             <%= empleado.tipoDoc %>
                                         </option>
                                         <% for( let documento=0; documento < documentos.length; documento++ ) { %>
@@ -43,8 +43,8 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="my-select">GERENCIA</label>
-                                    <select class="form-control custom-select" value="" name="gerencia">
-                                        <option disabled selected>
+                                    <select class="form-control custom-select" type="number" name="gerencia">
+                                        <option  value="<%= empleado.gerencias_id %>">
                                             <%= empleado.gerencia %>
                                         </option>
                                         <% for( let gerencia=0; gerencia < gerencias.length; gerencia++ ) { %>
@@ -56,8 +56,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="my-select">DEPARTAMENTO</label>
-                                    <select class="form-control custom-select" value="" name="departamento">
-                                        <option disabled selected>
+                                    <select class="form-control custom-select" name="departamento">
+                                        <option  value="<%= empleado.departamentos_id %>">
                                             <%= empleado.departamento %>
                                         </option>
                                         <% for( let departamento=0; departamento < departamentos.length; departamento++
@@ -70,9 +70,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="my-select">CARGO</label>
-                                    <select class="form-control custom-select" value="" name="cargo">
-                                        <option disabled selected>
-                                            <%= empleado.cargo %>
+                                    <select class="form-control custom-select" name="cargo">
+                                        <option value="<%= empleado.cargos_id %>">
+                                            <%= empleado.cargo%>
                                         </option>
                                         <% for( let cargo=0; cargo < cargos.length; cargo++ ) { %>
                                             <option value="<%=cargos[cargo].id %>">

@@ -59,9 +59,8 @@ module.exports = {
         console.log(req.body);
         if (req.body) {
             empleado.actualizar(conn, req.body, function (err) {
-            console.log(body.datos);
             });
-           // res.redirect('/empleados');
+            res.redirect('/empleados');
         }
     },
 
