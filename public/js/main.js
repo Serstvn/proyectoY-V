@@ -33,6 +33,11 @@ $(document).ready(function () {
 
 
   });
+});
+
+
+$(document).ready(function () {
+
   /*-----------------SELECT2--------------------*/
   /*-------------SELECT FORMULARIOS---------------*/
   /* */
@@ -41,15 +46,31 @@ $(document).ready(function () {
     width: '100%',
 
     language: {
-        noResults: function () {
-            return "Sin resultados";
-        },
-        searching: function () {
-            return "Buscando...";
-        }
+      noResults: function () {
+        return "Sin resultados";
+      },
+      searching: function () {
+        return "Buscando...";
+      }
     },
   });
- 
-    
+});
 
+$(document).ready(function () {
+  function onMouseUp(e) {
+    const activeTextarea = document.activeElement;
+    const selection = activeTextarea.value.substring(
+      activeTextarea.selectionStart, activeTextarea.selectionEnd
+    );
+
+    const outputElement = document.getElementById('output-element');
+    const outputText = document.getElementById('output-text');
+    outputElement.innerHTML = activeTextarea.id;
+    outputText.innerHTML = selection;
+  }
+
+  const textarea1 = document.getElementById('ta-example-one');
+  const textarea2 = document.getElementById('ta-example-two');
+  textarea1.addEventListener('mouseup', onMouseUp, false);
+  textarea2.addEventListener('mouseup', onMouseUp, false);
 });

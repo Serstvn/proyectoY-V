@@ -1,5 +1,5 @@
 <%- include ../layouts/cabecera.ejs%>
-    <div class="container-fluid">
+    <div class="container">
         <br>
         <br>
 
@@ -108,9 +108,9 @@
 
                                                         <div class="form-group ">
                                                             <label for="form-group">PROYECTO</label>
-                                                            <select class="custom-select" id="empleadoSTF"
-                                                                name="empleadoSTF">
-                                                                <option disabled selected>Selecciona al proyecto
+                                                            <select class="custom-select" id="proyectoSTF"
+                                                                name="proyectoSTF">
+                                                                <option disabled selected>Selecciona el proyecto
                                                                 </option>
                                                                 <% for( let proyectoSTF=0; proyectoSTF <
                                                                     proyectosSTF.length; proyectoSTF++ ) { %>
@@ -131,9 +131,10 @@
                                                                     <div class="col">
                                                                         <div class="form-group">
                                                                             <label for="my-input">CODIGO</label>
+                                                                            
                                                                             <input id="my-input" class="form-control"
                                                                                 type="text" name="codigo">
-                                                                        </div>
+                                                                                </div>
 
                                                                         <div class="form-group">
                                                                             <label for="my-input">CECO</label>
@@ -286,4 +287,26 @@
             </div>
         </div>
     </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>Select some text from one of the text areas below:</p>
+
+<form>
+  <textarea name="ta-example-one" id="ta-example-one" rows="7" cols="40">This is Text Area One. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea>
+  <textarea name="ta-example-two" id="ta-example-two" rows="7" cols="40">This is Text Area Two. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea>
+</form>
+
+<p>Active element ID: <b id="output-element"></b></p>
+<p>Selected text: <b id="output-text"></b></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <%- include ../layouts/pie.ejs %>
