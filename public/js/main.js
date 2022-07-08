@@ -1,4 +1,5 @@
 
+
 $(document).ready(function () {
 
   $('#myTable').DataTable({
@@ -56,21 +57,15 @@ $(document).ready(function () {
   });
 });
 
+
+/*-----------------recepcion de evento con ajax--------------------*/
+/*-------------SELECT FORMULARIO empleados---------------*/
 $(document).ready(function () {
-  function onMouseUp(e) {
-    const activeTextarea = document.activeElement;
-    const selection = activeTextarea.value.substring(
-      activeTextarea.selectionStart, activeTextarea.selectionEnd
-    );
-
-    const outputElement = document.getElementById('output-element');
-    const outputText = document.getElementById('output-text');
-    outputElement.innerHTML = activeTextarea.id;
-    outputText.innerHTML = selection;
-  }
-
-  const textarea1 = document.getElementById('ta-example-one');
-  const textarea2 = document.getElementById('ta-example-two');
-  textarea1.addEventListener('mouseup', onMouseUp, false);
-  textarea2.addEventListener('mouseup', onMouseUp, false);
+  $("select[id=empleadoFormSTF]").change(function () {
+    $('select[id=gerenciaFormSTF]').val($(this).val());
+    $('select[id=tipoDocFormSTF]').val($(this).val());
+    $('select[id=documentoFormSTF]').val($(this).val());
+    $('select[id=departamentoFormSTF]').val($(this).val());
+    $('select[id=cargoFormSTF]').val($(this).val());
+  });
 });

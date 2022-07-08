@@ -19,6 +19,7 @@ router.get('/crearSTF' ,staffingC.crearSTF);
 
 
 
+router.get('/registroEmpleadoSTF',staffingC.pruebaAjax);
 /*      
 router.get('/crearSTF', (req,res) =>{
     res.render("crearSTF")

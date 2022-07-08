@@ -1,7 +1,7 @@
 var conn = require('../config/conexion');
 var staffing = require("../modelo/staffing");
 var empleadoSTF = require("../modelo/empleado")
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 
 module.exports = {
     index: function (req, res) {
@@ -61,17 +61,36 @@ console.log(datos)
 
 
     //----------------------------------------------------------------//
-    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS MODALES//
+    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
 
     /* */
     crearSTF: function (req, res) {
        staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
-            staffing.obtStaffProyecto(conn, function (err, proyStf) {
-                     console.log(empleadoSTF);
-                     res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF:proyStf}); 
+        staffing.obtStaffProyecto(conn, function (err, proyStf) {
+            staffing.obtStaffGerencia(conn, function (err, gerenciaStf) {
+                    // console.log(empleadoSTF);
+                     res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF:proyStf, gerenciasSTF:gerenciaStf }); 
                     });
                 });
+            });
     },
+
+    //----------------------------------------------------------------//
+    //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL EMPLEADO//
+    retornarEmpleado: function (req, res){
+        res.send(req.body);
+        console.log('pues se supone que aqui va la info del select');
+    },
+
+
+    //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL PROYECTO//
+
+pruebaAjax:function (req,res){
+    staffing.obtener(conn, function (err, datos) {
+        console.log(datos);
+    });
+},
+
 
     //----------------------------------------------------------------//
 }
