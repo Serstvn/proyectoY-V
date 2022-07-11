@@ -62,10 +62,24 @@ $(document).ready(function () {
 /*-------------SELECT FORMULARIO empleados---------------*/
 $(document).ready(function () {
   $("select[id=empleadoFormSTF]").change(function () {
-    $('select[id=gerenciaFormSTF]').val($(this).val());
+    $('select[id=idEmpleadoSTF]').val($(this).val());
+    $('select[id=nombreFormSTF]').val($(this).val());
+    $('select[id=apellidoFormSTF]').val($(this).val());
     $('select[id=tipoDocFormSTF]').val($(this).val());
     $('select[id=documentoFormSTF]').val($(this).val());
+    $('select[id=gerenciaFormSTF]').val($(this).val());
     $('select[id=departamentoFormSTF]').val($(this).val());
     $('select[id=cargoFormSTF]').val($(this).val());
   });
 });
+$(document).ready(function () {
+  $("select[id=proyectoFormSTF]").change(function () {
+    $('select[id=idProyectoSTF]').val($(this).val());
+    $('select[id=codigoSTF]').val($(this).val());
+    $('select[id=cecoSTF]').val($(this).val());
+    $('select[id=clienteSTF]').val($(this).val());
+    $('select[id=nomCortoSTF]').val($(this).val());
+    $('select[id=gerenteSTF]').val($(this).val());
+  });
+});
+

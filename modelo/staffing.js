@@ -9,13 +9,23 @@
         conn.query("SELECT * FROM proyectos WHERE id=?", [id], funcion);
         
     },
+
+
+
+
     obtStaffEmpleado: function (conn, funcion) {
         conn.query("SELECT e.id,doc.tipoDoc ,documento,nombre,apellido,  g.gerencia, d.departamento, c.cargo FROM empleados as e INNER JOIN documentos as doc on e.documentos_id=doc.id INNER JOIN gerencias as g on e.gerencias_id=g.id INNER JOIN departamentos as d on e.departamentos_id=d.id INNER JOIN cargos as c on e.cargos_id=c.id", funcion);  
     },
     obtStaffProyecto: function (conn, funcion) {
-        conn.query("SELECT id ,codigo, nomCorto  FROM proyectos ", funcion);
+        conn.query("SELECT p.id,codigo, cliente, nomCorto, e.nombre AS nombreGerente, c.ceco FROM proyectos as p INNER JOIN empleados as e on p.empleados_id=e.id INNER JOIN cecos as c on p.ceco_id=c.id order by id", funcion);
     },
-    obtStaffGerencia: function (conn, funcion) {
-        conn.query("SELECT empleados.id,gerencias.gerencia FROM empleados  INNER JOIN gerencias on empleados.gerencias_id=gerencias.id  order by id", funcion);
-    },
+
+    insertarSTF: function(conn,datos,funcion){
+        conn.query("INSERT INTO `staffing` ( `id_empleado`, `id_proyecto`) VALUES (?,?)", [ datos.idEmpleadoSTF,datos.idProyectoSTF], funcion);
+    }
+    
+
+
+
+
 }

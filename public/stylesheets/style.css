@@ -171,7 +171,16 @@ div.dataTables_wrapper div.dataTables_filter {
 #cargoFormSTF,
 #documentoFormSTF,
 #tipoDocFormSTF,
-#gerenciaFormSTF{
+#codigoSTF,
+#cecoSTF,
+#clienteSTF,
+#nomCortoSTF,
+#gerenteSTF,
+#gerenciaFormSTF,
+#idProyectoSTF,
+#idEmpleadoSTF{
+  border-radius: 8px;
+  pointer-events: none;
   appearance: none;
   text-align: center;
   width: 100%;
@@ -180,6 +189,7 @@ div.dataTables_wrapper div.dataTables_filter {
   margin-top: 10px;
   font-size: 20px;
 }
+
 h5{
   font-size: 20px;
   text-align: center;
@@ -192,7 +202,3 @@ h5{
 label{
  font-size: 20px; 
 }
-
-
-
-

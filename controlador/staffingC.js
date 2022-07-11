@@ -32,6 +32,21 @@ module.exports = {
         });
 
     },
+    //----------------------------------------------------------------//
+    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
+
+    /* */
+    crearSTF: function (req, res) {
+       staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
+        staffing.obtStaffProyecto(conn, function (err, proyStf) {
+                    //console.log(empleadoSTF,proyStf);
+                      res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF:proyStf}); 
+                    });
+                });
+    },
+
+
+
     actualizar: function name(req, res) {
         console.log(req.body);
         if (req.body) {
@@ -60,20 +75,6 @@ console.log(datos)
     },
 
 
-    //----------------------------------------------------------------//
-    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
-
-    /* */
-    crearSTF: function (req, res) {
-       staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
-        staffing.obtStaffProyecto(conn, function (err, proyStf) {
-            staffing.obtStaffGerencia(conn, function (err, gerenciaStf) {
-                    // console.log(empleadoSTF);
-                     res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF:proyStf, gerenciasSTF:gerenciaStf }); 
-                    });
-                });
-            });
-    },
 
     //----------------------------------------------------------------//
     //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL EMPLEADO//
@@ -85,10 +86,15 @@ console.log(datos)
 
     //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL PROYECTO//
 
-pruebaAjax:function (req,res){
-    staffing.obtener(conn, function (err, datos) {
-        console.log(datos);
-    });
+    verBody:function (req,res){
+        console.log(req.body);
+        if (req.body) {
+
+            staffing.insertarSTF(conn, req.body, function (err) {
+
+                res.redirect('/staffing');
+            });
+        }
 },
 
 
