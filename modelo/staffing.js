@@ -3,7 +3,7 @@
 
 
     obtener: function (conn, funcion) {
-        conn.query("  SELECT ST.id, E.documentos_id, E.documento, E.nombre, E.apellido, E.gerencias_id, E.departamentos_id, E.cargos_id, P.codigo, P.ceco_id, P.cliente, P.nomCorto, P.empleados_id, F.fechaInicial, F.fechaFinal, F.valor FROM staffing AS ST INNER JOIN empleados AS E ON ST.id_empleado=E.id INNER JOIN proyectos AS P ON ST.id_proyecto=P.id INNER JOIN fechas AS F ON ST.id_fecha=F.id", funcion);
+        conn.query("SELECT doc.tipoDoc, g.gerencia, d.departamento, c.cargo,  ST.id, E.documento, E.nombre, E.apellido, P.codigo, P.cliente, P.nomCorto, F.valor, DATE_FORMAT(F.fechaFinal, '%M %d %Y') AS Fecha_Final, DATE_FORMAT(F.fechaInicial, '%M %d %Y') AS Fecha_Inicial FROM staffing AS ST INNER JOIN empleados AS E ON ST.id_empleado=E.id INNER JOIN proyectos AS P ON ST.id_proyecto=P.id INNER JOIN fechas AS F ON ST.id_fecha=F.id INNER JOIN documentos as doc on e.documentos_id=doc.id INNER JOIN gerencias as g on e.gerencias_id=g.id INNER JOIN departamentos as d on e.departamentos_id=d.id INNER JOIN cargos as c on e.cargos_id=c.id", funcion);
     },
     retornarDatosID: function (conn, id, funcion) {
         conn.query("SELECT * FROM proyectos WHERE id=?", [id], funcion);

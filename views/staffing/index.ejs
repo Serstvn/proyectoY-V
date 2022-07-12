@@ -1,46 +1,52 @@
 <%- include ../layouts/cabecera.ejs %>
-        <div class="container position-fixed"><a href="../staffing/crearSTF"
-                class="btn btn-outline-warning mt-4 position-fixed text-right"><i
-                    class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
+        
+<div class="container-fluid">
+        <br><br>
+        <h1>STAFFING</h1>
+        <div class="container-fluid position-fixed">
+            <br><br><br><br>
+            
+            <a href="../staffing/crearSTF" class="btn btn-outline-warning mt-1 position-fixed text-right"><i
+                class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
             <br>
             <br>
             <br>
             <a href="" class=" btn btn-outline-warning mt-4 text-right"><i
                     class='bx bx-calendar bx-md bx-flashing-hover'></i></a>
         </div>
-    <div class="container">
+    <div class="container-fluid tablaProyecto" style="padding: 6em;">
         <br>
-        <br>
-        <h1>STAFFING</h1>
-        <br>
-        <div class="container-fluid p-3 mb-5 bg-white rounded">
-            <table id="myTable" class="table  table-hover text-center mt-4 table-responsive">
+        <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
+            <table id="myTable"  style="margin: 0 auto; width: 100%;" class="table  table-hover text-center table-responsive">
 
-                <thead class="thead">
+                <thead class="thead text-center">
                     <tr>
-                        <th>ACCION</th>
-                        <th>ID</th>
-                        <th>documentos_id</th>
-                        <th>documento</th>
-                        <th>nombre</th>
-                        <th>apellido</th>
-                        <th>gerencias_id</th>
-                        <th>departamentos_id</th>
-                        <th>cargos_id</th>
-                        <th>codigo</th>
-                        <th>ceco_id</th>
-                        <th>cliente</th>
-                        <th>nomCorto</th>
-                        <th>empleados_id</th>
-                        <th>fechaInicial</th>
-                        <th>fechaFinal</th>
-                        <th>asignación</th>
+                        <th style="text-align: center;">ACCION</th>
+                                    <!---empleado---->
+                        <th style="text-align: center;">#</th>
+                        <th style="text-align: center;">Tipo Doc</th>
+                        <th style="text-align: center;">Documento</th>
+                        <th style="text-align: center;">Nombre</th>
+                        <th style="text-align: center;">Apellido</th>
+                        <th style="text-align: center;">Gerencia</th>
+                        <th style="text-align: center;">Departamento</th>
+                        <th style="text-align: center;">Cargo</th>
+                                    <!---proyecto---->
+                        <th style="text-align: center;">Codigo</th>
+                        <th style="text-align: center;">Ceco</th>
+                        <th style="text-align: center;">Cliente</th>
+                        <th style="text-align: center;">Nombre corto</th>
+                        <th style="text-align: center;">Gerente</th>
+                                <!---fechas - valor---->
+                        <th style="text-align: center;">Fecha Inicial</th>
+                        <th style="text-align: center;">Fecha Final</th>
+                        <th style="text-align: center;">Asignación</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
                     <% for( let staffing=0; staffing < staffings.length; staffing++ ) { %>
                         <tr id="myRow">
-                            <td>
+                            <td style="width:100px;">
                                 <div class="btn-group" role="group" aria-label="Button group">
 
                                     <form class="form-inline" method="post"
@@ -49,6 +55,7 @@
                                                 class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
                                     </form>
                                 </div>
+                                <hr>
                                 <div class="btn-group" role="group" aria-label="Button group">
 
                                     <form class="form-inline" method="post" action="">
@@ -58,52 +65,55 @@
                                     </form>
                                 </div>
                             </td>
+                            <!---empleado---->
                             <td>
                                 <%=staffings[staffing].id %>
                             </td>
                             <td>
-                                <%=staffings[staffing].documentos_id %>
+                                <%=staffings[staffing].tipoDoc %>
                             </td>
                             <td>
                                 <%=staffings[staffing].documento %>
                             </td>
-                            <td>
+                            <td id="ColorTableSTF">
                                 <%=staffings[staffing].nombre %>
                             </td>
-                            <td>
-                                <%=staffings[staffing].apellido %>
+                            <td id="ColorTableSTF">
+                                <%=staffings[staffing].apellido %> 
                             </td>
                             <td>
-                                <%=staffings[staffing].ceco_id %>
+                                <%=staffings[staffing].gerencia%>
                             </td>
                             <td>
-                                <%=staffings[staffing].departamentos_id %>
+                                <%=staffings[staffing].departamento %>
                             </td>
                             <td>
-                                <%=staffings[staffing].cargos_id %>
+                                <%=staffings[staffing].cargo %>
+                            </td>
+                            <!---proyecto---->
+                            <td>
+                                <%=staffings[staffing].codigo%>
                             </td>
                             <td>
-                                <%=staffings[staffing].codigo %>
+                                <%=staffings[staffing].ceco%>
                             </td>
-                            <td>
-                                <%=staffings[staffing].ceco_id %>
-                            </td>
-                            <td>
+                            <td id="ColorTableSTF">
                                 <%=staffings[staffing].cliente %>
                             </td>
-                            <td>
+                            <td id="ColorTableSTF">
                                 <%=staffings[staffing].nomCorto %>
                             </td>
                             <td>
                                 <%=staffings[staffing].empleados_id %>
                             </td>
-                            <td>
-                                <%=staffings[staffing].fechaInicial %>
+                            <!---fechas - valor---->
+                            <td id="ColorTableFechaSTF">
+                                <%=staffings[staffing].Fecha_Inicial %>
+                            </td >
+                            <td id="ColorTableFechaSTF">
+                                <%=staffings[staffing].Fecha_Final %>
                             </td>
-                            <td>
-                                <%=staffings[staffing].fechaFinal %>
-                            </td>
-                            <td>
+                            <td id="TdValorSTF">
                                 <%=staffings[staffing].valor %>
                             </td>
                         </tr>
@@ -112,6 +122,8 @@
             </table>
         </div>
     </div>
+    
+</div>
 
 
 

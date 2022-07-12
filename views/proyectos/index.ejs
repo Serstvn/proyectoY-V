@@ -1,31 +1,31 @@
 <%- include ../layouts/cabecera.ejs %>
 
     <div class="container-fluid">
-        <br>
-        <br>
+        <br><br>
 
         <h1>DIRECTORIO ACTIVO DE PROYECTOS</h1>
-        <br>
 
-        <div class="container-fluid position-fixed"><a href="/proyectos/crear"
-                class="btn btn-outline-warning mt-1 position-fixed text-right"><i
+
+        <div class="container-fluid position-fixed">
+            <br><br><br><br>
+            <a href="/proyectos/crear" class="btn btn-outline-warning mt-1 position-fixed text-right"><i
                     class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
         </div>
-        <div class="container">
+        <div class="container-fluid " style="padding: 6em;">
 
 
-            <div class="container shadow p-3 mb-5 bg-white rounded">
+            <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
 
-                <table id="myTable" class="table  table-hover text-center mt-4 table-responsive">
+                <table id="myTable"  style="margin: 0 auto; width: 100%;" class="table table-hover text-center table-responsive-xl">
                     <thead class="thead">
                         <tr>
-                            <th>#</th>
-                            <th>CODIGO</th>
-                            <th>CECO</th>
-                            <th>CLIENTE</th>
-                            <th>NOMBRE CORTO</th>
-                            <th>GERENTE</th>
-                            <th>ACCIÓN</th>
+                            <th style="text-align: center;">#</th>
+                            <th style="text-align: center;">CODIGO</th>
+                            <th style="text-align: center;">CECO</th>
+                            <th style="text-align: center;">CLIENTE</th>
+                            <th style="text-align: center;">NOMBRE CORTO</th>
+                            <th style="text-align: center;">GERENTE</th>
+                            <th style="text-align: center;">ACCIÓN</th>
                         </tr>
                     </thead>
                     <tbody id="myTable">
@@ -74,6 +74,7 @@
                 </table>
             </div>
         </div>
+    </div>
 
 
 

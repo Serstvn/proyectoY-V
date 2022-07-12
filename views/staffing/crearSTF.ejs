@@ -150,7 +150,7 @@
                                 <br>
                                 <!-- BOTON SELECT PROYECTOS -->
                                 <div class="shadow p-3 mb-5 bg-white rounded">
-                                    <select  class="custom-select" id="proyectoFormSTF">
+                                    <select required class="custom-select" id="proyectoFormSTF">
                                         <option disabled selected>Selecciona el proyecto
                                         </option>
                                         <% for(let proyectoSTF=0;proyectoSTF<proyectosSTF.length;proyectoSTF++){%>
@@ -238,10 +238,14 @@
                             </div>
 
 
-                            <div class="col-sm-12 ">
+                            <div class="col-sm-12">
                             <form action="/staffing/registroEmpleadoSTF" method="post">
-
-                    
+                                <div">
+                                <input type="date" name="fechaInicio" id="fechaInicio" required>
+                                
+                                <input type="date" name="fechaFin" id="fechaFin" required>
+                                </div>
+                                
                                 <div class="form-group"  style="display: none">
                                     <label for="my-input">Id_Proyecto</label>
                                     <select id="idProyectoSTF" name="idProyectoSTF"  >
@@ -266,25 +270,19 @@
                                     </select>
                                 </div>
                     
-                            <div class="col-sm-12 align-items-center">
-                                <div class="text-center">
+                                <div class="col-sm-12 align-items-center">
+                                    <div class="text-center">
             
-                                    <button type="submit" class="btn btn-outline-warning m-2"><i
-                                            class='bx bx-check-circle bx-md bx-flashing-hover'></i></button>
+                                        <button type="submit" class="btn btn-outline-warning m-2"><i
+                                        class='bx bx-check-circle bx-md bx-flashing-hover'></i></button>
 
 
-                                            <a href="/staffing" onclick="return confirm('seguro quieres salir??')"
-                                            class="btn btn-outline-danger m-2"><i class='bx bx-x-circle bx-md'></i></a>
+                                        <a href="/staffing" onclick="return confirm('seguro quieres salir??')"
+                                        class="btn btn-outline-danger m-2"><i class='bx bx-x-circle bx-md'></i></a>
+                                   </div>
                                 </div>
-                            </div>
                             </form>
-
                             </div>
-                
-
-
-
-                            
                         </div>
                     </div>
                 </div>
@@ -294,7 +292,8 @@
             <br>
             <hr>
             <br>
-            <div class="container-fluid">
+          <!--- 
+          <div class="container-fluid" style="padding: 5em;">
                 
             <div>
                 <h2>Datos a enviar a sftaffing</h2>
@@ -370,6 +369,7 @@
                 </div>
             </div>
             </div>
+            ---> 
         </div>
     </div>
     </div>

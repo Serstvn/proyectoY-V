@@ -7,17 +7,31 @@ module.exports = {
     index: function (req, res) {
         staffing.obtener(conn, function (err, datos) {
             console.log(datos);
-            res.render('staffing/index', { title: 'Y&V backlog', staffings: datos });
+           res.render('staffing/index', { title: 'Y&V backlog', staffings: datos });
         });
     },
-    guardar: function (req, res) {
-        console.log(req.body);
+    //----------------------------------------------------------------//
+    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
 
-        staffing.insertar(conn, req.body, function (err) {
-            res.redirect('/staffing');
-
+    /* */
+    crearSTF: function (req, res) {
+        staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
+            staffing.obtStaffProyecto(conn, function (err, proyStf) {
+                //console.log(empleadoSTF,proyStf);
+                res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF: proyStf });
+            });
         });
+    },
+    //VSTA CREAR STFF + INGRESAR REGISTRO EN BASE DE DATOS//
+    registrarSTF: function (req, res) {
+        console.log(req.body);
+        if (req.body) {
 
+            staffing.insertarSTF(conn, req.body, function (err) {
+
+                res.redirect('/staffing');
+            });
+        }
     },
     eliminar: function (req, res) {
         console.log("recepcion de datos");
@@ -25,24 +39,15 @@ module.exports = {
             res.redirect('/staffing');
         });
     },
+
+
+    
     editar: function (req, res) {
         staffing.retornarDatosID(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
             res.render('staffing/editar', { staffing: datos[0] });
         });
 
-    },
-    //----------------------------------------------------------------//
-    //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
-
-    /* */
-    crearSTF: function (req, res) {
-       staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
-        staffing.obtStaffProyecto(conn, function (err, proyStf) {
-                    //console.log(empleadoSTF,proyStf);
-                      res.render('staffing/crearSTF', { empleadosSTF: empleadoSTF, proyectosSTF:proyStf}); 
-                    });
-                });
     },
 
 
@@ -59,11 +64,11 @@ module.exports = {
 
     },
     editarSTF: function (req, res) {
-        empleadoSTF.obtener(conn,function(err,datos){
-console.log(datos)
+        empleadoSTF.obtener(conn, function (err, datos) {
+            console.log(datos)
         });
-           //res.render('staffing/crearSTF');
-        
+        //res.render('staffing/crearSTF');
+
     },
 
     verEmpleados: function (req, res) {
@@ -78,24 +83,12 @@ console.log(datos)
 
     //----------------------------------------------------------------//
     //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL EMPLEADO//
-    retornarEmpleado: function (req, res){
+    retornarEmpleado: function (req, res) {
         res.send(req.body);
         console.log('pues se supone que aqui va la info del select');
     },
 
 
-    //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL PROYECTO//
-
-    verBody:function (req,res){
-        console.log(req.body);
-        if (req.body) {
-
-            staffing.insertarSTF(conn, req.body, function (err) {
-
-                res.redirect('/staffing');
-            });
-        }
-},
 
 
     //----------------------------------------------------------------//

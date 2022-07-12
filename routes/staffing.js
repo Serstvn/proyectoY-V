@@ -9,30 +9,21 @@ router.get('/',staffingC.index);
 router.get('/crearSTF' ,staffingC.crearSTF);
 
 
+/*RUTA PARA ENVIAR DATOS Y CREAR REGISTRO STF. */
+router.post('/registroEmpleadoSTF',staffingC.registrarSTF);
 
 
 
 
 
-/* POST guardar page. */
-router.post("/",staffingC.guardar);
-/* POST eliminar page. 
+/* page POST eliminar registro STF. 
 router.post("/eliminar/:id",staffingC.eliminar);  */
-/* POST editar page. */
+
+
+/* page POST editar registro STF . */
 router.post("/editar/:id",staffingC.editarSTF);
 /* POST actualizar page. */
 router.post("/actualizar",staffingC.actualizar);
-
-router.post('/registroEmpleadoSTF',staffingC.verBody);
-/*      
-router.get('/crearSTF', (req,res) =>{
-    res.render("crearSTF")
-});
-*/
-
-/* POST editarSTF page. */
-router.post("/editarSTF/",staffingC.editarSTF);
-
 
 /* GET home page EMPLEADOS PARA VISTA CREAR. */
 
