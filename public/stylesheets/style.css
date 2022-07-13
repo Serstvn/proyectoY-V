@@ -210,7 +210,7 @@ h5{
   text-align: center;
 }
 label{
- font-size: 20px; 
+ font-size: 20px;
 }
 
 #ColorTableFechaSTF{
@@ -237,4 +237,34 @@ label{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+
+.colSFTEmpleado{
+  background-color: rgb(155, 194, 216);
+}
+.colSFTProyecto{
+  background-color: rgb(169, 216, 155);
+}
+.btnSTF{
+  margin-top: 6%;
+}
+
+#textoAsignacionSTF{
+  margin:0;
+  padding:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  border-color: #b9b9b9;
+  margin-top: 10%;
+  border:1;
+
+}
+#seccionBtnSTF{
+text-align: center;
+}
+
+.labelSTF{
+  text-transform: none;
 }

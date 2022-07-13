@@ -13,6 +13,8 @@ router.get('/crearSTF' ,staffingC.crearSTF);
 router.post('/registroEmpleadoSTF',staffingC.registrarSTF);
 
 
+/* POST eliminar page. */
+router.post("/eliminar/:id",staffingC.eliminar);
 
 
 

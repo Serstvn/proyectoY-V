@@ -47,32 +47,35 @@
                     <% for( let staffing=0; staffing < staffings.length; staffing++ ) { %>
                         <tr id="myRow">
                             <td style="width:100px;">
-                                <div class="btn-group" role="group" aria-label="Button group">
-
+                                    
+                                </div>
+                                <div class="btn-group " role="group" aria-label="Button group">
+                                    <div>
                                     <form class="form-inline" method="post"
                                         action="/staffing/editar/<%=staffings[staffing].id %>">
-                                        <button class="btn btn-outline-info" type="submit"><i
+                                        <button class="btn btn-outline-info btnSTF" type="submit"><i
                                                 class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
                                     </form>
-                                </div>
-                                <hr>
-                                <div class="btn-group" role="group" aria-label="Button group">
-
-                                    <form class="form-inline" method="post" action="">
-                                        <button class="btn btn-outline-danger"
-                                            onclick="eliminarSTFcrear('<%=staffings[staffing].id %>')" type="submit"><i
+                                    </div>
+                                    <div>
+                                    <form class="form-inline" method="post" action="/staffing/eliminar/<%=staffings[staffing].id %>">
+                                        <button class="btn btn-outline-danger btnSTF"
+                                            onclick="alert('estas segur@ que quieres eliminar a:'+'<%=staffings[staffing].nombre %>'+'asignad@ al proyecto'+'<%=staffings[staffing].codigo %>'+'???')" type="submit"><i
                                                 class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                     </form>
+                                    </div>
+
+
                                 </div>
                             </td>
                             <!---empleado---->
-                            <td>
+                            <td class="colSFTEmpleado">
                                 <%=staffings[staffing].id %>
                             </td>
-                            <td>
+                            <td class="colSFTEmpleado">
                                 <%=staffings[staffing].tipoDoc %>
                             </td>
-                            <td>
+                            <td class="colSFTEmpleado">
                                 <%=staffings[staffing].documento %>
                             </td>
                             <td id="ColorTableSTF">
@@ -81,20 +84,20 @@
                             <td id="ColorTableSTF">
                                 <%=staffings[staffing].apellido %> 
                             </td>
-                            <td>
+                            <td class="colSFTEmpleado">
                                 <%=staffings[staffing].gerencia%>
                             </td>
-                            <td>
+                            <td class="colSFTEmpleado">
                                 <%=staffings[staffing].departamento %>
                             </td>
-                            <td>
+                            <td class="colSFTEmpleado">
                                 <%=staffings[staffing].cargo %>
                             </td>
                             <!---proyecto---->
-                            <td>
+                            <td class="colSFTProyecto">
                                 <%=staffings[staffing].codigo%>
                             </td>
-                            <td>
+                            <td class="colSFTProyecto">
                                 <%=staffings[staffing].ceco%>
                             </td>
                             <td id="ColorTableSTF">
@@ -103,15 +106,15 @@
                             <td id="ColorTableSTF">
                                 <%=staffings[staffing].nomCorto %>
                             </td>
-                            <td>
+                            <td class="colSFTProyecto">
                                 <%=staffings[staffing].empleados_id %>
                             </td>
                             <!---fechas - valor---->
                             <td id="ColorTableFechaSTF">
-                                <%=staffings[staffing].Fecha_Inicial %>
+                                <%=staffings[staffing].fechaInicial %>
                             </td >
                             <td id="ColorTableFechaSTF">
-                                <%=staffings[staffing].Fecha_Final %>
+                                <%=staffings[staffing].fechaFinal %>
                             </td>
                             <td id="TdValorSTF">
                                 <%=staffings[staffing].valor %>

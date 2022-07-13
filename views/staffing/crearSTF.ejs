@@ -13,9 +13,6 @@
 
                     <div class="container">
                         <div class="row">
-
-
-
                             <div class="col">
                                 <br>
                                 <br>
@@ -136,13 +133,7 @@
 
                                 </div>
                             </div>
-
-
-                            <br>
-                            <br>
-
-
-
+                            <br><br>
                             <div class="col">
                                 <br>
                                 <br>
@@ -237,14 +228,8 @@
                                 </div>
                             </div>
 
-
                             <div class="col-sm-12">
                             <form action="/staffing/registroEmpleadoSTF" method="post">
-                                <div">
-                                <input type="date" name="fechaInicio" id="fechaInicio" required>
-                                
-                                <input type="date" name="fechaFin" id="fechaFin" required>
-                                </div>
                                 
                                 <div class="form-group"  style="display: none">
                                     <label for="my-input">Id_Proyecto</label>
@@ -270,17 +255,38 @@
                                     </select>
                                 </div>
                     
-                                <div class="col-sm-12 align-items-center">
-                                    <div class="text-center">
-            
-                                        <button type="submit" class="btn btn-outline-warning m-2"><i
-                                        class='bx bx-check-circle bx-md bx-flashing-hover'></i></button>
 
+                                <div id="seccionBtnSTF" class="row shadow p-3 mb-5 bg-white rounded">
+                                    <div class="col-sm-4">
 
-                                        <a href="/staffing" onclick="return confirm('seguro quieres salir??')"
-                                        class="btn btn-outline-danger m-2"><i class='bx bx-x-circle bx-md'></i></a>
-                                   </div>
+                                    <label class="labelSTF">Selecciona la fecha INICIAL</label>
+                                    <hr>
+                                    <input type="date" id="fechaInicio" name="fechaInicio" class="btn-group m-4">
+
                                 </div>
+                                <div class="col-sm-4">
+                                    <label class="labelSTF">Selecciona la fecha FINAL</label>
+                                    <hr>
+                                    <input type="date" id="fechaFin" name="fechaFin" class="btn-group m-4" >
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <label class="labelSTF">Asignacion</label>
+                                    <hr>
+                                    <input id="textoAsignacionSTF" class="form-control text-center" type="number" name="aisgnacion" step="0.01" min="0.10" max="1.00" placeholder="Valor decimal no mayor a 1.">
+                                    </div>
+
+                                </div>
+
+                                <div class="text-center col-sm-12">
+                                    <button type="submit" class="btn btn-outline-warning ml-8"><i
+                                    class='bx bx-check-circle bx-md bx-flashing-hover'></i></button>
+
+
+                                    <a href="/staffing" onclick="return confirm('seguro quieres salir??')"
+                                    class="btn btn-outline-danger m-4"><i class='bx bx-x-circle bx-md'></i></a>
+                                </div>
+
                             </form>
                             </div>
                         </div>
@@ -291,8 +297,7 @@
 
             <br>
             <hr>
-            <br>
-          <!--- 
+            <br> 
           <div class="container-fluid" style="padding: 5em;">
                 
             <div>
@@ -369,7 +374,8 @@
                 </div>
             </div>
             </div>
-            ---> 
+           
+          <!--- ---> 
         </div>
     </div>
     </div>
