@@ -231,14 +231,6 @@ label{
   font-weight: normal;
 }
 
-.tablaProyecto{
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
 .colSFTEmpleado{
   background-color: rgb(155, 194, 216);
 }

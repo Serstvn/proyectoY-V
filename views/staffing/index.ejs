@@ -3,19 +3,13 @@
 <div class="container-fluid">
         <br><br>
         <h1>STAFFING</h1>
+
         <div class="container-fluid position-fixed">
             <br><br><br><br>
-            
             <a href="../staffing/crearSTF" class="btn btn-outline-warning mt-1 position-fixed text-right"><i
                 class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
-            <br>
-            <br>
-            <br>
-            <a href="" class=" btn btn-outline-warning mt-4 text-right"><i
-                    class='bx bx-calendar bx-md bx-flashing-hover'></i></a>
         </div>
     <div class="container-fluid tablaProyecto" style="padding: 6em;">
-        <br>
         <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
             <table id="myTable"  style="margin: 0 auto; width: 100%;" class="table  table-hover text-center table-responsive">
 
@@ -60,7 +54,7 @@
                                     <div>
                                     <form class="form-inline" method="post" action="/staffing/eliminar/<%=staffings[staffing].id %>">
                                         <button class="btn btn-outline-danger btnSTF"
-                                            onclick="alert('estas segur@ que quieres eliminar a:'+'<%=staffings[staffing].nombre %>'+'asignad@ al proyecto'+'<%=staffings[staffing].codigo %>'+'???')" type="submit"><i
+                                            onclick="alert('estas segur@ que quieres eliminar a: '+'<%=staffings[staffing].nombre %>'+' asignad@ al proyecto '+'<%=staffings[staffing].codigo %>'+'???')" type="submit"><i
                                                 class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
                                     </form>
                                     </div>
@@ -107,7 +101,7 @@
                                 <%=staffings[staffing].nomCorto %>
                             </td>
                             <td class="colSFTProyecto">
-                                <%=staffings[staffing].empleados_id %>
+                                <%=staffings[staffing].encargado %>
                             </td>
                             <!---fechas - valor---->
                             <td id="ColorTableFechaSTF">
