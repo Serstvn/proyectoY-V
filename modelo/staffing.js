@@ -3,7 +3,7 @@ module.exports = {
 
 
     obtener: function (conn, funcion) {
-        conn.query("SELECT doc.tipoDoc, g.gerencia, d.departamento, c.cargo,  ST.id, E.documento, E.nombre, E.apellido, P.codigo, cec.ceco ,P.cliente, P.nomCorto, empl.nombre AS encargado, DATE_FORMAT(fechaInicial, '%M %d %Y') AS fechaInicial,  DATE_FORMAT(fechaFinal, '%M %d %Y') AS fechaFinal, valor FROM staffing AS ST INNER JOIN empleados AS E ON ST.id_empleado=E.id INNER JOIN proyectos AS P ON ST.id_proyecto=P.id INNER JOIN documentos as doc on e.documentos_id=doc.id INNER JOIN gerencias as g on e.gerencias_id=g.id INNER JOIN departamentos as d on e.departamentos_id=d.id INNER JOIN cargos as c on e.cargos_id=c.id INNER JOIN cecos as cec on p.ceco_id=cec.id INNER JOIN proyectos as pro INNER JOIN empleados as empl ON pro.empleados_id=empl.id", funcion);
+        conn.query("SELECT doc.tipoDoc, g.gerencia, d.departamento, c.cargo,  ST.id, E.documento, E.nombre, E.apellido, P.codigo, cec.ceco ,P.cliente, P.nomCorto, DATE_FORMAT(fechaInicial, '%M %d %Y') AS fechaInicial,  DATE_FORMAT(fechaFinal, '%M %d %Y') AS fechaFinal, valor FROM staffing AS ST INNER JOIN empleados AS E ON ST.id_empleado=E.id INNER JOIN proyectos AS P ON ST.id_proyecto=P.id INNER JOIN documentos as doc on e.documentos_id=doc.id INNER JOIN gerencias as g on e.gerencias_id=g.id INNER JOIN departamentos as d on e.departamentos_id=d.id INNER JOIN cargos as c on e.cargos_id=c.id INNER JOIN cecos as cec on p.ceco_id=cec.id", funcion);
     },
     retornarDatosIdSTF: function (conn, id, funcion) {
         conn.query("SELECT * FROM staffing WHERE id=?", [id], funcion);
@@ -33,4 +33,7 @@ module.exports = {
 
 
 }
+
+
+
 
