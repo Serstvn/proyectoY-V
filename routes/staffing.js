@@ -23,7 +23,7 @@ router.post("/eliminar/:id",staffingC.eliminar);  */
 
 
 /* page POST editar registro STF . */
-router.post("/editar/:id",staffingC.editarSTF);
+router.post("/editar/:id",staffingC.editar);
 /* POST actualizar page. */
 router.post("/actualizar",staffingC.actualizar);
 

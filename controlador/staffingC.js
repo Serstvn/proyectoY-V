@@ -43,7 +43,7 @@ module.exports = {
 
     
     editar: function (req, res) {
-        staffing.retornarDatosID(conn, req.params.id, function (err, datos) {
+        staffing.retornarDatosIdSTF(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
             res.render('staffing/editar', { staffing: datos[0] });
         });
