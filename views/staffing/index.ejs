@@ -1,128 +1,170 @@
 <%- include ../layouts/cabecera.ejs %>
-        
-<div class="container-fluid">
+
+    <div class="container-fluid">
         <br><br>
         <h1>STAFFING</h1>
 
         <div class="container-fluid position-fixed">
             <br><br><br><br>
             <a href="../staffing/crearSTF" class="btn btn-outline-warning mt-1 position-fixed text-right"><i
-                class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
+                    class='bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
         </div>
-    <div class="container-fluid tablaProyecto" style="padding: 6em;">
-        <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
-            <table id="myTable"  style="margin: 0 auto; width: 100%;" class="table  table-hover text-center table-responsive">
+        <div class="container-fluid tablaProyecto" style="padding: 6em;">
+            <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
+                <table id="myTable" style="margin: 0 auto; width: 100%;"
+                    class="table  table-hover text-center table-responsive">
 
-                <thead class="thead text-center">
-                    <tr>
-                        <th style="text-align: center;">ACCION</th>
-                                    <!---empleado---->
-                        <th style="text-align: center;">#</th>
-                        <th style="text-align: center;">Tipo Doc</th>
-                        <th style="text-align: center;">Documento</th>
-                        <th style="text-align: center;">Nombre</th>
-                        <th style="text-align: center;">Apellido</th>
-                        <th style="text-align: center;">Gerencia</th>
-                        <th style="text-align: center;">Departamento</th>
-                        <th style="text-align: center;">Cargo</th>
-                                    <!---proyecto---->
-                        <th style="text-align: center;">Codigo</th>
-                        <th style="text-align: center;">Ceco</th>
-                        <th style="text-align: center;">Cliente</th>
-                        <th style="text-align: center;">Nombre corto</th>
-                        <th style="text-align: center;">Gerente</th>
-                                <!---fechas - valor---->
-                        <th style="text-align: center;">Fecha Inicial</th>
-                        <th style="text-align: center;">Fecha Final</th>
-                        <th style="text-align: center;">Asignación</th>
-                    </tr>
-                </thead>
-                <tbody id="myTable">
-                    <% for( let staffing=0; staffing < staffings.length; staffing++ ) { %>
-                        <tr id="myRow">
-                            <td style="width:100px;">
-                                    
-                                </div>
-                                <div class="btn-group " role="group" aria-label="Button group">
-                                    <div>
-                                    <form class="form-inline" method="post"
-                                        action="/staffing/editar/<%=staffings[staffing].id %>">
-                                        <button class="btn btn-outline-info btnSTF" type="submit"><i
-                                                class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
-                                    </form>
-                                    </div>
-                                    <div>
-                                    <form class="form-inline" method="post" action="/staffing/eliminar/<%=staffings[staffing].id %>">
-                                        <button class="btn btn-outline-danger btnSTF"
-                                            onclick="alert('estas segur@ que quieres eliminar a: '+'<%=staffings[staffing].nombreEmpleado %>'+' asignad@ al proyecto '+'<%=staffings[staffing].codigo %>'+'???')" type="submit"><i
-                                                class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
-                                    </form>
-                                    </div>
-
-
-                                </div>
-                            </td>
+                    <thead class="thead text-center">
+                        <tr>
+                            <th style="text-align: center;">ACCION</th>
                             <!---empleado---->
-                            <td class="colSFTEmpleado">
-                                <%=staffings[staffing].id %>
-                            </td>
-                            <td class="colSFTEmpleado">
-                                <%=staffings[staffing].tipoDoc %>
-                            </td>
-                            <td class="colSFTEmpleado">
-                                <%=staffings[staffing].documento %>
-                            </td>
-                            <td id="ColorTableSTF">
-                                <%=staffings[staffing].nombreEmpleado %>
-                            </td>
-                            <td id="ColorTableSTF">
-                                <%=staffings[staffing].apellido %> 
-                            </td>
-                            <td class="colSFTEmpleado">
-                                <%=staffings[staffing].gerencia%>
-                            </td>
-                            <td class="colSFTEmpleado">
-                                <%=staffings[staffing].departamento %>
-                            </td>
-                            <td class="colSFTEmpleado">
-                                <%=staffings[staffing].cargo %>
-                            </td>
+                            <th style="text-align: center;">#</th>
+                            <th style="text-align: center;">Tipo Doc</th>
+                            <th style="text-align: center;">Documento</th>
+                            <th style="text-align: center;">Nombre</th>
+                            <th style="text-align: center;">Apellido</th>
+                            <th style="text-align: center;">Gerencia</th>
+                            <th style="text-align: center;">Departamento</th>
+                            <th style="text-align: center;">Cargo</th>
                             <!---proyecto---->
-                            <td class="colSFTProyecto">
-                                <%=staffings[staffing].codigo%>
-                            </td>
-                            <td class="colSFTProyecto">
-                                <%=staffings[staffing].ceco%>
-                            </td>
-                            <td id="ColorTableSTF">
-                                <%=staffings[staffing].cliente %>
-                            </td>
-                            <td id="ColorTableSTF">
-                                <%=staffings[staffing].nomCorto %>
-                            </td>
-                            <td class="colSFTProyecto">
-                                <%=staffings[staffing].gerenteEncargado %>
-                            </td>
+                            <th style="text-align: center;">Codigo</th>
+                            <th style="text-align: center;">Ceco</th>
+                            <th style="text-align: center;">Cliente</th>
+                            <th style="text-align: center;">Nombre corto</th>
+                            <th style="text-align: center;">Gerente</th>
                             <!---fechas - valor---->
-                            <td id="ColorTableFechaSTF">
-                                <%=staffings[staffing].fechaInicial %>
-                            </td >
-                            <td id="ColorTableFechaSTF">
-                                <%=staffings[staffing].fechaFinal %>
-                            </td>
-                            <td id="TdValorSTF">
-                                <%=staffings[staffing].valor %>
-                            </td>
+                            <th style="text-align: center;">Fecha Inicial</th>
+                            <th style="text-align: center;">Fecha Final</th>
+                            <th style="text-align: center;">Asignación</th>
                         </tr>
-                        <% } %>
+                    </thead>
+                    <tbody id="myTable">
+                        <% for( let staffing=0; staffing < staffings.length; staffing++ ) { %>
+                            <tr id="myRow">
+                                <td style="width:100px;">
+
+            </div>
+            <div class="btn-group " role="group" aria-label="Button group">
+                <div>
+                    <form class="form-inline" method="post" action="/staffing/editar/<%=staffings[staffing].id %>">
+                        <button class="btn btn-outline-info btnSTF" type="submit"><i
+                                class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
+                    </form>
+                </div>
+                <div>
+                    <form class="form-inline" method="post" action="/staffing/eliminar/<%=staffings[staffing].id %>">
+                        <button class="btn btn-outline-danger btnSTF"
+                            onclick="alert('estas segur@ que quieres eliminar a: '+'<%=staffings[staffing].nombreEmpleado %>'+' asignad@ al proyecto '+'<%=staffings[staffing].codigo %>'+'???')"
+                            type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
+                    </form>
+                </div>
+
+
+            </div>
+            </td>
+            <!---empleado---->
+            <td class="colSFTEmpleado">
+                <%=staffings[staffing].id %>
+            </td>
+            <td class="colSFTEmpleado">
+                <%=staffings[staffing].tipoDoc %>
+            </td>
+            <td class="colSFTEmpleado">
+                <%=staffings[staffing].documento %>
+            </td>
+            <td id="ColorTableSTF">
+                <%=staffings[staffing].nombreEmpleado %>
+            </td>
+            <td id="ColorTableSTF">
+                <%=staffings[staffing].apellido %>
+            </td>
+            <td class="colSFTEmpleado">
+                <%=staffings[staffing].gerencia%>
+            </td>
+            <td class="colSFTEmpleado">
+                <%=staffings[staffing].departamento %>
+            </td>
+            <td class="colSFTEmpleado">
+                <%=staffings[staffing].cargo %>
+            </td>
+            <!---proyecto---->
+            <td class="colSFTProyecto">
+                <%=staffings[staffing].codigo%>
+            </td>
+            <td class="colSFTProyecto">
+                <%=staffings[staffing].ceco%>
+            </td>
+            <td id="ColorTableSTF">
+                <%=staffings[staffing].cliente %>
+            </td>
+            <td id="ColorTableSTF">
+                <%=staffings[staffing].nomCorto %>
+            </td>
+            <td class="colSFTProyecto">
+                <%=staffings[staffing].gerenteEncargado %>
+            </td>
+            <!---fechas - valor---->
+            <td id="ColorTableFechaSTF">
+                <%=staffings[staffing].fechaInicial %>
+            </td>
+            <td id="ColorTableFechaSTF">
+                <%=staffings[staffing].fechaFinal %>
+            </td>
+            <td id="TdValorSTF">
+                <%=staffings[staffing].valor %>
+            </td>
+            </tr>
+            <% } %>
                 </tbody>
-            </table>
+                </table>
         </div>
     </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+    </div>
     
-</div>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">holii</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
 
 
+                    
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <div class="row w-100 align-items-center">
+                        <div class="col text-center">
+                            <button type="button" class="btn btn-outline-danger bx bx-x-circle bx-md bx-flashing-hover"
+                                data-dismiss="modal"></button>
+                            <button type="button" class="btn btn-outline-warning bx bx-check-circle"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
 
 
 
