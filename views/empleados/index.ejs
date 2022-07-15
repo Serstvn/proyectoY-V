@@ -11,7 +11,7 @@
 
         <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
 
-            <table id="myTable"  style="margin: 0 auto; width: 100%;" class="table table-hover text-center table-responsive-xl">
+            <table id="myTable" class="table table-hover text-center table-responsive-xl compact" style="margin: 0 auto; width: 100%;" >
                 <thead class="thead">
                     <tr>
                         <th style="text-align: center;">#</th>
@@ -55,7 +55,7 @@
                         <td>
 
 
-                            <div class="btn-group" id="btnAccion" role="group" aria-label="button group">
+                            <div class="btn-group" id="btnAccionEdit" role="group" aria-label="button group">
 
                                 <form class="form-inline" method="post"
                                     action="/empleados/editar/<%=empleados[empleado].id%>">
@@ -63,8 +63,7 @@
                                             class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
                                 </form>
                             </div>
-                            <br>
-                            <div class="btn-group" id="btnAccion" role="group" aria-label="button group">
+                            <div class="btn-group" id="btnAccionDelete" role="group" aria-label="button group">
 
                                 <form class="form-inline" method="post"
                                     action="/empleados/eliminar/<%=empleados[empleado].id %>">

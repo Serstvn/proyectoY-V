@@ -260,3 +260,9 @@ text-align: center;
 .labelSTF{
   text-transform: none;
 }
+
+
+#modalEditarSTF{
+  text-align: center;
+  align-items: center;
+}

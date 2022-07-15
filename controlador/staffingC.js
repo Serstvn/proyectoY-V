@@ -7,13 +7,21 @@ module.exports = {
     index: function (req, res) {
         staffing.obtener(conn, function (err, datos) {
             console.log(datos);
-           res.render('staffing/index', { title: 'Y&V backlog', staffings: datos });
+           res.render('staffing/index', { title: 'Y&V backlog', staffings: datos, staffing: datos[0]});
         });
     },
+
+    editar: function (req, res) {
+        staffing.retornarDatosIdSTF(conn, req.params.id, function (err, datos) {
+            console.log(datos[0]);
+            res.render('staffing/editar', { staffing: datos[0] });
+        });
+    },
+  /*      */
     //----------------------------------------------------------------//
     //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
 
-    /* */
+    
     crearSTF: function (req, res) {
         staffing.obtStaffEmpleado(conn, function (err, empleadoSTF) {
             staffing.obtStaffProyecto(conn, function (err, proyStf) {
@@ -42,22 +50,13 @@ module.exports = {
 
 
     
-    editar: function (req, res) {
-        staffing.retornarDatosIdSTF(conn, req.params.id, function (err, datos) {
-            console.log(datos[0]);
-            res.render('staffing/editar', { staffing: datos[0] });
-        });
-
-    },
 
 
 
     actualizar: function name(req, res) {
         console.log(req.body);
         if (req.body) {
-
             staffing.actualizar(conn, req.body, function (err,) {
-
                 res.redirect('/staffing');
             });
         }

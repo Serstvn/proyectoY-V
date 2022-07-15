@@ -1,157 +1,200 @@
 <%- include ../layouts/cabecera.ejs %>
-    <div class="container-fluid">
-        <br><br>
-
+    <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1 class="align-text-bottom text-center">EDITAR REGISTRO</h1>
-                <br>
-                <div class="container shadow-lg p-3 mb-5 bg-waith rounded">
+                <!-------------------------------------------------------->
+                <!----SECCION FECHAS Y VALOR---->
+                <div class="container shadow-lg p-3 bg-waith rounded">
                     <form class="form-inline" method="POST" action="../actualizar/">
-                        <input type="text" name="id" value="<%= staffing.id %>">
-
+                        <input type="hidden" name="id" value="<%= staffing.id %>">
                         <div class="container">
-
-
+                            <br>
                             <div class="row">
-                                <fieldset disabled="disabled">
-                                    <div class="col">
-                                        <h5>EMPLEADO</h5>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Nombre</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.nombreEmpleado %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Apellido</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.apellido %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Tipo de
-                                                documento</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.tipoDoc %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Documento</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.documento %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Gerencia</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.gerencia %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel"
-                                                class="col-sm-2 col-form-label">Departamento</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.departamento %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Cargo</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.cargo %>">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </fieldset>
-
-
-
-
-
-                                <div class="col">
-                                    <h5>EDITAR</h5>
+                                <h2  class="modal-title w-100 text-center">EDITAR</h2>
+                                <div class="col-sm mt-5">
                                     <div class="form-group row">
-                                        <label for="colFormLabel" class="col-sm-2 col-form-label">fecha Inicial</label>
-                                        <div class="col-sm-10">
+                                        <label for="colFormLabel" class="col-sm-12 col-form-label">fecha
+                                            Inicial</label>
+                                        <div class="col-sm-12">
                                             <input type="date" class="form-control" id="colFormLabel"
                                                 value="<%= staffing.fechaInicial %>">
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="col-sm mt-5">
                                     <div class="form-group row">
-                                        <label for="colFormLabel" class="col-sm-2 col-form-label">fecha Final</label>
-                                        <div class="col-sm-10">
+                                        <label for="colFormLabel" class="col-sm-12 col-form-label">fecha
+                                            Final</label>
+                                        <div class="col-sm-12">
                                             <input type="date" class="form-control" id="colFormLabel"
                                                 value="<%= staffing.fechaFinal %>">
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="col-sm mt-5">
                                     <div class="form-group row">
-                                        <label for="colFormLabel" class="col-sm-2 col-form-label">Asignacion</label>
-                                        <div class="col-sm-10">
-                                            <input id="textoAsignacionSTF" id="colFormLabel" class="form-control text-center" type="number" name="aisgnacion" step="0.01" min="0.10" max="1.00" placeholder="<%= staffing.valor %>  Valor decimal no mayor a 1.">
+                                        <label for="colFormLabel" class="col-sm-12 col-form-label">Asignacion</label>
+                                        <div class="col-sm-12">
+                                            <input id="colFormLabel" class="form-control text-center" type="number"
+                                                name="aisgnacion" step="0.01" min="0.10" max="1.00"
+                                                placeholder="<%= staffing.valor %>  Valor decimal no mayor a 1.">
                                         </div>
                                     </div>
 
                                 </div>
-
-                                <fieldset disabled="disabled">
-
-                                    <div class="col">
-                                        <h5>PROYECTO</h5>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Codigo</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.codigo %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Ceco</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.ceco %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Cliente</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.cliente %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Nombre
-                                                Corto</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.nomCorto %>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="colFormLabel" class="col-sm-2 col-form-label">Gerente
-                                                encargado</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="colFormLabel"
-                                                    placeholder="<%= staffing.gerenteEncargado %>">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </fieldset>
-
                             </div>
                         </div>
                     </form>
+                    <br><br>
+
+                    <div class="container-fluid h-100">
+                        <div class="row w-100 align-items-center">
+                            <div class="col text-center">
+
+
+                                <button type="submit" class="btn btn-outline-warning"><i
+                                        class='bx bx-check-circle bx-md'></i></button>
+                                <a href="/staffing" class="btn btn-outline-danger"><i
+                                        class='bx bx-x-circle bx-md'></i></a>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
+                <!-------------------------------------------------------->
+
+                <br>
+
+                <!-------------------------------------------------------->
+                <!----SECCION DATOS RETORNADOS EN INPUT DESHABILITADOS---->
+                <!-------------------------------------------------------->
+
+
+                <!--------------------DATOS EMPLEADO-------------------->
+                <div class="container shadow-lg p-3 bg-waith rounded">
+                    <div class="container-sm">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>EMPLEADO</h2>
+                                <fieldset disabled="disabled">
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Nombre</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.nombreEmpleado %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Apellido</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.apellido %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Tipo
+                                            de
+                                            documento</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.tipoDoc %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Documento</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.documento %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Gerencia</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.gerencia %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Departamento</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.departamento %>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Cargo</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.cargo %>">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-------------------------------------------------------->
+
+
+
+                            <!-------------------------------------------------------->
+                            <!----------------------DATOS DEL PROYECTO---------------->
+                            <div class="col-6">
+                                <h2>PROYECTO</h2>
+                                <fieldset disabled="disabled">
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.codigo %>">
+                                        </div>
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Codigo</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.ceco %>">
+                                        </div>
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Ceco</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.cliente %>">
+                                        </div>
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Cliente</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.nomCorto %>">
+                                        </div>
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Nombre
+                                            Corto</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" id="colFormLabel"
+                                                placeholder="<%= staffing.gerenteEncargado %>">
+                                        </div>
+                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Gerente
+                                            encargado</label>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-------------------------------------------------------->
+
             </div>
         </div>
+
     </div>
-    <br>
+
+
     <%- include ../layouts/pie.ejs %>

@@ -12,7 +12,7 @@
         <div class="container-fluid tablaProyecto" style="padding: 6em;">
             <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
                 <table id="myTable" style="margin: 0 auto; width: 100%;"
-                    class="table  table-hover text-center table-responsive">
+                    class="table table-hover text-center table-responsive compact ">
 
                     <thead class="thead text-center">
                         <tr>
@@ -45,9 +45,11 @@
 
             </div>
             <div class="btn-group " role="group" aria-label="Button group">
+
                 <div>
-                    <form class="form-inline" method="post" action="/staffing/editar/<%=staffings[staffing].id %>">
-                        <button class="btn btn-outline-info btnSTF" type="submit"><i
+                    <form class="form-inline" method="post"
+                        action="/staffing/editar/<%=staffings[staffing].id %>">
+                        <button class="btn btn-outline-info" type="submit"><i
                                 class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
                     </form>
                 </div>
@@ -119,54 +121,242 @@
                 </table>
         </div>
     </div>
-    </div>
-
 
 
     <div class="container">
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-        </button>
-
-    </div>
-    
-    
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="exampleModalLabel">holii</h1>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+   
+                                <!-------------------------------------------------------->
+                <!--- BOTON ABRIR MODAL EDITAR REGISTRO VALOR + FECHAS    data-toggle="modal" data-target="#modalEditarSTF"   --->
+                                <!--------------------------------------------------------> <!-- 
+                <div>
+                 <button class="btn btn-outline-info btnSTF"  id="BtnMoldalSTF"  data-toggle="modal" data-target="#modalEditarSTF" type="submit">BTNmodal</i></button>
                 </div>
-                <div class="modal-body">
-                    
 
 
-                    
+ -->
+                                <!-------------------------------------------------------->
+                                <!--------------------------MODAL------------------------->
+                                <!-------------------------------------------------------->
+
+        <!-----------MODAL EDITAR REGISTRO VALOR Y FECHAS--------->
+        <div class="modal fade" id="modalEditarSTF" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalEditarSTF" class="modal-title w-100 text-center">Editar registro</h2>
+                        <button type=" button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-------------------------------------------------------->
+                                <!----SECCION DATOS RETORNADOS EN INPUT DESHABILITADOS---->
+                                <!-------------------------------------------------------->
 
 
 
-                </div>
-                <div class="modal-footer">
-                    <div class="row w-100 align-items-center">
-                        <div class="col text-center">
-                            <button type="button" class="btn btn-outline-danger bx bx-x-circle bx-md bx-flashing-hover"
-                                data-dismiss="modal"></button>
-                            <button type="button" class="btn btn-outline-warning bx bx-check-circle"></button>
+                                <!--------------------DATOS EMPLEADO-------------------->
+                                <div class="container shadow-lg p-3 bg-waith rounded">
+                                    <div class="container-sm">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h2>EMPLEADO</h2>
+                                                <fieldset disabled="disabled">
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Nombre</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.nombreEmpleado %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Apellido</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.apellido %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Tipo
+                                                            de
+                                                            documento</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.tipoDoc %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Documento</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.documento %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Gerencia</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.gerencia %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Departamento</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.departamento %>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Cargo</label>
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.cargo %>">
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <!-------------------------------------------------------->
+
+
+
+                                            <!-------------------------------------------------------->
+                                            <!----------------------DATOS DEL PROYECTO---------------->
+                                            <div class="col-6">
+                                                <h2>PROYECTO</h2>
+                                                <fieldset disabled="disabled">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.codigo %>">
+                                                        </div>
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Codigo</label>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.ceco %>">
+                                                        </div>
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Ceco</label>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.cliente %>">
+                                                        </div>
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Cliente</label>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.nomCorto %>">
+                                                        </div>
+                                                        <label for="colFormLabel" class="col-sm-6 col-form-label">Nombre
+                                                            Corto</label>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-6">
+                                                            <input type="text" class="form-control" id="colFormLabel"
+                                                                placeholder="<%= staffing.gerenteEncargado %>">
+                                                        </div>
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-6 col-form-label">Gerente encargado</label>
+                                                    </div>
+
+                                                </fieldset>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-------------------------------------------------------->
+
+                                <br>
+
+                                <!-------------------------------------------------------->
+                                <!----SECCION FECHAS Y VALOR---->
+                                <div class="container shadow-lg p-3 bg-waith rounded">
+                                    <form class="form-inline" method="POST" action="../actualizar/">
+                                        <input type="text" id="InputModalSTF" name="id" value="<%= staffing.id %>">
+                                        <div class="container">
+                                            <br>
+                                            <div class="row">
+                                                <h5 class="modal-title w-100 text-center">EDITAR</h5>
+                                                <br>
+                                                <br>
+                                                <div class="col-sm">
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel" class="col-sm-12 col-form-label">fecha
+                                                            Inicial</label>
+                                                        <div class="col-sm-12">
+                                                            <input type="date" class="form-control" id="colFormLabel"
+                                                                value="<%= staffing.fechaInicial %>">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm">
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel" class="col-sm-12 col-form-label">fecha
+                                                            Final</label>
+                                                        <div class="col-sm-12">
+                                                            <input type="date" class="form-control" id="colFormLabel"
+                                                                value="<%= staffing.fechaFinal %>">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm">
+                                                    <div class="form-group row">
+                                                        <label for="colFormLabel"
+                                                            class="col-sm-12 col-form-label">Asignacion</label>
+                                                        <div class="col-sm-12">
+                                                            <input id="colFormLabel" class="form-control text-center"
+                                                                type="number" name="aisgnacion" step="0.01" min="0.10"
+                                                                max="1.00"
+                                                                placeholder="<%= staffing.valor %>  Valor decimal no mayor a 1.">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <br><br>
+                                </div>
+                                <!-------------------------------------------------------->
+
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center align-content-center">
+
+                        <button type="button" class="btn btn-outline-danger m-1" data-dismiss="modal"><i
+                                class='bx bx-x-circle bx-md'></i></button>
+
+                        <button type="button" class="btn btn-outline-warning m-1"><i
+                                class='bx bx-check-circle bx-md bx-flashing-hover'></i></button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-------------------------------------------------------->
+
     </div>
-    <br><br><br><br><br>
-
-
+        <br><br><br><br><br><br><br><br>
 
 
     <%- include ../layouts/pie.ejs %>
