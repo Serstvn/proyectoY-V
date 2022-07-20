@@ -25,11 +25,14 @@ module.exports = {
         conn.query("INSERT INTO `staffing` (`id_empleado`, `id_proyecto`, `fechaInicial`, `fechaFinal`, `valor`) VALUES (?,?,?,?,?)", [datos.idEmpleadoSTF, datos.idProyectoSTF, datos.fechaInicio, datos.fechaFin, datos.aisgnacion], funcion);
     },
 
-    retornarDatosIdSTF: function (conn, id, funcion) {
-        conn.query(" SELECT  ST.id, DATE_FORMAT(fechaInicial, '%M %d %Y') AS fechaInicial,  DATE_FORMAT(fechaFinal, '%M %d %Y') AS fechaFinal,valor,codigo,cliente,nomCorto, E1.documento, E1.nombre as nombreEmpleado,E1.apellido,tipoDoc,gerencia,departamento,cargo,ceco,E2.nombre as gerenteEncargado FROM staffing as ST inner join proyectos as P1 on ST.id_proyecto=P1.id inner join empleados as E1 on ST.id_empleado=E1.id INNER JOIN documentos as doc on E1.documentos_id=doc.id INNER JOIN gerencias as g on E1.gerencias_id=g.id INNER JOIN departamentos as d on E1.departamentos_id=d.id INNER JOIN cargos as c on E1.cargos_id=c.id INNER JOIN cecos as cec on P1.ceco_id=cec.id INNER JOIN empleados as E2 on P1.empleados_id=E2.id WHERE ST.id=?", [id], funcion);
+    retornarDatosIdSTF: function (conn, id, funcion) {   
+        conn.query(" SELECT  ST.id, DATE_FORMAT(fechaInicial, '%Y-%m-%d') AS fechaInicial,  DATE_FORMAT(fechaFinal, '%Y-%m-%d') AS fechaFinal,valor,codigo,cliente,nomCorto, E1.documento, E1.nombre as nombreEmpleado,E1.apellido,tipoDoc,gerencia,departamento,cargo,ceco,E2.nombre as gerenteEncargado FROM staffing as ST inner join proyectos as P1 on ST.id_proyecto=P1.id inner join empleados as E1 on ST.id_empleado=E1.id INNER JOIN documentos as doc on E1.documentos_id=doc.id INNER JOIN gerencias as g on E1.gerencias_id=g.id INNER JOIN departamentos as d on E1.departamentos_id=d.id INNER JOIN cargos as c on E1.cargos_id=c.id INNER JOIN cecos as cec on P1.ceco_id=cec.id INNER JOIN empleados as E2 on P1.empleados_id=E2.id WHERE ST.id=?", [id], funcion);
     },
 
 
+    actualizarSTF: function (conn, datos, funcion) {
+        conn.query("UPDATE `staffing` SET `fechaInicial`=?, `fechaFinal`=?, `valor`=?  WHERE `staffing`.`id` =?", [datos.fechaInicial, datos.fechaFinal, datos.aisgnacion,datos.id], funcion);
+    },
 
 
 }

@@ -11,12 +11,32 @@ module.exports = {
         });
     },
 
+    //----------------------------------------------------------------//
+    //----------------------------------------------------------------//
+
     editar: function (req, res) {
         staffing.retornarDatosIdSTF(conn, req.params.id, function (err, datos) {
             console.log(datos[0]);
             res.render('staffing/editar', { staffing: datos[0] });
         });
     },
+
+    //----------------------------------------------------------------//
+
+    actualizar: function name(req, res) {
+        console.log(req.body);
+        if (req.body) {
+            staffing.actualizarSTF(conn, req.body, function (err,) {
+                console.log('OK VIEJO TODO SALIO BIEN!!!')
+                res.redirect('/staffing');
+            });
+        }
+        
+         /* res.send(req.body); */
+      
+    },
+    //----------------------------------------------------------------//
+    //----------------------------------------------------------------//
   /*      */
     //----------------------------------------------------------------//
     //RUTAS CREAR STAFFING Y TRAER EMPLEADOS Y PROYECTOS A LOS SELECT//
@@ -47,48 +67,5 @@ module.exports = {
             res.redirect('/staffing');
         });
     },
-
-
-    
-
-
-
-    actualizar: function name(req, res) {
-        console.log(req.body);
-        if (req.body) {
-            staffing.actualizar(conn, req.body, function (err,) {
-                res.redirect('/staffing');
-            });
-        }
-
-    },
-    editarSTF: function (req, res) {
-        empleadoSTF.obtener(conn, function (err, datos) {
-            console.log(datos)
-        });
-        //res.render('staffing/crearSTF');
-
-    },
-
-    verEmpleados: function (req, res) {
-        staffing.crearstaff(conn, function (err, datos) {
-            console.log(datos);
-            res.render('staffing/crearSTF', { title: 'Y&V backlog' });
-        });
-
-    },
-
-
-
-    //----------------------------------------------------------------//
-    //RETORNAR DATOS PARA LLENAR LOS FORMULARIOS DEPUES DE HABER SELECCIONADO EL EMPLEADO//
-    retornarEmpleado: function (req, res) {
-        res.send(req.body);
-        console.log('pues se supone que aqui va la info del select');
-    },
-
-
-
-
     //----------------------------------------------------------------//
 }

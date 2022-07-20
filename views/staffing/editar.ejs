@@ -15,10 +15,10 @@
                                     <div class="form-group row">
                                         <label for="colFormLabel" class="col-sm-12 col-form-label">fecha
                                             Inicial</label>
-                                        <div class="col-sm-12">
-                                            <input type="date" class="form-control" id="colFormLabel"
-                                                value="<%= staffing.fechaInicial %>">
-                                        </div>
+                                            <div class="col-sm-12">
+                                                <input type="date" class="form-control" name="fechaInicial" id="fechaInicial"
+                                                    value="<%= staffing.fechaInicial %>">
+                                            </div>
                                     </div>
 
                                 </div>
@@ -26,10 +26,10 @@
                                     <div class="form-group row">
                                         <label for="colFormLabel" class="col-sm-12 col-form-label">fecha
                                             Final</label>
-                                        <div class="col-sm-12">
-                                            <input type="date" class="form-control" id="colFormLabel"
-                                                value="<%= staffing.fechaFinal %>">
-                                        </div>
+                                            <div class="col-sm-12">
+                                                <input type="date" class="form-control" name="fechaFinal" id="fechaFinal"
+                                                    value="<%= staffing.fechaFinal %>">
+                                            </div>
                                     </div>
 
                                 </div>
@@ -39,32 +39,26 @@
                                         <div class="col-sm-12">
                                             <input id="colFormLabel" class="form-control text-center" type="number"
                                                 name="aisgnacion" step="0.01" min="0.10" max="1.00"
-                                                placeholder="<%= staffing.valor %>  Valor decimal no mayor a 1.">
+                                                value="<%= staffing.valor %>" placeholder="<%= staffing.valor %>">
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <br><br>
-
-                    <div class="container-fluid h-100">
-                        <div class="row w-100 align-items-center">
-                            <div class="col text-center">
-
-
-                                <button type="submit" class="btn btn-outline-warning"><i
-                                        class='bx bx-check-circle bx-md'></i></button>
-                                <a href="/staffing" class="btn btn-outline-danger"><i
-                                        class='bx bx-x-circle bx-md'></i></a>
-
-
+                        <div class="container-fluid h-100">
+                        <br>
+                            <div class="row w-100 align-items-center">
+                                <div class="col text-center">
+                                    <button type="submit" class="btn btn-outline-warning"><i
+                                            class='bx bx-check-circle bx-md'></i></button>
+                                    <a href="/staffing" class="btn btn-outline-danger"><i
+                                            class='bx bx-x-circle bx-md'></i></a>
+                                </div>
                             </div>
                         </div>
-
-
-                    </div>
+                    </form>
+                    <br><br>
                 </div>
                 <!-------------------------------------------------------->
 
@@ -81,6 +75,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <h2>EMPLEADO</h2>
+                                <br><br>
                                 <fieldset disabled="disabled">
                                     <div class="form-group row">
                                         <label for="colFormLabel" class="col-sm-6 col-form-label">Nombre</label>
@@ -144,6 +139,7 @@
                             <!----------------------DATOS DEL PROYECTO---------------->
                             <div class="col-6">
                                 <h2>PROYECTO</h2>
+                                <br><br>
                                 <fieldset disabled="disabled">
                                     <div class="form-group row">
                                         <div class="col-sm-6">
