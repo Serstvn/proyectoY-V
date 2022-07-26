@@ -5,10 +5,18 @@
             <div class="card-body">
                 <h1 class="align-text text-center">AGREGAR NUEVO EMPLEADO</h1>
                 <br>
+
+                                <!------------------------------->
+                                <!-- FORMULARIO CREAR EMPLEADO -->
+                                <!------------------------------->
+
                 <div class="container shadow p-3 mb-5 bg-white rounded">
                     <form method="post" action="/empleados">
                         <div class="container-fluid">
                             <div class="row">
+                                <!------------------------------->
+                                <!---------- columna#1 ---------->
+                                <!------------------------------->
                                 <div class="col">
 
                                     <div>
@@ -16,10 +24,10 @@
                                             <label for="form-group">TIPO DE DOCUMENTO</label>
                                             <select class="custom-select" name="tipoDoc">
                                                 <option disabled selected>Selecciona el tipo de documento</option>
-                                            <% for( let documento=0; documento < documentos.length; documento++ ) { %>
-                                            <option value="<%=documentos[documento].id %>">
-                                                <%=documentos[documento].tipoDoc %>
-                                            </option>
+                                                <% for( let documento=0; documento < documentos.length; documento++ ) { %>
+                                                    <option value="<%=documentos[documento].id %>">
+                                                        <%=documentos[documento].tipoDoc %>
+                                                    </option>
                                                     <% } %>
                                             </select>
                                         </div>
@@ -38,6 +46,10 @@
                                         <input id="my-input" class="form-control" type="text" name="apellido">
                                     </div>
                                 </div>
+            
+                                <!------------------------------->
+                                <!---------- columna#2 ---------->
+                                <!------------------------------->
                                 <div class="col">
                                     <div>
                                         <div class="form-group">
@@ -45,48 +57,55 @@
                                             <select class="custom-select" name="gerencia">
                                                 <option disabled selected>Selecciona una gerencia</option>
                                                 <% for( let gerencia=0; gerencia < gerencias.length; gerencia++ ) { %>
-                                                <option value="<%=gerencias[gerencia].id %>">
-                                                    <%=gerencias[gerencia].gerencia %>
-                                                </option>
-                                                        <% } %>
+                                                    <option value="<%=gerencias[gerencia].id %>">
+                                                        <%=gerencias[gerencia].gerencia %>
+                                                    </option>
+                                                    <% } %>
                                             </select>
                                         </div>
                                     </div>
+                                    <br>
                                     <div>
                                         <div class="form-group">
 
                                             <label for="form-group">DEPARTAMENTOS</label>
-                                            <select class="custom-select" name="departamento" placeholder="Seleccionar departamento">
-                                                
+                                            <select class="custom-select" name="departamento"
+                                                placeholder="Seleccionar departamento">
+
                                                 <option disabled selected>Selecciona un departamento</option>
                                                 <% for( let departamento=0; departamento < departamentos.length; departamento++ ) { %>
-                                                <option value="<%=departamentos[departamento].id %>">
-                                                    <%=departamentos[departamento].departamento %>
-                                                </option>
-                                                        <% } %>
+                                                    <option value="<%=departamentos[departamento].id %>">
+                                                        <%=departamentos[departamento].departamento %>
+                                                    </option>
+                                                    <% } %>
                                             </select>
 
                                         </div>
                                     </div>
+                                    <br>
                                     <div>
                                         <div>
                                             <div class="form-group ">
                                                 <label for="form-group">CARGOS</label>
                                                 <select class="custom-select" name="cargo">
-                                                <option disabled selected>Selecciona un cargo</option>
+                                                    <option disabled selected>Selecciona un cargo</option>
                                                     <% for( let cargo=0; cargo < cargos.length; cargo++ ) { %>
-                                                    <option value="<%=cargos[cargo].id %>">
-                                                        <%=cargos[cargo].cargo %>
-                                                    </option>
-                                                            <% } %>
+                                                        <option value="<%=cargos[cargo].id %>">
+                                                            <%=cargos[cargo].cargo %>
+                                                        </option>
+                                                        <% } %>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-outline-warning"><i
-                                            class='bx bx-check-circle bx-md'></i></button>
-                                    <a href="../empleados" class="btn btn-outline-danger"><i
-                                            class='bx bx-x-circle bx-md'></i></a>
+                                    <br>
+                                    
+                                    <div class="text-center col-sm-12">
+                                        <button type="submit" class="btn btn-outline-warning"><i
+                                                class='bx bx-check-circle bx-md'></i></button>
+                                        <a href="../empleados" class="btn btn-outline-danger"><i
+                                                class='bx bx-x-circle bx-md'></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

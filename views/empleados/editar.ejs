@@ -10,12 +10,17 @@
 
                     <div class="container shadow-lg p-3 mb-5 bg-waith rounded">
 
+                        <!-------------------------------->
+                        <!-- FORMULARIO EDITAR EMPLEADO -->
+                        <!-------------------------------->
+
                         <div class="row">
+                        <!----------- COLUMNA 1 ---------->
                             <div class="col">
                                 <div class="form-group">
                                     <label for="my-select">TIPO DE DOCUMENTO</label>
-                                    <select class="form-control custom-select"  name="tipoDocumento">
-                                        <option  value="<%= empleado.documentos_id %>">
+                                    <select class="form-control custom-select" name="tipoDocumento">
+                                        <option value="<%= empleado.documentos_id %>">
                                             <%= empleado.tipoDoc %>
                                         </option>
                                         <% for( let documento=0; documento < documentos.length; documento++ ) { %>
@@ -37,14 +42,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="my-input">APELLIDO </label>
-                                    <input value="<%= empleado.apellido %>" class="form-control" type="text" name="apellido">
+                                    <input value="<%= empleado.apellido %>" class="form-control" type="text"
+                                        name="apellido">
                                 </div>
                             </div>
+                            
+                        <!----------- COLUMNA 2 ---------->
                             <div class="col">
                                 <div class="form-group">
                                     <label for="my-select">GERENCIA</label>
                                     <select class="form-control custom-select" type="number" name="gerencia">
-                                        <option  value="<%= empleado.gerencias_id %>">
+                                        <option value="<%= empleado.gerencias_id %>">
                                             <%= empleado.gerencia %>
                                         </option>
                                         <% for( let gerencia=0; gerencia < gerencias.length; gerencia++ ) { %>
@@ -54,20 +62,21 @@
                                             <% } %>
                                     </select>
                                 </div>
+                                <br>
                                 <div class="form-group">
                                     <label for="my-select">DEPARTAMENTO</label>
                                     <select class="form-control custom-select" name="departamento">
-                                        <option  value="<%= empleado.departamentos_id %>">
+                                        <option value="<%= empleado.departamentos_id %>">
                                             <%= empleado.departamento %>
                                         </option>
-                                        <% for( let departamento=0; departamento < departamentos.length; departamento++
-                                            ) { %>
+                                        <% for( let departamento=0; departamento < departamentos.length; departamento++ ) { %>
                                             <option value="<%=departamentos[departamento].id %>">
                                                 <%=departamentos[departamento].departamento %>
                                             </option>
                                             <% } %>
                                     </select>
                                 </div>
+                                <br>
                                 <div class="form-group">
                                     <label for="my-select">CARGO</label>
                                     <select class="form-control custom-select" name="cargo">
@@ -81,12 +90,19 @@
                                             <% } %>
                                     </select>
                                 </div>
+                                <br>
 
+                                    <!------------------------------->
+                                    <!----------- BUTTONS ----------->
+                                    <!------------------------------->
+                                <div class="text-center col-sm-12">
                                 <button type="submit" class="btn btn-outline-warning"><i
                                         class='bx bx-check-circle bx-md'></i></button>
 
                                 <a href="/empleados" class="btn btn-outline-danger"><i
                                         class='bx bx-x-circle bx-md'></i></a>
+                                </div>
+
 
                             </div>
                         </div>

@@ -1,19 +1,36 @@
+/*----------------------------------------------*/
+/* ---------- modulo de exportacion ----------- */
+/*--------- ROUTER - PROYECTOS - MVC -----------*/
+
+/*--- variable de (EXPRESS) ---*/
 var express = require('express');
 var router = express.Router();
+/*--- Constante de controlador (PROYECTOS) ---*/
 const proyectosC= require("../controlador/proyectosC");
 
-/* GET home page. */
+/* GET vista INDEX. */
 router.get('/',proyectosC.index);
-/* GET crear page. */
+/* ---------------- */
+
+/* GET vista CREAR. */
 router.get('/crear',proyectosC.crear);
-/* POST guardar page. */
-router.post("/guardar",proyectosC.guardar);
-/* POST eliminar page. */
-router.post("/eliminar/:id",proyectosC.eliminar);
-/* POST editar page. */
+/* ---------------- */
+
+/* page vista POST EDITAR. */
 router.post("/editar/:id",proyectosC.editar);
-/* POST actualizar page. */
+/* ---------------- */
+
+/* POST ACTUALIZAR. */
 router.post("/actualizar",proyectosC.actualizar);
+/* ---------------- */
+
+/* POST GUARDAR. */
+router.post("/guardar",proyectosC.guardar);
+/* ---------------- */
+
+/* POST ELIMINAR. */
+router.post("/eliminar/:id",proyectosC.eliminar);
+/* ---------------- */
 
 
 module.exports = router;

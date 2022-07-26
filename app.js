@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var proyectosRouter = require('./routes/proyectos');
 var empleadosRouter = require('./routes/empleados');
 var backlogRouter = require('./routes/backlog');
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/proyectos', proyectosRouter);
 app.use('/empleados', empleadosRouter);
 app.use('/backlog', backlogRouter);

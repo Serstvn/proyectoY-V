@@ -1,89 +1,97 @@
 <%- include ../layouts/cabecera.ejs %>
+
     <div class="container-fluid">
         <br><br>
         <h1>DIRECTORIO ACTIVO DE EMPLEADOS</h1>
 
+                        <!----------- BUTTON CREAR ----------->
         <div class="container position-fixed"">
-            <br><br><br><br><a href="/empleados/crear" class='btn btn-outline-warning mt-1 position-fixed text-right bx bx-layer-plus bx-md bx-flashing-hover'></i></a>
+            <br><br><br><br><a href=" /empleados/crear"
+            class='btn btn-outline-warning mt-1 position-fixed text-right bx bx-layer-plus bx-md bx-flashing-hover'>
+            </i></a>
         </div>
 
+                        <!-------------------------------------->
+                        <!----------- TABLA EMPLEADOS ---------->
+                        <!-------------------------------------->
         <div class="container-fluid" style="padding: 6em;">
 
-        <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
+            <div class="container-fluid  shadow p-3 mb-5 bg-white rounded">
 
-            <table id="myTable" class="table table-hover text-center table-responsive-xl compact" style="margin: 0 auto; width: 100%;" >
-                <thead class="thead">
-                    <tr>
-                        <th style="text-align: center;">#</th>
-                        <th style="text-align: center;">CC</th>
-                        <th style="text-align: center;">DOCUMENTO</th>
-                        <th style="text-align: center;">NOMBRE</th>
-                        <th style="text-align: center;">APELLIDO</th>
-                        <th style="text-align: center;">GERENCIA</th>
-                        <th style="text-align: center;">DEPARTAMENTO</th>
-                        <th style="text-align: center;">CARGO</th>
-                        <th style="text-align: center;">ACCIÓN</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for( let empleado=0; empleado < empleados.length; empleado++ ) { %>
-
-                        <td>
-                            <%=empleados[empleado].id %>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].tipoDoc%>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].documento %>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].nombre %>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].apellido %>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].gerencia %>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].departamento %>
-                        </td>
-                        <td>
-                            <%=empleados[empleado].cargo %>
-                        </td>
-                        <td>
-
-
-                            <div class="btn-group" id="btnAccionEdit" role="group" aria-label="button group">
-
-                                <form class="form-inline" method="post"
-                                    action="/empleados/editar/<%=empleados[empleado].id%>">
-                                    <button class="btn btn-outline-info" type="submit"><i
-                                            class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
-                                </form>
-                            </div>
-                            <div class="btn-group" id="btnAccionDelete" role="group" aria-label="button group">
-
-                                <form class="form-inline" method="post"
-                                    action="/empleados/eliminar/<%=empleados[empleado].id %>">
-                                    <button class="btn btn-outline-danger"
-                                        onclick="return confirm('deseas eliminar a <%=empleados[empleado].nombre %> ???')"
-                                        type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
-                                </form>
-                            </div>
-
-
-                        </td>
+                <table id="myTable" class="table table-hover text-center table-responsive-xl compact"
+                    style="margin: 0 auto; width: 100%;">
+                    <thead class="thead">
+                        <tr>
+                            <th style="text-align: center;">#</th>
+                            <th style="text-align: center;">CC</th>
+                            <th style="text-align: center;">DOCUMENTO</th>
+                            <th style="text-align: center;">NOMBRE</th>
+                            <th style="text-align: center;">APELLIDO</th>
+                            <th style="text-align: center;">GERENCIA</th>
+                            <th style="text-align: center;">DEPARTAMENTO</th>
+                            <th style="text-align: center;">CARGO</th>
+                            <th style="text-align: center;">ACCIÓN</th>
                         </tr>
-                        <% } %>
+                    </thead>
+                    <tbody>
+                        <% for( let empleado=0; empleado < empleados.length; empleado++ ) { %>
 
-                </tbody>
-            </table>
-        </div>
+                            <td>
+                                <%=empleados[empleado].id %>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].tipoDoc%>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].documento %>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].nombre %>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].apellido %>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].gerencia %>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].departamento %>
+                            </td>
+                            <td>
+                                <%=empleados[empleado].cargo %>
+                            </td>
+                            <td>
+
+
+                                <div class="btn-group" id="btnAccionEdit" role="group" aria-label="button group">
+
+                                    <form class="form-inline" method="post"
+                                        action="/empleados/editar/<%=empleados[empleado].id%>">
+                                        <button class="btn btn-outline-info" type="submit"><i
+                                                class='bx bx-edit-alt bx-sm bx-tada-hover'></i></button>
+                                    </form>
+                                </div>
+                                <div class="btn-group" id="btnAccionDelete" role="group" aria-label="button group">
+
+                                    <form class="form-inline" method="post"
+                                        action="/empleados/eliminar/<%=empleados[empleado].id %>">
+                                        <button class="btn btn-outline-danger"
+                                            onclick="return confirm('deseas eliminar a <%=empleados[empleado].nombre %> ???')"
+                                            type="submit"><i class='bx bxs-trash bx-sm bx-tada-hover'></i></button>
+                                    </form>
+                                </div>
+
+
+                            </td>
+                            </tr>
+                            <% } %>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
 
 
-        <%- include ../layouts/pie.ejs %>
+    <%- include ../layouts/pie.ejs %>
