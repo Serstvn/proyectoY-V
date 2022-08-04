@@ -1,5 +1,10 @@
 <%- include ../layouts/cabecera.ejs %>
 
+
+
+
+
+
     <div class="container-fluid">
         <br><br>
         <h1>DIRECTORIO ACTIVO DE EMPLEADOS</h1>
@@ -81,6 +86,12 @@
                                     </form>
                                 </div>
 
+                            <!--  PRUEBA - SWEET ALERT2 (INCLUD SCRIPT)
+                                <div class="container">
+                                    <a onclick="confirmar(<%=empleados[empleado].id %>)" >holiii</a>
+                                </div>
+                            -->
+
 
                             </td>
                             </tr>
@@ -93,5 +104,29 @@
 
     </div>
 
+<!-- PRUEBA - SWEET ALERT2
+    <script>
+
+        
+  function confirmar(id){
+    Swal.fire({
+  title: 'Deseas eliminar este registro?',
+  text: "No podras revertir esta acción despues de confirmar!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#FFAA00',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'aceptar!',
+  cancelButtonText: 'No, mejor no'
+}).then((result) => {
+  if (result.isConfirmed) {
+    location.href ='/eliminar'+id;
+
+  }
+});
+  }
+
+    </script> 
+-->
 
     <%- include ../layouts/pie.ejs %>
